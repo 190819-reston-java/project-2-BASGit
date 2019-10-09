@@ -8,6 +8,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import com.revature.model.Story;
 import com.revature.model.User;
 
 public class StoreData {
@@ -24,13 +25,18 @@ public class StoreData {
 
 		User u1 = new User();
 		
-		u1.setUsername("callen");
-		u1.setFirstName("Chris");
-		u1.setLastName("Allen");
-		u1.setPassword("testPassword");
-		u1.setEmail("chris.allen070@gmail.com");
+		u1 = session.get(User.class, "callen");
+		
+		u1.setEmail("newEmail");
+		
+		Story s1 = new Story();
+		s1.setAuthorID(u1.getUsername());
+		s1.setBody("This is a test story for the database!");
+		s1.setHeadline("Local man updates story in database");
 		
 		session.save(u1);
+		session.save(s1);
+		
 		t.commit();
 		System.out.println("successfully saved");
 		factory.close();
