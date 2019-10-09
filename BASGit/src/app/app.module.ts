@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NewsfeedComponent } from './newsfeed/newsfeed.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AccountDropdownComponent } from './account-dropdown/account-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     FooterComponent,
     NewsfeedComponent,
     SidebarComponent,
-    NavbarComponent
+    NavbarComponent,
+    AccountDropdownComponent
   ],
   imports: [
     BrowserModule
