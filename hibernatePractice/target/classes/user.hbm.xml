@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">  
+  
+ <hibernate-mapping>  
+  <class name="com.revature.model.User" table="users">  
+    <id name="username">  
+     <generator class="assigned"></generator>  
+    </id>  
+            
+    <property name="email"></property>  
+    <property name="password"></property>  
+    <property name="avatarURL"></property>  
+    <property name="blurb"></property>  
+    <property name="firstName"></property>  
+    <property name="lastName"></property>  
+            
+  </class>  
+            
+ </hibernate-mapping>  
