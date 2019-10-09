@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">  
+  
+ <hibernate-mapping>  
+  <class name="com.revature.model.Story" table="stories">  
+    <id name="storyID">  
+     <generator class="assigned"></generator>  
+    </id>  
+            
+    <property name="headline"></property>  
+    <property name="body"></property>  
+    <property name="picture"></property>  
+    <property name="authorID"></property>  
+            
+  </class>  
+            
+ </hibernate-mapping>  
