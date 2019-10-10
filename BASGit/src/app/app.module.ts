@@ -8,6 +8,7 @@ import { NewsfeedComponent } from './newsfeed/newsfeed.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AccountDropdownComponent } from './account-dropdown/account-dropdown.component';
+import { TopNewsComponent } from './top-news/top-news.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AccountDropdownComponent } from './account-dropdown/account-dropdown.co
     NewsfeedComponent,
     SidebarComponent,
     NavbarComponent,
-    AccountDropdownComponent
+    AccountDropdownComponent,
+    TopNewsComponent
   ],
   imports: [
     BrowserModule
