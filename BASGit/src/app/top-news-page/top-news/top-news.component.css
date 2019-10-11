@@ -10,11 +10,27 @@ min-width: 350px;
 /* padding-right: 3%;
 padding-left: 3%; */
 background-color:#ffffff;
-border-radius: 5px;
-box-shadow: 3px 3px 6px #888;
+border-radius: 3px;
+box-shadow: 4px 4px 8px #888888;
+/* margin-top: 52px; */
 }
 #news-view{
     /* background-color:#ccc; */
     max-width:82%;
 
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.source-link{
+    text-align: center;
+    /* vertical-align: bottom; */
+    /* margin: 0;
+    position: absolute;
+    top: 97%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
 }
