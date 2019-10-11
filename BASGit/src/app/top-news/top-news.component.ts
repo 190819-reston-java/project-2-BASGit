@@ -10,6 +10,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 export class TopNewsComponent implements OnInit {
 
   topNews: any;
+  newsSelection: String = "country=us";
 
   imageStatus(imageJson) {
     if(imageJson) {
@@ -34,7 +35,7 @@ export class TopNewsComponent implements OnInit {
   constructor(private http : HttpClient) { }
 ​
   ngOnInit() {
-    let observable = this.http.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=596a0fc3564340dda0564acc17baae85')
+    let observable = this.http.get(`https://newsapi.org/v2/top-headlines?${this.newsSelection}&apiKey=596a0fc3564340dda0564acc17baae85`)
     observable.subscribe((result=>{
       this.topNews = result;
     }))
