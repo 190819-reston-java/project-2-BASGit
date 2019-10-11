@@ -1,0 +1,17 @@
+#news-view{
+    z-index: 2;
+    margin-left:240px;
+    margin-top:60px;
+    /* left: 240px; */
+}
+.newsbox{
+min-width: 350px;
+/* max-width: 625px; */
+/* padding-right: 3%;
+padding-left: 3%; */
+background-color:rgb(223, 223, 223);
+}
+#news-view{
+    /* background-color:#ccc; */
+    max-width:80%;
+}
