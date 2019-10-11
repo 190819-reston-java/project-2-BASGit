@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountDropdownComponent } from '../account-dropdown/account-dropdown.component';
 
 @Component({
   selector: 'app-navbar',
