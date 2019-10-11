@@ -13,7 +13,7 @@ background-color:#ff0000;
 #sidebar {
     z-index: 1;
     position: absolute;
-    height: 100%;
+    height: 135%;
     /* background-color:#292c2f; */
     /* background: linear-gradient(to right, #292c2f 50%, #313538 50.1%, #3e4246); */
     background: linear-gradient(to right, #343A40 92.5%, rgb(38, 42, 46));
