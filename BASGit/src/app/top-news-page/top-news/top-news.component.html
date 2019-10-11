@@ -51,5 +51,30 @@
             <h6 *ngIf="synopsisStatus(topNews.articles[5].content)">Synopsis: {{topNews.articles[5].content}}</h6>
             <h6><a href="{{topNews.articles[5].url}}" target="_blank">Original Article</a></h6>
         </div>
+        <div class="col-sm-3 mb-5 mx-auto newsbox">
+          <h2>Source: {{topNews.articles[6].source.name}}</h2>
+          <h5>Headline: {{topNews.articles[6].title}}</h5>
+          <h6>Published At: {{topNews.articles[6].publishedAt}}</h6>
+          <img *ngIf="imageStatus(topNews.articles[6].urlToImage)" src="{{topNews.articles[6].urlToImage}}" alt="Article One Image" height="25%" width="50%">
+          <h6 *ngIf="synopsisStatus(topNews.articles[6].content)">Synopsis: {{topNews.articles[6].content}}</h6>
+          <h6><a href="{{topNews.articles[6].url}}" target="_blank">Original Article</a></h6>
+      </div>
+      <div class="col-sm-3 mb-5 pb-5 mx-auto newsbox">
+          <h2>Source: {{topNews.articles[7].source.name}}</h2>
+          <h5>Headline: {{topNews.articles[7].title}}</h5>
+          <h6>Published At: {{topNews.articles[7].publishedAt}}</h6>
+          <img *ngIf="imageStatus(topNews.articles[7].urlToImage)" src="{{topNews.articles[7].urlToImage}}" alt="Article Two Image" height="25%" width="50%">
+          <h6 *ngIf="synopsisStatus(topNews.articles[7].content)">Synopsis: {{topNews.articles[7].content}}</h6>
+          <h6><a href="{{topNews.articles[7].url}}" target="_blank">Original Article</a></h6>
+      </div>
+      <div class="col-sm-3 mb-5 mx-auto newsbox">
+          <h2>Source: {{topNews.articles[8].source.name}}</h2>
+          <h5>Headline: {{topNews.articles[8].title}}</h5>
+          <h6>Published At: {{topNews.articles[8].publishedAt}}</h6>
+          <img *ngIf="imageStatus(topNews.articles[8].urlToImage)" src="{{topNews.articles[8].urlToImage}}" alt="Article Two Image" height="25%" width="50%">
+          <h6 *ngIf="synopsisStatus(topNews.articles[8].content)">Synopsis: {{topNews.articles[8].content}}</h6>
+          <h6><a href="{{topNews.articles[8].url}}" target="_blank">Original Article</a></h6>
+      </div>
     </div>
 </div>
+
