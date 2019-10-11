@@ -9,9 +9,12 @@ min-width: 350px;
 /* max-width: 625px; */
 /* padding-right: 3%;
 padding-left: 3%; */
-background-color:rgb(223, 223, 223);
+background-color:#ffffff;
+border-radius: 5px;
+box-shadow: 3px 3px 6px #888;
 }
 #news-view{
     /* background-color:#ccc; */
-    max-width:80%;
+    max-width:82%;
+
 }
