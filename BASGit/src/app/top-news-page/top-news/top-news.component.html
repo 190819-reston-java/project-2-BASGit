@@ -1,7 +1,7 @@
 <app-sidebar></app-sidebar>
 <div id="news-view" class="container">
     <div class="row">
-        <div class="col-sm-3 mb-5 mx-auto newsbox">
+        <div class="col-sm-3 mt-2 mb-3 pb-4 mx-auto newsbox">
             <h2>Source: {{topNews.articles[0].source.name}}</h2>
             <h5>Headline: {{topNews.articles[0].title}}</h5>
             <h6>Published At: {{topNews.articles[0].publishedAt}}</h6>
@@ -9,7 +9,7 @@
             <h6 *ngIf="synopsisStatus(topNews.articles[0].content)">Synopsis: {{topNews.articles[0].content}}</h6>
             <h6><a href="{{topNews.articles[0].url}}" target="_blank">Original Article</a></h6>
         </div>
-        <div class="col-sm-3 mb-5 pb-5 mx-auto newsbox">
+        <div class="col-sm-3 mt-2 mb-3 pb-4 mx-auto newsbox">
             <h2>Source: {{topNews.articles[1].source.name}}</h2>
             <h5>Headline: {{topNews.articles[1].title}}</h5>
             <h6>Published At: {{topNews.articles[1].publishedAt}}</h6>
@@ -17,7 +17,7 @@
             <h6 *ngIf="synopsisStatus(topNews.articles[1].content)">Synopsis: {{topNews.articles[1].content}}</h6>
             <h6><a href="{{topNews.articles[1].url}}" target="_blank">Original Article</a></h6>
         </div>
-        <div class="col-sm-3 mb-5 mx-auto newsbox">
+        <div class="col-sm-3 mt-2 mb-3 pb-4 mx-auto newsbox">
             <h2>Source: {{topNews.articles[2].source.name}}</h2>
             <h5>Headline: {{topNews.articles[2].title}}</h5>
             <h6>Published At: {{topNews.articles[2].publishedAt}}</h6>
@@ -27,7 +27,7 @@
         </div>
     <!-- </div>
     <div class="row"> -->
-        <div class="col-sm-3 mb-5 mx-auto newsbox">
+        <div class="col-sm-3 mt-2 mb-3 pb-4 mx-auto newsbox">
             <h2>Source: {{topNews.articles[3].source.name}}</h2>
             <h5>Headline: {{topNews.articles[3].title}}</h5>
             <h6>Published At: {{topNews.articles[3].publishedAt}}</h6>
@@ -35,7 +35,7 @@
             <h6 *ngIf="synopsisStatus(topNews.articles[3].content)">Synopsis: {{topNews.articles[3].content}}</h6>
             <h6><a href="{{topNews.articles[3].url}}" target="_blank">Original Article</a></h6>
         </div>
-        <div class="col-sm-3 mb-5 mx-auto newsbox">
+        <div class="col-sm-3 mt-2 mb-3 pb-4 mx-auto newsbox">
             <h2>Source: {{topNews.articles[4].source.name}}</h2>
             <h5>Headline: {{topNews.articles[4].title}}</h5>
             <h6>Published At: {{topNews.articles[4].publishedAt}}</h6>
@@ -43,7 +43,7 @@
             <h6 *ngIf="synopsisStatus(topNews.articles[4].content)">Synopsis: {{topNews.articles[4].content}}</h6>
             <h6><a href="{{topNews.articles[4].url}}" target="_blank">Original Article</a></h6>
         </div>
-        <div class="col-sm-3 mb-5 mx-auto newsbox">
+        <div class="col-sm-3 mt-2 mb-3 pb-4 mx-auto newsbox">
             <h2>Source: {{topNews.articles[5].source.name}}</h2>
             <h5>Headline: {{topNews.articles[5].title}}</h5>
             <h6>Published At: {{topNews.articles[1].publishedAt}}</h6>
@@ -51,5 +51,13 @@
             <h6 *ngIf="synopsisStatus(topNews.articles[5].content)">Synopsis: {{topNews.articles[5].content}}</h6>
             <h6><a href="{{topNews.articles[5].url}}" target="_blank">Original Article</a></h6>
         </div>
+        <!-- <div class="col-sm-3 mt-2 mb-3 pb-4 mx-auto newsbox">
+                <h2>Source: {{topNews.articles[6].source.name}}</h2>
+                <h5>Headline: {{topNews.articles[6].title}}</h5>
+                <h6>Published At: {{topNews.articles[1].publishedAt}}</h6>
+                <img *ngIf="imageStatus(topNews.articles[6].urlToImage)" src="{{topNews.articles[6].urlToImage}}" alt="Article Two Image" height="25%" width="50%">
+                <h6 *ngIf="synopsisStatus(topNews.articles[6].content)">Synopsis: {{topNews.articles[6].content}}</h6>
+                <h6><a href="{{topNews.articles[5].url}}" target="_blank">Original Article</a></h6>
+            </div> -->
     </div>
 </div>
