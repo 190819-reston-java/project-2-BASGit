@@ -34,3 +34,21 @@ img{
     left: 50%;
     transform: translate(-50%, -50%); */
 }
+ img {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: scale(1) rotate(0deg);
+  -ms-transform: scale(1) rotate(0deg);
+  -o-transform: scale(1) rotate(0deg);
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+
+ img:hover {
+  -webkit-transform: scale(1.05) rotate(1deg);
+  -ms-transform: scale(1.05) rotate(1deg);
+  -o-transform: scale(1.05) rotate(1deg);
+  transform: scale(1.05) rotate(1deg);
+  opacity: 0.8;
+}
