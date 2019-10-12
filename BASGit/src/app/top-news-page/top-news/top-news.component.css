@@ -19,14 +19,23 @@ box-shadow: 4px 4px 8px #888888;
     max-width:82%;
 
 }
+p {
+display: inline;
+
+}
+
 img{
+  padding-right: 5px;
+  float: left;
+}
+/* img{
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
+} */
 
 .source-link{
-    text-align: center;
+    /* text-align: center; */
     /* vertical-align: bottom; */
     /* margin: 0;
     position: absolute;
