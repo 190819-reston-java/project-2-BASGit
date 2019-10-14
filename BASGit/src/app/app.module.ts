@@ -25,6 +25,14 @@ import { ManagerUserAllStoriesComponent } from './manager-page/manager-user-all-
 import { FeaturedUserStoriesComponent } from './user-stories-page/featured-user-stories/featured-user-stories.component';
 import { SingleUserAllStoriesComponent } from './manager-page/single-user-all-stories/single-user-all-stories.component';
 import { LoginPanelComponent } from './login-panel/login-panel.component';
+import { CnnComponent } from './cnn/cnn.component';
+import { FoxComponent } from './fox/fox.component';
+import { NbcComponent } from './nbc/nbc.component';
+import { SportsComponent } from './sports/sports.component';
+import { PoliticsComponent } from './politics/politics.component';
+import { BusinessComponent } from './business/business.component';
+import { EntertainmentComponent } from './entertainment/entertainment.component';
+import { TechnologyComponent } from './technology/technology.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +58,14 @@ import { LoginPanelComponent } from './login-panel/login-panel.component';
     FeaturedUserStoriesComponent,
     SingleUserAllStoriesComponent,
     LoginPanelComponent,
+    CnnComponent,
+    FoxComponent,
+    NbcComponent,
+    SportsComponent,
+    PoliticsComponent,
+    BusinessComponent,
+    EntertainmentComponent,
+    TechnologyComponent,
   ],
   imports: [
     BrowserModule,
