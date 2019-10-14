@@ -24,6 +24,7 @@ import { UpdateProfileComponent } from './profile-page/update-profile/update-pro
 import { ManagerUserAllStoriesComponent } from './manager-page/manager-user-all-stories/manager-user-all-stories.component';
 import { FeaturedUserStoriesComponent } from './user-stories-page/featured-user-stories/featured-user-stories.component';
 import { SingleUserAllStoriesComponent } from './manager-page/single-user-all-stories/single-user-all-stories.component';
+import { LoginPanelComponent } from './login-panel/login-panel.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { SingleUserAllStoriesComponent } from './manager-page/single-user-all-st
     ManagerComponent,
     FeaturedUserStoriesComponent,
     SingleUserAllStoriesComponent,
+    LoginPanelComponent,
   ],
   imports: [
     BrowserModule,
