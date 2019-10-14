@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BusinessComponent implements OnInit {
   topNews: any;
-  newsSelection: String = "country=us&sources=cnn";
+  newsSelection: String = "country=us&category=business";
 
   imageStatus(imageJson) {
     if (imageJson) {
