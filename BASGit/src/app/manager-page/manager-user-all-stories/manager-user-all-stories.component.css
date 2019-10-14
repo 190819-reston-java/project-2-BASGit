@@ -5,34 +5,43 @@
   /* left: 240px; */
 }
 button{
-  min-width: 80px;
-  border: 2px solid #cccccc;
+  min-width: 100px;
+  border: 2px solid #bbbbbb;
+  /* color: #ffffff; */
+}
+button:hover{
+  border: 2px solid #ffffff;
+  /* color: #ffffff; */
+  filter: brightness(1.4);
 }
 .manager-tools{
   /* margin-top: 15px; */
   padding: 5px;
   display: flex;
-  background-color:#666666;
+  /* background-color:#666666; */
+  background: linear-gradient(#888888 50%,#828282 50.1%, #6e6e6e);
   /* border: 2px solid #bbbbbb; */
   box-shadow: 4px 4px 8px #888888;
   border-top: 2px solid #888888;
-  border-radius: 0px 0px 5px 5px;
-  width:100%;
+  border-radius: 4px 4px 4px 4px;
+  width:102%;
+	transform: translate(-1%, -5px);
 }
 .newsbox{
-min-width: 350px;
+/* min-width: 350px; */
 /* max-width: 625px; */
 /* padding-right: 3%;
 padding-left: 3%; */
 background-color:#ffffff;
-border-radius: 3px 3px 0px 0px;
+border-radius: 3px;
 box-shadow: 4px 4px 8px #888888;
 /* height: calc(40vh - 50px); */
 /* margin-top: 52px; */
 }
 #news-view{
   /* background-color:#ccc; */
-  max-width:82%;
+  /* max-width:82%; */
+  width: calc(100% - 240px);
 
 }
 p {
@@ -50,15 +59,6 @@ float: left;
   margin-right: auto;
 } */
 
-.source-link{
-  /* text-align: center; */
-  /* vertical-align: bottom; */
-  /* margin: 0;
-  position: absolute;
-  top: 97%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-}
 img {
 -webkit-transition: all 0.3s ease;
 -o-transition: all 0.3s ease;
