@@ -1,102 +1,63 @@
 <app-sidebar-manager></app-sidebar-manager>
-<!-- 
-<div id="news-view" class="container">
-    <div class="row justify-content-around">
-        <div class="col-sm-3 m-1 mt-3 mb-3 pb-4 newsbox">
-            <h5>My cat is crazy</h5>
-            <h6>Published At: 11:33 am</h6>
-
-            <p>Managers highlight this plz.  HELLO BASGit FRONT PAGE!!  I'm famous now</p>
-            <h6 class="source-link"><a href="{{topNews.articles[0].url}}" target="_blank">Original Article</a></h6>
-        </div>
-        <div class="col-sm-3 m-1 mt-3 mb-3 pb-4 newsbox">
-            <h3>{{topNews.articles[1].source.name}}</h3>
-            <h5>{{topNews.articles[1].title}}</h5>
-            <h6>Published At: {{topNews.articles[1].publishedAt}}</h6>
-            <img *ngIf="imageStatus(topNews.articles[1].urlToImage)" src="{{topNews.articles[1].urlToImage}}" alt="Article One Image" height="25%" width="50%">
-            <img *ngIf="!imageStatus(topNews.articles[1].urlToImage)" src="../assets/defaultimage.png"alt="Article One Image" height="25%" width="50%">>
-            <p *ngIf="synopsisStatus(topNews.articles[1].content)">{{topNews.articles[1].content}}</p>
-            <p *ngIf="!synopsisStatus(topNews.articles[1].content)">{{topNews.articles[1].description}}</p>
-            <h6 class="source-link"><a href="{{topNews.articles[1].url}}" target="_blank">Original Article</a></h6>
-        </div>
-        <div class="col-sm-3 m-1 mt-3 mb-3 pb-5 newsbox">
-            <h3>{{topNews.articles[2].source.name}}</h3>
-            <h5>{{topNews.articles[2].title}}</h5>
-            <h6>Published At: {{topNews.articles[2].publishedAt}}</h6>
-            <img *ngIf="imageStatus(topNews.articles[2].urlToImage)" src="{{topNews.articles[2].urlToImage}}" alt="Article Two Image" height="25%" width="50%">
-            <img *ngIf="!imageStatus(topNews.articles[2].urlToImage)" src="../assets/defaultimage.png"alt="Article One Image" height="25%" width="50%">>
-            <p *ngIf="synopsisStatus(topNews.articles[2].content)">{{topNews.articles[2].content}}</p>
-            <p *ngIf="!synopsisStatus(topNews.articles[2].content)">{{topNews.articles[2].description}}</p>
-            <h6 class="source-link"><a href="{{topNews.articles[2].url}}" target="_blank">Original Article</a></h6>
-        </div>
-
-        <div class="col-sm-3 m-1 mt-3 mb-3 pb-4 newsbox">
-            <h3>{{topNews.articles[3].source.name}}</h3>
-            <h5>{{topNews.articles[3].title}}</h5>
-            <h6>Published At: {{topNews.articles[3].publishedAt}}</h6>
-            <img *ngIf="imageStatus(topNews.articles[3].urlToImage)" src="{{topNews.articles[3].urlToImage}}" alt="Article Two Image" height="25%" width="50%">
-            <img *ngIf="!imageStatus(topNews.articles[3].urlToImage)" src="../assets/defaultimage.png"alt="Article One Image" height="25%" width="50%">>
-            <p *ngIf="synopsisStatus(topNews.articles[3].content)">{{topNews.articles[3].content}}</p>
-            <p *ngIf="!synopsisStatus(topNews.articles[3].content)">{{topNews.articles[3].description}}</p>
-            <h6 class="source-link"><a href="{{topNews.articles[3].url}}" target="_blank">Original Article</a></h6>
-        </div>
-        <div class="col-sm-3 m-1 mt-3 mb-3 pb-4 newsbox">
-            <h3>{{topNews.articles[4].source.name}}</h3>
-            <h5>{{topNews.articles[4].title}}</h5>
-            <h6>Published At: {{topNews.articles[4].publishedAt}}</h6>
-            <img *ngIf="imageStatus(topNews.articles[4].urlToImage)" src="{{topNews.articles[4].urlToImage}}" alt="Article Two Image" height="25%" width="50%">
-            <img *ngIf="!imageStatus(topNews.articles[4].urlToImage)" src="../assets/defaultimage.png"alt="Article One Image" height="25%" width="50%">>
-            <p *ngIf="synopsisStatus(topNews.articles[4].content)">{{topNews.articles[4].content}}</p>
-            <p *ngIf="!synopsisStatus(topNews.articles[4].content)">{{topNews.articles[4].description}}</p>
-            <h6 class="source-link"><a href="{{topNews.articles[4].url}}" target="_blank">Original Article</a></h6>
-        </div>
-        <div class="col-sm-3 m-1 mt-3 mb-3 pb-4 newsbox">
-            <h3>{{topNews.articles[5].source.name}}</h3>
-            <h5>{{topNews.articles[5].title}}</h5>
-            <h6>Published At: {{topNews.articles[1].publishedAt}}</h6>
-            <img *ngIf="imageStatus(topNews.articles[5].urlToImage)" src="{{topNews.articles[5].urlToImage}}" alt="Article Two Image" height="25%" width="50%">
-            <img *ngIf="!imageStatus(topNews.articles[5].urlToImage)" src="../assets/defaultimage.png"alt="Article One Image" height="25%" width="50%">>
-            <p *ngIf="synopsisStatus(topNews.articles[5].content)">{{topNews.articles[5].content}}</p>
-            <p *ngIf="!synopsisStatus(topNews.articles[5].content)">{{topNews.articles[5].description}}</p>
-            <h6 class="source-link"><a href="{{topNews.articles[5].url}}" target="_blank">Original Article</a></h6>
-        </div>
-        <div class="col-sm-3 mb-5 mx-auto newsbox">
-          <h3>{{topNews.articles[6].source.name}}</h3>
-          <h5>{{topNews.articles[6].title}}</h5>
-          <h6>Published At: {{topNews.articles[6].publishedAt}}</h6>
-          <img *ngIf="imageStatus(topNews.articles[6].urlToImage)" src="{{topNews.articles[6].urlToImage}}" alt="Article One Image" height="25%" width="50%">
-          <img *ngIf="!imageStatus(topNews.articles[6].urlToImage)" src="../assets/defaultimage.png"alt="Article One Image" height="25%" width="50%">>
-          <p *ngIf="synopsisStatus(topNews.articles[6].content)">{{topNews.articles[6].content}}</p>
-          <p *ngIf="!synopsisStatus(topNews.articles[6].content)">{{topNews.articles[6].description}}</p>
-          <h6><a href="{{topNews.articles[6].url}}" target="_blank">Original Article</a></h6>
-      </div>
-      <div class="col-sm-3 mb-5 pb-5 mx-auto newsbox">
-          <h3>{{topNews.articles[7].source.name}}</h3>
-          <h5>{{topNews.articles[7].title}}</h5>
-          <h6>Published At: {{topNews.articles[7].publishedAt}}</h6>
-          <img *ngIf="imageStatus(topNews.articles[7].urlToImage)" src="{{topNews.articles[7].urlToImage}}" alt="Article Two Image" height="25%" width="50%">
-          <img *ngIf="!imageStatus(topNews.articles[7].urlToImage)" src="../assets/defaultimage.png"alt="Article One Image" height="25%" width="50%">>
-          <p *ngIf="synopsisStatus(topNews.articles[7].content)">{{topNews.articles[7].content}}</p>
-          <p *ngIf="!synopsisStatus(topNews.articles[7].content)">{{topNews.articles[7].description}}</p>
-          <h6><a href="{{topNews.articles[7].url}}" target="_blank">Original Article</a></h6>
-      </div>
-      <div class="col-sm-3 mb-5 mx-auto newsbox">
-          <h3>{{topNews.articles[8].source.name}}</h3>
-          <h5>{{topNews.articles[8].title}}</h5>
-          <h6>Published At: {{topNews.articles[8].publishedAt}}</h6>
-          <img *ngIf="imageStatus(topNews.articles[8].urlToImage)" src="{{topNews.articles[8].urlToImage}}" alt="Article Two Image" height="25%" width="50%">
-          <img *ngIf="!imageStatus(topNews.articles[8].urlToImage)" src="../assets/defaultimage.png"alt="Article One Image" height="25%" width="50%">>
-          <p *ngIf="synopsisStatus(topNews.articles[8].content)">{{topNews.articles[8].content}}</p>
-          <p *ngIf="!synopsisStatus(topNews.articles[8].content)">{{topNews.articles[8].description}}</p>
-          <h6><a href="{{topNews.articles[8].url}}" target="_blank">Original Article</a></h6>
-      </div>
-    </div>
-</div> -->
 
 
 <body>
-<br>
+    <div id="news-view" class="container">
+        <div class="row justify-content-around">
+            <div class="col-sm-6">
+                <div class="mt-3 p-3 newsbox">
+                    <h5>Nonsense Post</h5>
+                    <h6>Published At: 11:33 am</h6>
+                    <h6>Contributed by: <a href="#">Ultra_Baskiteer</a></h6>
+                    <p>Lorem ipsum dolor sit amet, facilisi dissentias instructior eos et, clita numquam ne sea. Ex qui
+                        feugiat dignissim voluptaria,
+                        in usu nullam tempor, ad ius harum moderatius. Omnium copiosae te eos, magna persius no sit,
+                        utroque
+                        repudiare est te. Vel odio
+                        placerat at, ex magna iuvaret mea, in pri labores sapientem intellegat. Has nullam explicari
+                        voluptaria ex, cu pri quas
+                        qualisque cotidieque.
+                        <br><br>
+                        Duo dicant tincidunt ne. Pri populo admodum ad, diam omnium salutatus quo ex. Sea vidisse
+                        minimum
+                        consequat at, munere
+                        inermis an eum. Mel eu magna verear, mea in dicit voluptatum.
+                    </p>
+                </div>
+                <div class="p-2 manager-tools">
+                    <button class="btn btn-primary mx-auto">Highlight</button>
+                    <button class="btn btn-warning mx-auto">Edit</button>
+                    <button class="btn btn-danger mx-auto">Remove</button>
+                </div>
+            </div>
+            <!-- </div> -->
+            <div class="col-sm-6">
+                    <div class="mt-3 p-3 newsbox">
+                        <h5>Life Changing Inspirational Story</h5>
+                        <h6>Published At: 3:15 pm</h6>
+                        <h6>Contributed by: <a href="#">BASKit_BALLER</a></h6>
+                        <p>Facilisi dissentias instructior eos et, clita numquam ne sea. Ex qui
+                            feugiat dignissim voluptaria,
+                            in usu nullam tempor, ad ius harum moderatius. Omnium copiosae te eos, magna persius no sit,
+                            utroque
+                            repudiare est te. Vel odio
+                            placerat at, ex magna iuvaret mea, in pri labores sapientem intellegat. Has nullam explicari
+                            voluptaria ex, cu pri quas
+                            qualisque cotidieque.
+                            
+                        </p>
+                    </div>
+                    <div class="p-2 manager-tools">
+                        <button class="btn btn-primary mx-auto">Highlight</button>
+                        <button class="btn btn-warning mx-auto">Edit</button>
+                        <button class="btn btn-danger mx-auto">Remove</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <!-- <br>
 <br>
 <p>manager-user-all-stories works!</p>
-<p>text here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+<p>text here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p> -->
 </body>
