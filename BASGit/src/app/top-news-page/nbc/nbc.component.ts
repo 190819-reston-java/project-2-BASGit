@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NbcComponent implements OnInit {
   topNews: any;
-  newsSelection: String = "country=us&sources=nbc";
+  newsSelection: String = "sources=nbc-news";
 
   imageStatus(imageJson) {
     if (imageJson) {

@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FoxComponent implements OnInit {
   topNews: any;
-  newsSelection: String = "country=us&source=fox";
+  newsSelection: String = "sources=fox-news";
 
   imageStatus(imageJson) {
     if (imageJson) {

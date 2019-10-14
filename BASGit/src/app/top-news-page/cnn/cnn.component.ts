@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CnnComponent implements OnInit {
   topNews: any;
-  newsSelection: String = "country=us&sources=cnn";
+  newsSelection: String = "sources=cnn";
 
   imageStatus(imageJson) {
     if (imageJson) {
