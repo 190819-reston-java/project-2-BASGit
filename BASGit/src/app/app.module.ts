@@ -25,14 +25,14 @@ import { ManagerUserAllStoriesComponent } from './manager-page/manager-user-all-
 import { FeaturedUserStoriesComponent } from './user-stories-page/featured-user-stories/featured-user-stories.component';
 import { SingleUserAllStoriesComponent } from './manager-page/single-user-all-stories/single-user-all-stories.component';
 import { LoginPanelComponent } from './login-panel/login-panel.component';
-import { CnnComponent } from './cnn/cnn.component';
-import { FoxComponent } from './fox/fox.component';
-import { NbcComponent } from './nbc/nbc.component';
-import { SportsComponent } from './sports/sports.component';
-import { PoliticsComponent } from './politics/politics.component';
-import { BusinessComponent } from './business/business.component';
-import { EntertainmentComponent } from './entertainment/entertainment.component';
-import { TechnologyComponent } from './technology/technology.component';
+import { CnnComponent } from './top-news-page/cnn/cnn.component';
+import { FoxComponent } from './top-news-page/fox/fox.component';
+import { NbcComponent } from './top-news-page/nbc/nbc.component';
+import { SportsComponent } from './top-news-page/sports/sports.component';
+import { PoliticsComponent } from './top-news-page/politics/politics.component';
+import { BusinessComponent } from './top-news-page/business/business.component';
+import { EntertainmentComponent } from './top-news-page/entertainment/entertainment.component';
+import { TechnologyComponent } from './top-news-page/technology/technology.component';
 
 @NgModule({
   declarations: [

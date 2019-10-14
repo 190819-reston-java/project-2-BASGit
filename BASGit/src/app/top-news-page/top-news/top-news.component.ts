@@ -10,7 +10,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 export class TopNewsComponent implements OnInit {
 
   topNews: any;
-  newsSelection: String = "country=us";
+  newsSelection: String = "country=us&category=sports";
 
   imageStatus(imageJson) {
     if(imageJson) {
