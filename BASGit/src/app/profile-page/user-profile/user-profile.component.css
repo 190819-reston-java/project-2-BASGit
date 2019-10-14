@@ -1,7 +1,10 @@
+
 body{
+  height: calc(100vh - 100px);
     padding-top:6.2rem;
   padding-bottom:4.2rem;
   background:#888888;
+  
     }
     a{
      text-decoration:none !important;
