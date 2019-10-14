@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-top-news',
@@ -10,7 +9,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 export class TopNewsComponent implements OnInit {
 
   topNews: any;
-  newsSelection: String = "country=us&category=sports";
+  newsSelection: String = "country=us";
 
   imageStatus(imageJson) {
     if(imageJson) {

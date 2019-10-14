@@ -13,21 +13,38 @@ import { SingleUserAllStoriesComponent } from './manager-page/single-user-all-st
 import { UpdateProfileComponent } from './profile-page/update-profile/update-profile.component';
 import { UserAllStoriesComponent } from './profile-page/user-all-stories/user-all-stories.component';
 import { SubmitStoryComponent } from './user-stories-page/submit-story/submit-story.component';
+import { SportsComponent } from './top-news-page/sports/sports.component';
+import { BusinessComponent } from './top-news-page/business/business.component';
+import { EntertainmentComponent } from './top-news-page/entertainment/entertainment.component';
+import { PoliticsComponent } from './top-news-page/politics/politics.component';
+import { TechnologyComponent } from './top-news-page/technology/technology.component';
+import { CnnComponent } from './top-news-page/cnn/cnn.component';
+import { NbcComponent } from './top-news-page/nbc/nbc.component';
+import { FoxComponent } from './top-news-page/fox/fox.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/topnews', pathMatch: 'full'},
-  { path: 'topnews', component: TopNewsComponent },
-  { path: 'userstories', component: UserStoriesComponent},
-  { path: 'managerpage', component: ManagerComponent},
-  { path: 'profilepage', component: UserProfileComponent},
-  { path: 'submituserstories', component: SubmitStoryComponent },
-  { path: 'topuserstories', component: FeaturedUserStoriesComponent},
-  { path: 'submitteduserstories', component: SubmittedUserStoriesComponent},
-  { path: 'manageralluserstories', component: ManagerUserAllStoriesComponent},
-  { path: 'viewallusers', component: ViewAllUsersComponent},
-  { path: 'singleuserallstories', component: SingleUserAllStoriesComponent},
-  { path: 'updateprofile', component: UpdateProfileComponent},
-  { path: 'userallstories', component: UserAllStoriesComponent}
+  { path: '', redirectTo: '/topnews/topnews', pathMatch: 'full'},
+  { path: 'topnews/topnews', component: TopNewsComponent },
+  { path: 'userstories/alluserstories', component: UserStoriesComponent},
+  { path: 'manager/managerpage', component: ManagerComponent},
+  { path: 'profile/profilepage', component: UserProfileComponent},
+  { path: 'profile/userstories/submituserstories', component: SubmitStoryComponent },
+  { path: 'userstories/topuserstories', component: FeaturedUserStoriesComponent},
+  { path: 'manager/submitteduserstories', component: SubmittedUserStoriesComponent},
+  { path: 'manager/manageralluserstories', component: ManagerUserAllStoriesComponent},
+  { path: 'manager/viewallusers', component: ViewAllUsersComponent},
+  { path: 'manager/singleuserallstories', component: SingleUserAllStoriesComponent},
+  { path: 'profile/updateprofile', component: UpdateProfileComponent},
+  { path: 'profile/userallstories', component: UserAllStoriesComponent},
+  { path: 'topnews/sports', component: SportsComponent},
+  { path: 'topnews/business', component: BusinessComponent},
+  { path: 'topnews/entertainment', component: EntertainmentComponent},
+  { path: 'topnews/politics', component: PoliticsComponent},
+  { path: 'topnews/sports', component: SportsComponent},
+  { path: 'topnews/technology', component: TechnologyComponent},
+  { path: 'topnews/cnn', component: CnnComponent},
+  { path: 'topnews/nbc', component: NbcComponent},
+  { path: 'topnews/fox', component: FoxComponent}
 ];
 
 
