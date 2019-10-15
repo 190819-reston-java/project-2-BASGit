@@ -2,7 +2,11 @@ body{
   padding-top:6.2rem;
   padding-bottom:4.2rem;
   background:#888888;
+<<<<<<< HEAD
+  height: calc(100vh - 100px) ;
+=======
   height: calc(100vh - 100px);
+>>>>>>> master
     }
     a{
      text-decoration:none !important;
@@ -24,7 +28,11 @@ body{
   border: 1px solid rgba(0,0,0,.2);
   border-radius: 1.1rem;
   outline: 0;
+<<<<<<< HEAD
+  max-height: 500px;
+=======
   
+>>>>>>> master
   max-width: 500px;
   }
      .tx-tfm{
@@ -59,6 +67,10 @@ body{
      }
 
 textarea {
+<<<<<<< HEAD
+  height:  100px;
+=======
   height:  200px;
+>>>>>>> master
 }
 

@@ -1,13 +1,67 @@
+<<<<<<< HEAD
+#news-view {
+    z-index: 2;
+    margin-left: 240px;
+    margin-top: 60px;
+=======
 #news-view{
     z-index: 2;
     margin-left:240px;
     margin-top:60px;
+>>>>>>> master
     /* left: 240px; */
     /* max-width:82%; */
     max-width: calc(100% - 240px);
     /* width: 100%; */
 }
 
+<<<<<<< HEAD
+#active {
+    /* color:#ffffff; */
+    /* z-index: 5;
+  position: fixed; */
+    margin-top: -4px;
+    background: linear-gradient(to right, #777777, #bbbbbb, #777777);
+    /* border-top:1.5px solid #525252; */
+    border-bottom: 2.5px solid #999999;
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px 3px 8px 5px #6b6b6b;
+    font-family: "Book Antiqua", Palatino, serif;
+    color: #2d2d2d;
+}
+
+
+/* 0 1 2 3 4 5 6 7 8 9 a s d e f */
+
+
+/* 01234567890ASDEF */
+
+.newsbox {
+    min-width: 355px;
+    margin: 25px 0px 10px 0px;
+    padding-bottom: 25px;
+    /* max-width: 625px; */
+    /* padding-right: 3%;
+padding-left: 3%; */
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 4px 4px 8px #888888;
+    /* margin-top: 52px; */
+}
+
+p {
+    display: inline;
+}
+
+img {
+    padding-right: 5px;
+    float: left;
+}
+
+
+=======
 #active{
   /* color:#ffffff; */
   /* z-index: 5;
@@ -47,6 +101,7 @@ img{
   padding-right: 5px;
   float: left;
 }
+>>>>>>> master
 /* img{
     display: block;
     margin-left: auto;
@@ -54,6 +109,44 @@ img{
 } */
 
 .source-link{
+<<<<<<< HEAD
+    text-align: center;
+    /* top: 97%; */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    /* right: 35%; */
+    /* transform: translate(-50%, -50%); */
+}
+.headline{
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-weight: bold;
+}
+h3{
+  /* text-align: center; */
+  /* font-size:24px; */
+}
+
+img {
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-transform: scale(1) rotate(0deg);
+    -ms-transform: scale(1) rotate(0deg);
+    -o-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+}
+
+img:hover {
+    -webkit-transform: scale(1.05) rotate(1deg);
+    -ms-transform: scale(1.05) rotate(1deg);
+    -o-transform: scale(1.05) rotate(1deg);
+    transform: scale(1.05) rotate(1deg);
+    opacity: 0.8;
+}
+=======
     /* text-align: center; */
     /* vertical-align: bottom; */
     margin: 0;
@@ -80,3 +173,4 @@ img{
   transform: scale(1.05) rotate(1deg);
   opacity: 0.8;
 }
+>>>>>>> master

@@ -3,7 +3,11 @@
   margin-left:240px;
   margin-top:60px;
   /* left: 240px; */
+<<<<<<< HEAD
+  max-width: calc(100% - 240px);
+=======
     max-width: calc(100% - 240px);
+>>>>>>> master
   background-color: #dddddd;
 }
 #active{
@@ -22,10 +26,16 @@
   font-family: "Book Antiqua", Palatino, serif;
 }
 
+<<<<<<< HEAD
+ body {
+  height: calc(100vh - 100px);
+
+=======
 body {
   height: calc(100vh - 100px);
   /* padding-top: 50px; */
   /* padding-bottom: 50px; */
+>>>>>>> master
 }
 
 #settings-area{
@@ -38,7 +48,11 @@ body {
 }
 
 .image {
+<<<<<<< HEAD
+
+=======
     
+>>>>>>> master
   opacity: 1;
   display: block;
   width: 100%;
