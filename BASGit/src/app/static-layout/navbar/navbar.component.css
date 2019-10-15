@@ -3,7 +3,8 @@ a:visited {
 
 }
 h4 {
-  font-family: 'Kaushan Script', cursive;
+  font-family: "Book Antiqua", Palatino, serif;
+  /* font-family: 'Kaushan Script', cursive; */
   }
 /* #top-navbar{
     top: 0px;
