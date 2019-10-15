@@ -14,7 +14,7 @@
   text-align: center;
   box-shadow: 0px 3px 8px 5px #6b6b6b;
   color: #6d0000;
-  font-family: courier, monospace;
+  font-family: "Book Antiqua", Palatino, serif;
 }
 button{
   min-width: 100px;

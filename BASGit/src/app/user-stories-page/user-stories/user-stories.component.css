@@ -7,14 +7,16 @@
 }
 #active{
   margin-top: -4px;
-  background:linear-gradient(to right,#774c14, #D18728, #774c14);
-  border-bottom:2.5px solid #aa6b18;
-  font-family: Comic Sans MS;
+  background:linear-gradient(to right,#ac870f, #ffdc6b, #ac870f);
+  border-bottom:2.5px solid #cca830;
+  /* background:linear-gradient(to right,#774c14, #D18728, #774c14);
+  border-bottom:2.5px solid #aa6b18; */
+  font-family: "Book Antiqua", Palatino, serif;
   height: 30px;
   width: 100%;
   text-align: center;
-  box-shadow: 0px 3px 8px 5px #6b6b6b;
-  color: #3a3a3a;
+  box-shadow: 0px 3px 8px 5px #5c4f26c4;
+  color: #554100;
 }
 button{
   min-width: 100px;
