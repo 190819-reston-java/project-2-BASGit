@@ -1,5 +1,6 @@
 package com.revature.repositories;
 
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -21,7 +22,7 @@ public class UserRepository  {
 	
 
 	
-	@Transactional(propagation = Propagation.MANDATORY)
+	@Transactional
 	public User findOne(int id) {
 		Session s = sf.getCurrentSession();
 		return (User) s.get(User.class, id);
@@ -29,16 +30,16 @@ public class UserRepository  {
 
 	
 	@SuppressWarnings("unchecked")
-	@Transactional(propagation = Propagation.MANDATORY)
+	@Transactional
 	public Set<User> findAll(){
 		Session s = sf.getCurrentSession();
 		
-		return (Set<User>) s.createCriteria(User.class).list();
+		return new HashSet<User>(s.createCriteria(User.class).list());
 		
 	}
 
 	
-	@Transactional(propagation = Propagation.MANDATORY)
+	@Transactional
 	public User save(User user) {
 		Session s = sf.getCurrentSession();
 		
@@ -48,6 +49,7 @@ public class UserRepository  {
 	}
 
 
+	@Transactional
 	public User findByUserName(String username) {
 		Session s = sf.getCurrentSession();
 		

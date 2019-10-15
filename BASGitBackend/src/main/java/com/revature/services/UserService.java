@@ -15,6 +15,7 @@ import com.revature.repositories.UserRepository;
 @Service
 public class UserService {
 
+	@Autowired
 	private UserRepository userRepository;
 	
 	

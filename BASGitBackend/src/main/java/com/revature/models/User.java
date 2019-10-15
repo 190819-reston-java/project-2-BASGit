@@ -14,6 +14,8 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Component
 @Table(name = "users")
@@ -38,6 +40,7 @@ public class User implements Serializable{
 	@Column
 	private String fullname;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "id", cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
 			CascadeType.REFRESH })
 	private Set<Story> stories;
