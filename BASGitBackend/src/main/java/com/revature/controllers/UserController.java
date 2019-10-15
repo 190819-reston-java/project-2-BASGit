@@ -36,6 +36,20 @@ public class UserController {
 		}
 	}
 	
+	@GetMapping(value = "/name/{username}")
+	@ResponseBody
+	public ResponseEntity<User> findByUsername(@PathVariable("username") String username) {
+		
+		User u = userService.findByUsername(username);
+		
+		if(u != null) {
+			return ResponseEntity.status(HttpStatus.OK).body(u);
+		}
+		else {
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+		}
+	}
+	
 	@GetMapping
 	@ResponseBody
 	public ResponseEntity<Set<User>> findAll(){

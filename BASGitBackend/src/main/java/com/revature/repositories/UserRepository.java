@@ -5,6 +5,7 @@ import java.util.Set;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -44,5 +45,14 @@ public class UserRepository  {
 		s.saveOrUpdate(user);
 		
 		return user;
+	}
+
+
+	public User findByUserName(String username) {
+		Session s = sf.getCurrentSession();
+		
+		return (User) s.createCriteria(User.class)
+				.add(Restrictions.eq("username", username))
+				.list().get(0);
 	}
 }
