@@ -19,5 +19,6 @@
   font-family: Verdana, Geneva, sans-serif;
 }
 body {
+  margin-top: 80px;;
   height: calc(100vh - 100px);
 }
