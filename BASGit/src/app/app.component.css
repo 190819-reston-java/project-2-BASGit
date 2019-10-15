@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #content-area{
   z-index: 2;
   margin-left:240px;
@@ -64,3 +65,8 @@
 .image-container:hover .middle {
   opacity: 1;
 }
+=======
+html,body{
+    height: 100%
+}
+>>>>>>> master
