@@ -59,14 +59,23 @@ img {
     margin-right: auto;
 } */
 
-.source-link {
-    /* text-align: center; */
-    /* vertical-align: bottom; */
-    margin: 0;
+.source-link{
+    text-align: center;
+    /* top: 97%; */
+    bottom: 0;
+    left: 0;
+    right: 0;
     position: absolute;
-    top: 97%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* right: 35%; */
+    /* transform: translate(-50%, -50%); */
+}
+.headline{
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-weight: bold;
+}
+h3{
+  /* text-align: center; */
+  /* font-size:24px; */
 }
 
 img {
