@@ -1,5 +1,6 @@
 package com.revature.repositories;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.hibernate.Session;
@@ -10,6 +11,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.models.Story;
+import com.revature.models.User;
 
 @Repository
 public class StoryRepository {
@@ -18,7 +20,7 @@ public class StoryRepository {
 	private SessionFactory sf;
 
 	
-	@Transactional(propagation = Propagation.MANDATORY)
+	@Transactional
 	public Story findOne(int id) {
 		Session s = sf.getCurrentSession();
 		return (Story) s.get(Story.class, id);
@@ -26,21 +28,33 @@ public class StoryRepository {
 
 	
 	@SuppressWarnings("unchecked")
-	@Transactional(propagation = Propagation.MANDATORY)
+	@Transactional
 	public Set<Story> findAll() {
 		Session s = sf.getCurrentSession();
 
-		return (Set<Story>) s.createCriteria(Story.class).list();
+		return new HashSet<Story>(s.createCriteria(Story.class).list());
 
 	}
 
 	
-	@Transactional(propagation = Propagation.MANDATORY)
+	@Transactional
 	public Story save(Story story) {
 		Session s = sf.getCurrentSession();
 
 		s.saveOrUpdate(story);
 
 		return story;
+	}
+
+
+	public Story createNew(Story story, User u) {
+		Session s = sf.getCurrentSession();
+		
+		story.setAuthor(u);
+		
+		s.saveOrUpdate(story);
+		
+		return story;
+		
 	}
 }

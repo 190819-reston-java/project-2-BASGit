@@ -10,11 +10,13 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.models.Story;
+import com.revature.models.User;
 import com.revature.repositories.StoryRepository;
 
 @Service
 public class StoryService  {
 
+	@Autowired
 	private StoryRepository storyRepository;
 	
 	
@@ -32,5 +34,13 @@ public class StoryService  {
 		storyRepository.save(story);
 		
 		return story;
+	}
+
+
+	public Story createNew(Story story, User u) {
+		storyRepository.createNew(story, u);
+		
+		return story;
+		
 	}
 }

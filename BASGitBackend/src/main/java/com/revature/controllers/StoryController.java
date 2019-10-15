@@ -2,6 +2,11 @@ package com.revature.controllers;
 
 import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,13 +17,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.models.Story;
-import com.revature.models.Story;
+import com.revature.models.User;
 import com.revature.services.StoryService;
 
 @RestController
 @RequestMapping(value = "/stories")
 public class StoryController {
 
+	@Autowired
 	private StoryService storyService;
 
 	@GetMapping(value = "/{id}")
@@ -44,11 +50,24 @@ public class StoryController {
 	}
 
 	@PutMapping
-
 	@ResponseBody
 	public ResponseEntity<Story> save(Story story) {
 		storyService.save(story);
 
+		return ResponseEntity.status(HttpStatus.OK).body(story);
+	}
+	
+	@PutMapping(value = "/create/new")
+	@ResponseBody
+	public ResponseEntity<Story> createNew(HttpServletRequest request, HttpServletResponse response, Story story) {
+
+		User u = (User) request.getSession().getAttribute("currentUser");
+		
+		if(u == null) {
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+		}
+		
+		storyService.createNew(story, u);
 		return ResponseEntity.status(HttpStatus.OK).body(story);
 	}
 
