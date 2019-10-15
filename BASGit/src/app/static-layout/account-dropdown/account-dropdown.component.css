@@ -4,6 +4,7 @@
     height: 500%;
 	transform: translate(-30%, -50%);
     position: fixed;
+<<<<<<< HEAD
     background-color:rgba(0, 0, 0, 0.6);
 }
 .dropdown-menu-right{
@@ -11,11 +12,22 @@
     border: 1px solid rgba(0, 0, 0, 0.0);
     height: 1%;
     width: 1%;
+=======
+    background-color:#0000007c;
+}
+.dropdown-menu-right{
+    background-color: #ffffff00;
+    border: 1px solid #ff000000;
+>>>>>>> master
 }
 
 
 /* NUMBER 1: */
+<<<<<<< HEAD
 #login-panel{
+=======
+/* #login-panel{
+>>>>>>> master
     z-index: 100;
     background-color: #eeeeee;
     border:2px solid #cccccc;
@@ -42,10 +54,17 @@ a p{
 	transform: translate(-30%, -50%);
     position: fixed;
     background-color:#0000007c;
+<<<<<<< HEAD
 }
 
 /* NUMBER 2: */
 /* #login-panel{
+=======
+} */
+
+/* NUMBER 2: */
+#login-panel{
+>>>>>>> master
     padding: 15px;
     position:fixed;
     left: 50%;
@@ -76,4 +95,8 @@ h5, td input, td h6{
 
 a p{
     text-align: center;
+<<<<<<< HEAD
 } */
+=======
+}
+>>>>>>> master
