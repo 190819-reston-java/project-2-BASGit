@@ -4,8 +4,8 @@
     <div class="row justify-content-around">
         <div id="active" class="w-100"><h4><b>TOP NEWS</b></h4></div>
         <div class="col-sm-3 mx-auto newsbox">
-            <h3>{{topNews.articles[0].source.name}}</h3>
-            <h5>{{topNews.articles[0].title}}</h5>
+            <h4><span class="badge badge-dark">{{topNews.articles[0].source.name}}</span></h4>
+            <h4 class="headline">{{topNews.articles[0].title}}</h4>
             <h6>Published At: {{topNews.articles[0].publishedAt}}</h6>
             <img *ngIf="imageStatus(topNews.articles[0].urlToImage)" src="{{topNews.articles[0].urlToImage}}" alt="Article One Image" height="25%" width="50%">
             <img *ngIf="!imageStatus(topNews.articles[0].urlToImage)" src="../assets/defaultimage.png"alt="Article One Image" height="25%" width="50%">>
@@ -14,8 +14,8 @@
             <h6 class="source-link"><a href="{{topNews.articles[0].url}}" target="_blank">Original Article</a></h6>
         </div>
         <div class="col-sm-3 mx-auto newsbox">
-            <h3>{{topNews.articles[1].source.name}}</h3>
-            <h5>{{topNews.articles[1].title}}</h5>
+            <h4><span class="badge badge-dark">{{topNews.articles[1].source.name}}</span></h4>
+            <h4 class="headline">{{topNews.articles[1].title}}</h4>
             <h6>Published At: {{topNews.articles[1].publishedAt}}</h6>
             <img *ngIf="imageStatus(topNews.articles[1].urlToImage)" src="{{topNews.articles[1].urlToImage}}" alt="Article One Image" height="25%" width="50%">
             <img *ngIf="!imageStatus(topNews.articles[1].urlToImage)" src="../assets/defaultimage.png"alt="Article One Image" height="25%" width="50%">>
@@ -24,8 +24,8 @@
             <h6 class="source-link"><a href="{{topNews.articles[1].url}}" target="_blank">Original Article</a></h6>
         </div>
         <div class="col-sm-3 mx-auto newsbox">
-            <h3>{{topNews.articles[2].source.name}}</h3>
-            <h5>{{topNews.articles[2].title}}</h5>
+            <h4><span class="badge badge-dark">{{topNews.articles[2].source.name}}</span></h4>
+            <h4 class="headline">{{topNews.articles[2].title}}</h4>
             <h6>Published At: {{topNews.articles[2].publishedAt}}</h6>
             <img *ngIf="imageStatus(topNews.articles[2].urlToImage)" src="{{topNews.articles[2].urlToImage}}" alt="Article Two Image" height="25%" width="50%">
             <img *ngIf="!imageStatus(topNews.articles[2].urlToImage)" src="../assets/defaultimage.png"alt="Article One Image" height="25%" width="50%">>
@@ -35,8 +35,8 @@
         </div>
 
         <div class="col-sm-3 mx-auto newsbox">
-            <h3>{{topNews.articles[3].source.name}}</h3>
-            <h5>{{topNews.articles[3].title}}</h5>
+            <h4><span class="badge badge-dark">{{topNews.articles[3].source.name}}</span></h4>
+            <h4 class="headline">{{topNews.articles[3].title}}</h4>
             <h6>Published At: {{topNews.articles[3].publishedAt}}</h6>
             <img *ngIf="imageStatus(topNews.articles[3].urlToImage)" src="{{topNews.articles[3].urlToImage}}" alt="Article Two Image" height="25%" width="50%">
             <img *ngIf="!imageStatus(topNews.articles[3].urlToImage)" src="../assets/defaultimage.png"alt="Article One Image" height="25%" width="50%">>
@@ -45,8 +45,8 @@
             <h6 class="source-link"><a href="{{topNews.articles[3].url}}" target="_blank">Original Article</a></h6>
         </div>
         <div class="col-sm-3 mx-auto newsbox">
-            <h3>{{topNews.articles[4].source.name}}</h3>
-            <h5>{{topNews.articles[4].title}}</h5>
+            <h4><span class="badge badge-dark">{{topNews.articles[4].source.name}}</span></h4>
+            <h4 class="headline">{{topNews.articles[4].title}}</h4>
             <h6>Published At: {{topNews.articles[4].publishedAt}}</h6>
             <img *ngIf="imageStatus(topNews.articles[4].urlToImage)" src="{{topNews.articles[4].urlToImage}}" alt="Article Two Image" height="25%" width="50%">
             <img *ngIf="!imageStatus(topNews.articles[4].urlToImage)" src="../assets/defaultimage.png"alt="Article One Image" height="25%" width="50%">>
@@ -55,9 +55,9 @@
             <h6 class="source-link"><a href="{{topNews.articles[4].url}}" target="_blank">Original Article</a></h6>
         </div>
         <div class="col-sm-3 mx-auto newsbox">
-            <h3>{{topNews.articles[5].source.name}}</h3>
-            <h5>{{topNews.articles[5].title}}</h5>
-            <h6>Published At: {{topNews.articles[1].publishedAt}}</h6>
+            <h4><span class="badge badge-dark">{{topNews.articles[5].source.name}}</span></h4>
+            <h4 class="headline">{{topNews.articles[5].title}}</h4>
+            <h6>Published At: {{topNews.articles[5].publishedAt}}</h6>
             <img *ngIf="imageStatus(topNews.articles[5].urlToImage)" src="{{topNews.articles[5].urlToImage}}" alt="Article Two Image" height="25%" width="50%">
             <img *ngIf="!imageStatus(topNews.articles[5].urlToImage)" src="../assets/defaultimage.png"alt="Article One Image" height="25%" width="50%">>
             <p *ngIf="synopsisStatus(topNews.articles[5].content)">{{topNews.articles[5].content}}</p>
@@ -65,8 +65,8 @@
             <h6 class="source-link"><a href="{{topNews.articles[5].url}}" target="_blank">Original Article</a></h6>
         </div>
         <div class="col-sm-3 mx-auto newsbox">
-          <h3>{{topNews.articles[6].source.name}}</h3>
-          <h5>{{topNews.articles[6].title}}</h5>
+            <h4><span class="badge badge-dark">{{topNews.articles[6].source.name}}</span></h4>
+            <h4 class="headline">{{topNews.articles[6].title}}</h4>
           <h6>Published At: {{topNews.articles[6].publishedAt}}</h6>
           <img *ngIf="imageStatus(topNews.articles[6].urlToImage)" src="{{topNews.articles[6].urlToImage}}" alt="Article One Image" height="25%" width="50%">
           <img *ngIf="!imageStatus(topNews.articles[6].urlToImage)" src="../assets/defaultimage.png"alt="Article One Image" height="25%" width="50%">>
@@ -75,8 +75,8 @@
           <h6 class="source-link"><a href="{{topNews.articles[6].url}}" target="_blank">Original Article</a></h6>
       </div>
       <div class="col-sm-3 mx-auto newsbox">
-          <h3>{{topNews.articles[7].source.name}}</h3>
-          <h5>{{topNews.articles[7].title}}</h5>
+        <h4><span class="badge badge-dark">{{topNews.articles[7].source.name}}</span></h4>
+        <h4 class="headline">{{topNews.articles[7].title}}</h4>
           <h6>Published At: {{topNews.articles[7].publishedAt}}</h6>
           <img *ngIf="imageStatus(topNews.articles[7].urlToImage)" src="{{topNews.articles[7].urlToImage}}" alt="Article Two Image" height="25%" width="50%">
           <img *ngIf="!imageStatus(topNews.articles[7].urlToImage)" src="../assets/defaultimage.png"alt="Article One Image" height="25%" width="50%">>
@@ -85,8 +85,8 @@
           <h6 class="source-link"><a href="{{topNews.articles[7].url}}" target="_blank">Original Article</a></h6>
       </div>
       <div class="col-sm-3 mx-auto newsbox">
-          <h3>{{topNews.articles[8].source.name}}</h3>
-          <h5>{{topNews.articles[8].title}}</h5>
+        <h4><span class="badge badge-dark">{{topNews.articles[8].source.name}}</span></h4>
+        <h4 class="headline">{{topNews.articles[8].title}}</h4>
           <h6>Published At: {{topNews.articles[8].publishedAt}}</h6>
           <img *ngIf="imageStatus(topNews.articles[8].urlToImage)" src="{{topNews.articles[8].urlToImage}}" alt="Article Two Image" height="25%" width="50%">
           <img *ngIf="!imageStatus(topNews.articles[8].urlToImage)" src="../assets/defaultimage.png"alt="Article One Image" height="25%" width="50%">>
