@@ -1,0 +1,77 @@
+#overlay{
+    z-index:-1;
+    width: 1000%;
+    height: 500%;
+	transform: translate(-30%, -50%);
+    position: fixed;
+    background-color:#0000007c;
+}
+.dropdown-menu-right{
+    background-color: #ffffff00;
+    border: 1px solid #ff000000;
+}
+
+
+/* NUMBER 1: */
+/* #login-panel{
+    z-index: 100;
+    background-color: #eeeeee;
+    border:2px solid #cccccc;
+    width:250px;
+    position:fixed;
+    left: 50%;
+    top: 50%;
+	transform: translate(-125px, -150px);
+    border-radius:4px;
+}
+
+.btn-primary{
+    width:100%;
+    margin-top:10px;
+    margin-bottom:-12px;
+}
+a p{
+    text-align: center;
+}
+#overlay{
+    z-index:-1;
+    width: 1000%;
+    height: 500%;
+	transform: translate(-30%, -50%);
+    position: fixed;
+    background-color:#0000007c;
+} */
+
+/* NUMBER 2: */
+#login-panel{
+    padding: 15px;
+    position:fixed;
+    left: 50%;
+    top: 50%;
+	transform: translate(-140px, -108px);
+    z-index: 100;
+    width: 280px;
+    height: 216px;
+    background-color: #dddddd;
+    border : 2px solid #eeeeee;
+    border-radius:4px;
+}
+div h5 {
+    text-align: center;
+}
+
+td input{
+    width:100%;
+}
+
+td a{
+    text-align: center;
+}
+
+h5, td input, td h6{
+    margin-bottom: 10px;
+}
+
+a p{
+    text-align: center;
+}
