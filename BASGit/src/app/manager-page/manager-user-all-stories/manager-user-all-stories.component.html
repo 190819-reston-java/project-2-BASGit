@@ -4,56 +4,54 @@
 <body>
     <div id="news-view" class="container">
         <div class="row justify-content-around">
-                <div id="active" class="w-100"><h4><b>MANAGER VIEW</b></h4></div>
-            <div class="col">
-                <div class="newsbox">
-                    <h5>Nonsense Post</h5>
-                    <h6>Published At: 11:33 am</h6>
-                    <h6>Contributed by: <a href="#">Ultra_Baskiteer</a></h6>
-                    <p>Lorem ipsum dolor sit amet, facilisi dissentias instructior eos et, clita numquam ne sea. Ex qui
-                        feugiat dignissim voluptaria,
-                        in usu nullam tempor, ad ius harum moderatius. Omnium copiosae te eos, magna persius no sit,
-                        utroque
-                        repudiare est te. Vel odio
-                        placerat at, ex magna iuvaret mea, in pri labores sapientem intellegat. Has nullam explicari
-                        voluptaria ex, cu pri quas
-                        qualisque cotidieque.
-                        <br><br>
-                        Duo dicant tincidunt ne. Pri populo admodum ad, diam omnium salutatus quo ex. Sea vidisse
-                        minimum
-                        consequat at, munere
-                        inermis an eum. Mel eu magna verear, mea in dicit voluptatum.
-                    </p>
-                </div>
-                <div class="manager-tools">
-                    <button class="btn btn-primary mx-auto">Highlight</button>
-                    <button class="btn btn-danger mx-auto">Edit</button>
-                    <button class="btn btn-dark mx-auto">Remove</button>
-                </div>
+            <div id="active" class="w-100">
+                <h4><b>MANAGER - ALL USER NEWS</b></h4>
             </div>
-            <!-- </div> -->
             <div class="col">
-                    <div class="newsbox">
-                        <h5>Life Changing Inspirational Story</h5>
-                        <h6>Published At: 3:15 pm</h6>
-                        <h6>Contributed by: <a href="#">BASKit_BALLER</a></h6>
-                        <p>Facilisi dissentias instructior eos et, clita numquam ne sea. Ex qui
-                            feugiat dignissim voluptaria,
-                            in usu nullam tempor, ad ius harum moderatius. Omnium copiosae te eos, magna persius no sit,
-                            utroque
-                            repudiare est te. Vel odio
-                            placerat at, ex magna iuvaret mea, in pri labores sapientem intellegat. Has nullam explicari
-                            voluptaria ex, cu pri quas
-                            qualisque cotidieque.
-                            
-                        </p>
-                    </div>
-                    <div class="manager-tools">
-                        <button class="btn btn-primary mx-auto">Highlight</button>
-                        <button class="btn btn-danger mx-auto">Edit</button>
-                        <button class="btn btn-dark mx-auto">Remove</button>
-                    </div>
+                <div>
+                    <h1></h1>
                 </div>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm tablebox">
+                        <thead class="tableboxchild">
+                            <tr>
+                                <th>Submitted On</th>
+                                <th>User</th>
+                                <th>Title</th>
+                                <th>Body</th>
+                                <th>Image</th>
+                                <th>Status</th>
+                                <th>Manager Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <tr *ngFor="let article of articles"> -->
+                            <!-- article is each object, and articles is an array -->
+                            <tr>
+                                <td>SUBMIT DATE</td>
+                                <td>SUBMIT USER</td>
+                                <!-- <td>{{article.username (or article.id put into all users)}}</td> -->
+                                <td>SUBMIT TITLE</td>
+                                <td>SUBMIT BODY</td>
+                                <td>SUBMIT IMAGE (YOMAKEITSMALL)</td>
+                                <td>HIGHLIGHTED OR NOT</td>
+                                <td>
+                                    <form action="">
+                                        <!-- HEY THIS SHOULD DO SOMETHING AND BE TIED TO AN ID NUMBER -->
+                                        <!-- if you can't figure out the buttons, then make it a select form with a sumbit -->
+
+                                        <!-- <button class="btn btn-primary mx-auto" name="changepost" type="submit" value="h " +{{article.id}}>Highlight</button> -->
+                                        <button class="btn btn-primary mx-auto">Highlight</button>
+                                        <button class="btn btn-danger mx-auto">Edit</button>
+                                        <button class="btn btn-dark mx-auto">Remove</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -62,3 +60,15 @@
 <p>manager-user-all-stories works!</p>
 <p>text here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p> -->
 </body>
+
+
+
+
+
+<!-- <div class="manager-tools">
+        <form action="">
+            <button class="btn btn-primary mx-auto">Highlight</button>
+            <button class="btn btn-danger mx-auto">Edit</button>
+            <button class="btn btn-dark mx-auto">Remove</button>
+        </form>
+    </div> -->
