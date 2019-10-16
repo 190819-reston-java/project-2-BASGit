@@ -19,18 +19,18 @@
 							<h1>Submit new story here</h1>
 						 </div>
 					</div>
-                   <form action="#" method="post" name="submit_story">
+               <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Title</label>
-                        <input type="text"  name="title" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Enter Title">
+                        <input type="text"  name="title" ngModel class="form-control" id="title" aria-describedby="emailHelp" placeholder="Enter Title">
                      </div>
                      <div class="form-group">
                         <label for="exampleInputEmail1">Body</label>
-                        <textarea type="text"  name="synopsis" class="form-control" id="synopsis" aria-describedby="emailHelp" placeholder="Enter Body Here"></textarea>
+                        <textarea type="text"  name="synopsis" ngModel class="form-control" id="synopsis" aria-describedby="emailHelp" placeholder="Enter Body Here"></textarea>
                      </div>
                      <div class="form-group">
                       <label for="exampleInputEmail1">Insert Picture</label>
-                      <input type="file"  name="picture" id="inputGroupFile04" class="custom-file-input">
+                      <input type="file"  name="picture" ngModel id="inputGroupFile04" class="custom-file-input">
                     </div>
                      <div class="col-md-12 ">
                         <div class="login-or">
