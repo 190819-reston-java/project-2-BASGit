@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-user-stories',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserStoriesComponent implements OnInit {
 
-  constructor() { }
+  userNews: any;
+
+  constructor(private http : HttpClient) { }
 
   ngOnInit() {
+    let observable = this.http.get('/BASGIT/stories')
+    observable.subscribe((result => {
+      this.userNews = result;
+    }))
   }
 
 }
