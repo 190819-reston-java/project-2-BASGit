@@ -139,7 +139,8 @@ public class StoryRepository {
 		Session s = sf.getCurrentSession();
 		
 		return (List<Story>) s.createCriteria(Story.class)
-				.add(Restrictions.eq("author", id)).list();
+				.add(Restrictions.eq("author.id", id)).addOrder(Order.desc("id"))
+				.list();
 	}
 
 	@Transactional
