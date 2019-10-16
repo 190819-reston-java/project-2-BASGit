@@ -13,14 +13,6 @@
     width: 1%;
 }
 
-.form-control{
-    border: 1.5px solid #cccccc;
-}
-
-h4{
-    margin: 6px 0px 16px 0px;
-    /* text-align: center; */
-}
 
 /* NUMBER 1: */
 #login-panel{
@@ -31,18 +23,17 @@ h4{
     position:fixed;
     left: 50%;
     top: 50%;
-	transform: translate(-125px, -160px);
-    border-radius:8px;
+	transform: translate(-125px, -150px);
+    border-radius:4px;
 }
 
 .btn-primary{
     width:100%;
-    margin-top:6px;
-    margin-bottom:-10px;
+    margin-top:10px;
+    margin-bottom:-12px;
 }
 a p{
     text-align: center;
-    margin-bottom:10px;
 }
 #overlay{
     z-index:-1;
