@@ -117,4 +117,13 @@ public class UserRepository  {
 		client.putObject(putObjectRequest);
 	}
 
+
+	public User findByUserNameAndPassword(String username, String password) {
+		Session s = sf.getCurrentSession();
+		
+		return (User) s.createCriteria(User.class)
+				.add(Restrictions.eq("username", username))
+				.add(Restrictions.eq("password", password)).list().get(0);
+	}
+
 }

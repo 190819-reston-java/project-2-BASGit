@@ -30,6 +30,21 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
+	@PostMapping(value = "/login")
+	@ResponseBody
+	public ResponseEntity<User> login(HttpServletRequest request, HttpServletResponse response){
+		User u = userService.login(request.getParameter("username"), request.getParameter("password"));
+		
+		if(u != null) {
+			return ResponseEntity.status(HttpStatus.OK).body(u);
+		}
+		else {
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+		}
+		
+		
+	}
+	
 	@GetMapping(value = "/{id}")
 	@ResponseBody
 	public ResponseEntity<User> findOne(@PathVariable("id") int id) {

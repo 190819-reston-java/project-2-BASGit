@@ -111,4 +111,8 @@ public class UserService {
 		return updateUser;
 	}
 
+	public User login(String username, String password) {
+		return userRepository.findByUserNameAndPassword(username, password);
+	}
+
 }
