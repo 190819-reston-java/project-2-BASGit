@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #news-view {
     z-index: 2;
     margin-left: 240px;
@@ -98,8 +97,3 @@ img:hover {
 body {
     height: calc(100vh - 100px);
 }
-=======
-body {
-  height: calc(100vh - 100px);
-}
->>>>>>> master
