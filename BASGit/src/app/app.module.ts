@@ -24,7 +24,6 @@ import { UpdateProfileComponent } from './profile-page/update-profile/update-pro
 import { ManagerUserAllStoriesComponent } from './manager-page/manager-user-all-stories/manager-user-all-stories.component';
 import { FeaturedUserStoriesComponent } from './user-stories-page/featured-user-stories/featured-user-stories.component';
 import { SingleUserAllStoriesComponent } from './manager-page/single-user-all-stories/single-user-all-stories.component';
-import { LoginPanelComponent } from './login-panel/login-panel.component';
 import { CnnComponent } from './top-news-page/cnn/cnn.component';
 import { FoxComponent } from './top-news-page/fox/fox.component';
 import { NbcComponent } from './top-news-page/nbc/nbc.component';
@@ -57,7 +56,6 @@ import { TechnologyComponent } from './top-news-page/technology/technology.compo
     ManagerComponent,
     FeaturedUserStoriesComponent,
     SingleUserAllStoriesComponent,
-    LoginPanelComponent,
     CnnComponent,
     FoxComponent,
     NbcComponent,

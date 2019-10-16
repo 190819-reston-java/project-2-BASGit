@@ -17,7 +17,7 @@
   font-family: "Book Antiqua", Palatino, serif;
 }
 button{
-  min-width: 100px;
+  min-width: 60px;
   border: 2px solid #bbbbbb;
   /* color: #ffffff; */
 }
