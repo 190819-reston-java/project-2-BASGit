@@ -123,7 +123,7 @@ public class UserController {
 		
 		
 		
-		return ResponseEntity.status(HttpStatus.OK).body(u);
+		return ResponseEntity.status(HttpStatus.OK).body("This is a test");
 	}
 	
 	@GetMapping(value = "/current")
