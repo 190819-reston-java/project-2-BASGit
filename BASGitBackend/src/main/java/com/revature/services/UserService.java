@@ -46,7 +46,6 @@ public class UserService {
 	}
 
 	public User create(HttpServletRequest request) {
-		System.out.print(request.getParameter("username"));
 		User u = new User(0, request.getParameter("username"), request.getParameter("password"),
 				"https://allen-gworek-llc-image-storage.s3.amazonaws.com/defaultprofilepic.png",
 				request.getParameter("managercode").equals("1908-REVATURE"), request.getParameter("fullname"), null);
