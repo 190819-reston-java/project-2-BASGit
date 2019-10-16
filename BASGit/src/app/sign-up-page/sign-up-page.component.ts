@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { NgForm } from '@angular/forms'
 
 @Component({
   selector: 'app-sign-up-page',
@@ -10,25 +11,21 @@ export class SignUpPageComponent implements OnInit {
 
 data: any;
 
-  constructor(private http: HttpClient) {
-    this.data = {
-      username: 'default',
-      password: 'default',
-      fullname: 'default',
-      managerCode: 'default'
-    };
-   }
-  
+  constructor(private http: HttpClient) {}
 
-  
-  onSubmit() {
-
-        this.http.post("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/signup", this.data).subscribe(res=>{
+   onSubmit(f: NgForm) {
+    this.http.post("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/signup", f.value).subscribe(res=>{
                  //here you received the response of your post
                  console.log(res);
                  //you can do asomething, like
            })
+    console.log(f.value);  // { first: '', last: '' }
+    console.log(f.valid);  // false
   }
+
+  
+
+        
 
   ngOnInit() {
   }
