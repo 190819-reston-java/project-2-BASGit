@@ -36,6 +36,7 @@ public class UserController {
 		User u = userService.login(request.getParameter("username"), request.getParameter("password"));
 		
 		if(u != null) {
+			request.getSession().setAttribute("currentUser", u);
 			return ResponseEntity.status(HttpStatus.OK).body(u);
 		}
 		else {
