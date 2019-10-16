@@ -13,7 +13,7 @@ export class UserStoriesComponent implements OnInit {
   constructor(private http : HttpClient) { }
 
   ngOnInit() {
-    let observable = this.http.get('https://localhost:5555/BASGIT/stories')
+    let observable = this.http.get('http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/stories')
     observable.subscribe((result => {
       this.userNews = result;
     }))
