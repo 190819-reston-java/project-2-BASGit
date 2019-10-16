@@ -114,20 +114,14 @@ public class UserController {
 	
 	@PostMapping(value = "/signup")
 	@ResponseBody
-	public ResponseEntity<User> signUp(User user, HttpServletRequest request, HttpServletResponse response){
+	public ResponseEntity<String> signUp(String infoJSON, HttpServletRequest request, HttpServletResponse response){
 		
 		
-		User u = userService.create(user, request);
+		String u = infoJSON;
 		
-		u = userService.save(u);
+		//u = userService.save(u);
 		
 		
-		try {
-			response.sendRedirect("BASGit/static/BASGit/");
-		} catch (IOException e) {
-			e.printStackTrace();
-			ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-		}
 		
 		return ResponseEntity.status(HttpStatus.OK).body(u);
 	}
