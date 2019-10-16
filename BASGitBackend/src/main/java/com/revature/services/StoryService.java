@@ -1,11 +1,21 @@
 package com.revature.services;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
 import java.util.Set;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.Part;
+
+import org.apache.commons.io.FileUtils;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,7 +36,7 @@ public class StoryService  {
 	}
 	
 	
-	public Set<Story> findAll(){
+	public List<Story> findAll(){
 		return storyRepository.findAll();
 	}
 	
@@ -38,7 +48,30 @@ public class StoryService  {
 	}
 
 
-	public Story createNew(Story story, File file) {
+	public Story createNew(HttpServletRequest request) {
+		
+
+		User u = (User) request.getSession().getAttribute("currentUser");
+		Story story = new Story(0, request.getParameter("synopsis"), request.getParameter("title"), "", u, false);
+		
+		File file = null;
+		
+		try {
+		Part submittedFilePart = request.getPart("picture");
+		String submittedFileName = submittedFilePart.getName();
+		InputStream fileContent = submittedFilePart.getInputStream();
+		file = new File(submittedFileName);
+			FileUtils.copyInputStreamToFile(fileContent, file);
+		}
+		catch (IOException | ServletException e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+		if(u == null) {
+			return null;
+		}
+		
 		return storyRepository.createNew(story, file);
 		
 	}
@@ -51,6 +84,28 @@ public class StoryService  {
 
 	public void delete(Story s) {
 		storyRepository.delete(s);
+		
+	}
+
+
+	public Story handleStory(HttpServletRequest request) {
+
+		String[] handleDecisions = request.getParameter("changestory").split(" ");
+		
+		int storyID = Integer.valueOf(handleDecisions[0]);
+		String decision = handleDecisions[1];
+		
+		Story s = findOne(storyID);
+		
+		if(decision == "h") {
+			s = highlight(s);
+		}
+		else if(decision == "r") {
+			delete(s);
+			s = null;
+		}
+		
+		return s;
 		
 	}
 	

@@ -3,6 +3,7 @@ package com.revature.controllers;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
@@ -54,9 +55,9 @@ public class StoryController {
 
 	@GetMapping
 	@ResponseBody
-	public ResponseEntity<Set<Story>> findAll() {
+	public ResponseEntity<List<Story>> findAll() {
 
-		Set<Story> u = storyService.findAll();
+		List<Story> u = storyService.findAll();
 		return ResponseEntity.status(HttpStatus.OK).body(u);
 	}
 	
@@ -64,21 +65,7 @@ public class StoryController {
 	@ResponseBody
 	public ResponseEntity<Story> handleStory(HttpServletRequest request, HttpServletResponse response){
 		
-		String[] handleDecisions = request.getParameter("changestory").split(" ");
-		
-		int storyID = Integer.valueOf(handleDecisions[0]);
-		String decision = handleDecisions[1];
-		
-		Story s = storyService.findOne(storyID);
-		
-		if(decision == "h") {
-			s = storyService.highlight(s);
-		}
-		else if(decision == "r") {
-			storyService.delete(s);
-			s = null;
-		}
-		
+		Story s = storyService.handleStory(request);
 		return ResponseEntity.status(HttpStatus.OK).body(s);
 		
 	}
@@ -95,28 +82,8 @@ public class StoryController {
 	@ResponseBody
 	public ResponseEntity<Story> createNew(HttpServletRequest request, HttpServletResponse response) {
 
-		User u = (User) request.getSession().getAttribute("currentUser");
-		Story story = new Story(0, request.getParameter("synopsis"), request.getParameter("title"), "", u, false);
+		Story story = storyService.createNew(request);
 		
-		File file = null;
-		
-		try {
-		Part submittedFilePart = request.getPart("picture");
-		String submittedFileName = submittedFilePart.getName();
-		InputStream fileContent = submittedFilePart.getInputStream();
-		file = new File(submittedFileName);
-			FileUtils.copyInputStreamToFile(fileContent, file);
-		}
-		catch (IOException | ServletException e) {
-			e.printStackTrace();
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(story);
-		}
-		
-		if(u == null) {
-			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-		}
-		
-		storyService.createNew(story, file);
 		return ResponseEntity.status(HttpStatus.OK).body(story);
 	}
 

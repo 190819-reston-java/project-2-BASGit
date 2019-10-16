@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
@@ -38,10 +39,10 @@ public class StoryRepository {
 
 	@SuppressWarnings("unchecked")
 	@Transactional
-	public Set<Story> findAll() {
+	public List<Story> findAll() {
 		Session s = sf.getCurrentSession();
 
-		return new HashSet<Story>(s.createCriteria(Story.class).list());
+		return s.createCriteria(Story.class).list();
 
 	}
 

@@ -1,6 +1,7 @@
 package com.revature.controllers;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
@@ -59,9 +60,9 @@ public class UserController {
 	
 	@GetMapping
 	@ResponseBody
-	public ResponseEntity<Set<User>> findAll(){
+	public ResponseEntity<List<User>> findAll(){
 		
-		Set<User> u = userService.findAll();
+		List<User> u = userService.findAll();
 		return ResponseEntity.status(HttpStatus.OK).body(u);
 	}
 	
@@ -89,8 +90,9 @@ public class UserController {
 	
 	@PostMapping(value = "/profile/update")
 	@ResponseBody
-	public ResponseEntity<User> update(User user, HttpServletRequest request, HttpServletResponse response){
+	public ResponseEntity<User> update(HttpServletRequest request, HttpServletResponse response){
 		
+		User user = userService.updateUser(request);
 		return ResponseEntity.status(HttpStatus.OK).body(user);
 	}
 	
@@ -98,15 +100,11 @@ public class UserController {
 	@ResponseBody
 	public ResponseEntity<User> signUp(HttpServletRequest request, HttpServletResponse response){
 		
-		User u = new User(0, request.getParameter("username"), 
-				request.getParameter("password"), 
-				"https://allen-gworek-llc-image-storage.s3.amazonaws.com/defaultprofilepic.png", 
-				request.getParameter("managercode").equals("1908-REVATURE"), 
-				request.getParameter("fullname"), null);
+		
+		User u = userService.create(request);
 		
 		u = userService.save(u);
 		
-		request.getSession().setAttribute("currentUser", u);
 		
 		try {
 			response.sendRedirect("BASGit/static/BASGit/");
@@ -116,5 +114,31 @@ public class UserController {
 		}
 		
 		return ResponseEntity.status(HttpStatus.OK).body(u);
+	}
+	
+	@GetMapping(value = "/current")
+	@ResponseBody
+	public ResponseEntity<User> currentUser(HttpServletRequest request){
+		User currentUser = (User) request.getSession().getAttribute("currentUser");
+		
+		if (currentUser != null) {
+			return ResponseEntity.status(HttpStatus.OK).body(currentUser);
+		}
+		else
+		{
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+		}
+
+		}
+	
+	
+	@PostMapping(value = "/profile/update")
+	@ResponseBody
+	public ResponseEntity<User> updateProfile(HttpServletRequest request){
+		
+		User currentUser = userService.getCurrent(request);
+		
+		return ResponseEntity.status(HttpStatus.OK).body(currentUser);
+		
 	}
 }
