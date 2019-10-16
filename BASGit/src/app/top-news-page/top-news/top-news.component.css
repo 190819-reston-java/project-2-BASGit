@@ -75,3 +75,33 @@ img:hover {
   text-decoration-color:#cca830 ;
   color:#ac870f;
 }
+
+/* h4 span a{
+    color:#ffffff;
+}
+h4 span a:hover{
+    text-decoration:none;
+    color: #444444;
+}
+.link-badge{
+    background: linear-gradient(to right, #777777, #888888, #777777);
+}
+.link-badge:hover{
+    background: linear-gradient(to right, #aaaaaa, #cccccc, #aaaaaa);
+} */
+h4 span a{
+    color:#2d2d2d;
+    /* color: inherit; */
+}
+h4 span a:hover{
+    text-decoration:none;
+    /* color: #ffffff; */
+}
+.link-badge{
+    background: linear-gradient(to right, #aaaaaa, #cccccc, #aaaaaa);
+    /* color: #ff0000; */
+}
+.link-badge:hover{
+    background: linear-gradient(to right, #cccccc, #eeeeee, #cccccc);
+    /* color: #00ff00; */
+}

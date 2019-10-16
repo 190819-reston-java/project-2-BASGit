@@ -12,7 +12,7 @@
       <!-- <p *ngIf="sourceCheck(topNews.articles[0].source.name)">{{sourceDirector(topNews.articles[0].source.name)}}</p> -->
       <!-- <span class="badge badge-dark">{{topNews.articles[0].source.name}}</span> -->
 
-      <h4 *ngIf="sourceCheck(topNews.articles[0].source.name)"><span class="badge badge-dark">
+      <h4 *ngIf="sourceCheck(topNews.articles[0].source.name)"><span class="badge badge-dark link-badge">
           <a href="{{sourceDirector(topNews.articles[0].source.name)}}">{{topNews.articles[0].source.name}}</a></span>
       </h4>
       <h4 *ngIf="!sourceCheck(topNews.articles[0].source.name)"><span
@@ -31,7 +31,7 @@
     <div class="col-sm-3 mx-auto newsbox">
       <!-- <h4><span class="badge badge-dark">{{topNews.articles[1].source.name}}</span></h4> -->
 
-      <h4 *ngIf="sourceCheck(topNews.articles[1].source.name)"><span class="badge badge-dark">
+      <h4 *ngIf="sourceCheck(topNews.articles[1].source.name)"><span class="badge badge-dark link-badge">
           <a href="{{sourceDirector(topNews.articles[1].source.name)}}">{{topNews.articles[1].source.name}}</a></span>
       </h4>
       <h4 *ngIf="!sourceCheck(topNews.articles[1].source.name)"><span
@@ -51,7 +51,7 @@
     <div class="col-sm-3 mx-auto newsbox">
       <!-- <h4><span class="badge badge-dark">{{topNews.articles[2].source.name}}</span></h4> -->
 
-      <h4 *ngIf="sourceCheck(topNews.articles[2].source.name)"><span class="badge badge-dark">
+      <h4 *ngIf="sourceCheck(topNews.articles[2].source.name)"><span class="badge badge-dark link-badge">
           <a href="{{sourceDirector(topNews.articles[2].source.name)}}">{{topNews.articles[2].source.name}}</a></span>
       </h4>
       <h4 *ngIf="!sourceCheck(topNews.articles[2].source.name)"><span
