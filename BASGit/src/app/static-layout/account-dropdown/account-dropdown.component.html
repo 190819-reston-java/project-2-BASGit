@@ -34,14 +34,14 @@
       <!-- NUMBER 2: -->
       <div id="login-panel">
           <h5>Sign into your account:</h5>
-          <form action="#" method="post" name="login">
+          <form action="http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/login" method="POST">
               <table>
                   <tr>
                       <td>
-                          <h6>Email:</h6>
+                          <h6>Username:</h6>
                       </td>
                       <td>
-                          <input type="text" name="email">
+                          <input type="text" name="username">
                       </td>
                   </tr>
                   <tr>
@@ -54,16 +54,17 @@
                   </tr>
                   <tr>
                       <td colspan="2">
-                          <input type="submit" value="Log in"><br>
+                          <input type="submit" class="btn btn-dark">Submit<br>
                       </td>
                   </tr>
+                </form>
                   <tr>
                       <td colspan="2">
                           <a routerLink="profilepage"><p><i>or register a new account</i></p></a>
                       </td>
                   </tr>
               </table>
-          </form>
+         
       </div>
 
     <div id="overlay"></div>
