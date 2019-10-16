@@ -1,13 +1,19 @@
 package com.revature.controllers;
 
+import java.io.IOException;
 import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -67,4 +73,41 @@ public class UserController {
 		return ResponseEntity.status(HttpStatus.OK).body(user);
 	}
 
+	@GetMapping(value = "/signout")
+	@ResponseBody
+	public ResponseEntity<User> signOut(User user, HttpServletRequest request, HttpServletResponse response){
+		request.getSession().setAttribute("currentUser", null);
+		
+		try {
+			response.sendRedirect("BASGit/static/BASGit/");
+		} catch (IOException e) {
+			e.printStackTrace();
+			ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+		}
+		return ResponseEntity.status(HttpStatus.OK).body(user);
+	}
+	
+	@PostMapping(value = "/signup")
+	@ResponseBody
+	public ResponseEntity<User> signUp(HttpServletRequest request, HttpServletResponse response){
+		
+		User u = new User(0, request.getParameter("username"), 
+				request.getParameter("password"), 
+				"https://allen-gworek-llc-image-storage.s3.amazonaws.com/defaultprofilepic.png", 
+				request.getParameter("managercode").equals("1908-REVATURE"), 
+				request.getParameter("fullname"), null);
+		
+		u = userService.save(u);
+		
+		request.getSession().setAttribute("currentUser", u);
+		
+		try {
+			response.sendRedirect("BASGit/static/BASGit/");
+		} catch (IOException e) {
+			e.printStackTrace();
+			ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+		}
+		
+		return ResponseEntity.status(HttpStatus.OK).body(u);
+	}
 }

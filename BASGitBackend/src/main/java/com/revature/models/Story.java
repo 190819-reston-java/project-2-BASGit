@@ -34,20 +34,26 @@ public class Story implements Serializable {
 	@ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
 	@JoinColumn(name = "user_id")
 	private User author;
+	@Column
+	private boolean isFeatured;
 
 
 	public Story() {
 	}
 
-	public Story(int id, String body, String headline, String pictureURL, User author) {
+	
+	
+	public Story(int id, String body, String headline, String pictureURL, User author, boolean isFeatured) {
 		this.id = id;
 		this.body = body;
 		this.headline = headline;
 		this.pictureURL = pictureURL;
 		this.author = author;
+		this.isFeatured = isFeatured;
 	}
-	
-	
+
+
+
 	public int getId() {
 		return id;
 	}
@@ -97,18 +103,36 @@ public class Story implements Serializable {
 		this.author = author;
 	}
 
-	
+
+
+	public boolean isFeatured() {
+		return isFeatured;
+	}
+
+
+
+	public void setFeatured(boolean isFeatured) {
+		this.isFeatured = isFeatured;
+	}
+
+
+
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((author == null) ? 0 : author.hashCode());
 		result = prime * result + ((body == null) ? 0 : body.hashCode());
 		result = prime * result + ((headline == null) ? 0 : headline.hashCode());
 		result = prime * result + id;
+		result = prime * result + (isFeatured ? 1231 : 1237);
 		result = prime * result + ((pictureURL == null) ? 0 : pictureURL.hashCode());
 		return result;
 	}
 
-	
+
+
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -117,6 +141,11 @@ public class Story implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Story other = (Story) obj;
+		if (author == null) {
+			if (other.author != null)
+				return false;
+		} else if (!author.equals(other.author))
+			return false;
 		if (body == null) {
 			if (other.body != null)
 				return false;
@@ -129,6 +158,8 @@ public class Story implements Serializable {
 			return false;
 		if (id != other.id)
 			return false;
+		if (isFeatured != other.isFeatured)
+			return false;
 		if (pictureURL == null) {
 			if (other.pictureURL != null)
 				return false;
@@ -137,9 +168,14 @@ public class Story implements Serializable {
 		return true;
 	}
 
-	
+
+
+	@Override
 	public String toString() {
-		return "Story [id=" + id + ", body=" + body + ", headline=" + headline + ", pictureURL=" + pictureURL + "]";
+		return "Story [id=" + id + ", body=" + body + ", headline=" + headline + ", pictureURL=" + pictureURL
+				+ ", author=" + author + ", isFeatured=" + isFeatured + "]";
 	}
+
+
 
 }

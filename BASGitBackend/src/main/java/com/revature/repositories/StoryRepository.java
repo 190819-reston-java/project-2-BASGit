@@ -109,4 +109,20 @@ public class StoryRepository {
 		// send request to S3 to create folder
 		client.putObject(putObjectRequest);
 	}
+
+	public Story highlight(Story story) {
+		Session s = sf.getCurrentSession();
+		
+		story.setFeatured(true);
+		s.save(story);
+		
+		return story;
+	}
+
+	public void delete(Story story) {
+		Session s = sf.getCurrentSession();
+		
+		s.delete(story);
+		
+	}
 }

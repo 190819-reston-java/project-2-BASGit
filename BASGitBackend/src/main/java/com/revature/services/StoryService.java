@@ -39,9 +39,18 @@ public class StoryService  {
 
 
 	public Story createNew(Story story, File file) {
-		storyRepository.createNew(story, file);
+		return storyRepository.createNew(story, file);
 		
-		return story;
+	}
+
+
+	public Story highlight(Story s) {
+		return storyRepository.highlight(s);
+	}
+
+
+	public void delete(Story s) {
+		storyRepository.delete(s);
 		
 	}
 	

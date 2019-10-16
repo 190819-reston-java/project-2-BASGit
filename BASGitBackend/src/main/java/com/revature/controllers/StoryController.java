@@ -59,6 +59,29 @@ public class StoryController {
 		Set<Story> u = storyService.findAll();
 		return ResponseEntity.status(HttpStatus.OK).body(u);
 	}
+	
+	@PostMapping("/admin/handle")
+	@ResponseBody
+	public ResponseEntity<Story> handleStory(HttpServletRequest request, HttpServletResponse response){
+		
+		String[] handleDecisions = request.getParameter("changestory").split(" ");
+		
+		int storyID = Integer.valueOf(handleDecisions[0]);
+		String decision = handleDecisions[1];
+		
+		Story s = storyService.findOne(storyID);
+		
+		if(decision == "h") {
+			s = storyService.highlight(s);
+		}
+		else if(decision == "r") {
+			storyService.delete(s);
+			s = null;
+		}
+		
+		return ResponseEntity.status(HttpStatus.OK).body(s);
+		
+	}
 
 	@PutMapping
 	@ResponseBody
@@ -73,7 +96,7 @@ public class StoryController {
 	public ResponseEntity<Story> createNew(HttpServletRequest request, HttpServletResponse response) {
 
 		User u = (User) request.getSession().getAttribute("currentUser");
-		Story story = new Story(0, request.getParameter("synopsis"), request.getParameter("title"), "", u);
+		Story story = new Story(0, request.getParameter("synopsis"), request.getParameter("title"), "", u, false);
 		
 		File file = null;
 		
