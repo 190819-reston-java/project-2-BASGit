@@ -8,7 +8,7 @@ body{
      text-decoration:none !important;
      }
      h1,h2,h3{
-     font-family: 'Kaushan Script', cursive;
+     font-family: "Book Antiqua", Palatino, serif;
      }
       .myform{
   position: relative;
@@ -60,5 +60,12 @@ body{
 
 textarea {
   height:  100px;
+}
+#story {
+
+    background: linear-gradient(to right, #ac870f, #ffdc6b, #ac870f);
+    border: 2.5px solid #cca830;
+    color: #554100;
+    font-family: "Book Antiqua", Palatino, serif;
 }
 
