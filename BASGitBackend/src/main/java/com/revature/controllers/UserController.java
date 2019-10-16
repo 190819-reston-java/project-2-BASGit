@@ -87,6 +87,12 @@ public class UserController {
 		return ResponseEntity.status(HttpStatus.OK).body(user);
 	}
 	
+	@PostMapping(value = "/profile/update")
+	@ResponseBody
+	public ResponseEntity<User> update(User user, HttpServletRequest request, HttpServletResponse response){
+		
+	}
+	
 	@PostMapping(value = "/signup")
 	@ResponseBody
 	public ResponseEntity<User> signUp(HttpServletRequest request, HttpServletResponse response){
