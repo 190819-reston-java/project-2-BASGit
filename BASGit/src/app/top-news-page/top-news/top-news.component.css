@@ -43,6 +43,8 @@ img {
     bottom: 0;
     left: 0;
     right: 0;    position: absolute;
+    text-decoration-color:#cca830 ;
+    color:#ac870f;
 
 }
 .headline{
@@ -67,4 +69,8 @@ img:hover {
     -o-transform: scale(1.05) rotate(1deg);
     transform: scale(1.05) rotate(1deg);
     opacity: 0.8;
+}
+.source-link a {
+  text-decoration-color:#cca830 ;
+  color:#ac870f;
 }

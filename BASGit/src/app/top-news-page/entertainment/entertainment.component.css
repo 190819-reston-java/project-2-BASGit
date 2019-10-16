@@ -53,11 +53,10 @@ img {
 }
 
 
-/* img{
-display: block;
-margin-left: auto;
-margin-right: auto;
-} */
+.source-link a {
+  text-decoration-color:#cca830 ;
+  color:#ac870f;
+}
 
 .source-link {
     /* text-align: center; */
