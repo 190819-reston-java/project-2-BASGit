@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgForm } from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './static-layout/footer/footer.component';
@@ -74,6 +75,7 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    NgForm,
   ],
   providers: [],
   bootstrap: [AppComponent]

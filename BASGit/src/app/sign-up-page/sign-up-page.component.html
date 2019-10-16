@@ -2,7 +2,7 @@
 <div class="container-fluid">
     <div class="row align-items-center">
         <div class="col-md-6 col-12">
-            <form [formGroup]="formGroup" (submit)="submit(formGroup)">
+            <form (ngSubmit)="onSubmit()" #newUserForm="ngForm">
                     <!-- http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/signup -->
                 <div class="form-group">
                     <h2>Sign Up
@@ -11,22 +11,22 @@
                 </div>
                 <div class="form-group">
                     <label for="Username">Username</label>
-                    <input type="text" class="form-control" id=password name="username" placeholder="CoolUsername" required>
+                    <input type="text" class="form-control" id=password name="username" placeholder="CoolUsername" [(ngModel)]="data.username" required>
                 </div>
                 <div class="form-group">
                     <label for="Password">Password</label>
-                    <input type="password" class="form-control" id=password name="password" placeholder=Password required>
+                    <input type="password" class="form-control" id=password name="password" placeholder=Password [(ngModel)]="data.password" required>
                     <!-- <small id="passwordHelp" class="form-text text-muted">Must contain at least one number and one
                         uppercase and lowercase letter, and at least 8 or more characters</small> -->
                 </div>
                 <div class="form-group">
                     <label for="Full Name">Full Name</label>
-                    <input type="text" class="form-control" id=newName name="fullname" placeholder="John Smith" required>
+                    <input type="text" class="form-control" id=newName name="fullname" placeholder="John Smith" [(ngModel)]="data.fullname" required>
                 </div>
                 <div class="form-group">
                     <label for="Manager Code">Manager Code</label>
                     <input type="text" class="form-control" id="managerCode" name="managerCode"
-                        placeholder="Secret Manager Code Goes Here">
+                        placeholder="Secret Manager Code Goes Here" [(ngModel)]="data.managerCode">
                 </div>
                 <!-- <div class="form-group">
                         <input class="btn btn-dark" type="submit" value="signup">

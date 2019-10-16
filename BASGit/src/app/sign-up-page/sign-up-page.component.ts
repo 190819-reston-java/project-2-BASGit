@@ -8,12 +8,22 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SignUpPageComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
-  
-  submit(formGroup)
-  {
+data: any;
 
-        this.http.post("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/signup", formGroup.value).subscribe(res=>{
+  constructor(private http: HttpClient) {
+    this.data = {
+      username: 'default',
+      password: 'default',
+      fullname: 'default',
+      managerCode: 'default'
+    };
+   }
+  
+
+  
+  onSubmit() {
+
+        this.http.post("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/signup", this.data).subscribe(res=>{
                  //here you received the response of your post
                  console.log(res);
                  //you can do asomething, like
