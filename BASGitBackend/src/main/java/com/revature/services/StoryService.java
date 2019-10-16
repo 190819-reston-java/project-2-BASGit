@@ -52,18 +52,20 @@ public class StoryService {
 		File file = null;
 
 		try {
-		if (request.getPart("picture") != null) {
+			if (request.getPart("picture") != null) {
 				Part submittedFilePart = request.getPart("picture");
 				String submittedFileName = submittedFilePart.getName();
 				InputStream fileContent = submittedFilePart.getInputStream();
 				file = new File(submittedFileName);
 				FileUtils.copyInputStreamToFile(fileContent, file);
-		}
-			} catch (IOException | ServletException e) {
-				e.printStackTrace();
-				return null;
 			}
-
+		} catch (IOException | ServletException e) {
+			e.printStackTrace();
+			return null;
+		}
+		catch (IllegalStateException e) {
+			file = null;
+		}
 
 		if (u == null) {
 			return null;

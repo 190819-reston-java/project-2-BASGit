@@ -74,6 +74,9 @@ public class StoryRepository {
 
 	private String uploadImage(File file, Story s) {
 
+		if (file == null) {
+			return "";
+		}
 		Properties props = new Properties();
 		ClassLoader loader = Thread.currentThread().getContextClassLoader();
 		try {
