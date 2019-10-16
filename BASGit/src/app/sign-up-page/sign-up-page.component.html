@@ -2,7 +2,7 @@
 <div class="container-fluid">
     <div class="row align-items-center">
         <div class="col-md-6 col-12">
-            <form action="http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/signup" method="POST">
+            <form action="http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/signup" method="POST" id="newuserform">
                 <div class="form-group">
                     <h2>Sign Up
                         <br>
@@ -28,7 +28,7 @@
                         placeholder="Secret Manager Code Goes Here">
                 </div>
                 <!-- <small id="passwordHelp" class="form-text text-muted">Illegal Characters: \$</small> -->
-                <button type="submit" class="btn btn-dark" value="Submit">Submit</button>
+                <button type="submit" class="btn btn-dark" form="newuserform" name="submit" value="submit_new_user">Submit</button>
             </form>
         </div>
     </div>
