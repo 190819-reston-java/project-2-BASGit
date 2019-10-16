@@ -55,6 +55,7 @@ public class StoryRepository {
 		return story;
 	}
 
+	@Transactional
 	public Story createNew(Story story, File file) {
 		Session s = sf.getCurrentSession();
 
@@ -111,6 +112,7 @@ public class StoryRepository {
 		client.putObject(putObjectRequest);
 	}
 
+	@Transactional
 	public Story highlight(Story story) {
 		Session s = sf.getCurrentSession();
 		
