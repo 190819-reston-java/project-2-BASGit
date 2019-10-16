@@ -2,7 +2,8 @@
 <div class="container-fluid">
     <div class="row align-items-center">
         <div class="col-md-6 col-12">
-            <form action="http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/signup" method="POST" id="newuserform">
+            <form [formGroup]="formGroup" (submit)="submit(formGroup)">
+                    <!-- http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/signup -->
                 <div class="form-group">
                     <h2>Sign Up
                         <br>
@@ -31,7 +32,7 @@
                         <input class="btn btn-dark" type="submit" value="signup">
                 </div> -->
                 <!-- <small id="passwordHelp" class="form-text text-muted">Illegal Characters: \$</small> -->
-                <button type="submit" class="btn btn-dark" form="newuserform" name="submit" value="signup">Submit</button>
+                <button type="submit" class="btn btn-dark">Submit</button>
             </form>
         </div>
     </div>
