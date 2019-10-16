@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms'
 })
 export class SignUpPageComponent implements OnInit {
 
-data: any;
+
 
   constructor(private http: HttpClient) {}
 

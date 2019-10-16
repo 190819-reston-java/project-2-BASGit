@@ -34,14 +34,14 @@
       <!-- NUMBER 2: -->
       <div id="login-panel">
           <h5>Sign into your account:</h5>
-          <form action="http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/login" method="POST">
+          <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
               <table>
                   <tr>
                       <td>
                           <h6>Username:</h6>
                       </td>
                       <td>
-                          <input type="text" name="username">
+                          <input type="text" name="username" ngModel>
                       </td>
                   </tr>
                   <tr>
@@ -49,7 +49,7 @@
                           <h6 style="min-width:85px">Password:</h6>
                       </td>
                       <td>
-                          <input type="password" name="password"><br>
+                          <input type="password" name="password" ngModel><br>
                       </td>
                   </tr>
                   <tr>
