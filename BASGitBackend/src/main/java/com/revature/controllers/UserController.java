@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -114,16 +115,16 @@ public class UserController {
 	
 	@PostMapping(value = "/signup")
 	@ResponseBody
-	public ResponseEntity<String> signUp(String infoJSON, HttpServletRequest request, HttpServletResponse response){
+	public ResponseEntity<String> signUp(@RequestBody String JSONString, HttpServletRequest request, HttpServletResponse response){
 		
 		
-		String u = infoJSON;
+		String u = JSONString;
 		
 		//u = userService.save(u);
 		
 		
 		
-		return ResponseEntity.status(HttpStatus.OK).body("This is a test");
+		return ResponseEntity.status(HttpStatus.OK).body(JSONString);
 	}
 	
 	@GetMapping(value = "/current")
