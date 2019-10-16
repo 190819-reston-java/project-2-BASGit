@@ -18,11 +18,10 @@
 button{
   min-width: 100px;
   border: 2px solid #bbbbbb;
-  /* color: #ffffff; */
+
 }
 button:hover{
   border: 2px solid #ffffff;
-  /* color: #ffffff; */
   filter: brightness(1.4);
 }
 
