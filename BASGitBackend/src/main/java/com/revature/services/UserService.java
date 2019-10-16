@@ -47,17 +47,26 @@ public class UserService {
 
 	public User create(HttpServletRequest request) {
 		try {
-		User u = new User(0, request.getParameter("username"), request.getParameter("password"),
-				"https://allen-gworek-llc-image-storage.s3.amazonaws.com/defaultprofilepic.png",
-				request.getParameter("managercode").equals("1908-REVATURE"), request.getParameter("fullname"), null);
 
-		u = userRepository.save(u);
+			User u;
+			if (request.getParameter("managercode") != null) {
+				u = new User(0, request.getParameter("username"), request.getParameter("password"),
+						"https://allen-gworek-llc-image-storage.s3.amazonaws.com/defaultprofilepic.png",
+						request.getParameter("managercode").equals("1908-REVATURE"), request.getParameter("fullname"),
+						null);
+			}
+			else {
+				u = new User(0, request.getParameter("username"), request.getParameter("password"),
+						"https://allen-gworek-llc-image-storage.s3.amazonaws.com/defaultprofilepic.png",
+						false, request.getParameter("fullname"),
+						null);
+			}
+			u = userRepository.save(u);
 
-		request.getSession().setAttribute("currentUser", u);
+			request.getSession().setAttribute("currentUser", u);
 
-		return u;
-		}
-		catch(NullPointerException e) {
+			return u;
+		} catch (NullPointerException e) {
 			return null;
 		}
 	}
@@ -70,16 +79,17 @@ public class UserService {
 	public User updateUser(HttpServletRequest request) {
 		User currentUser = getCurrent(request);
 
-		User updateUser = new User(currentUser.getId(), request.getParameter("username"), request.getParameter("password"), "", currentUser.isAdmin(),
-				request.getParameter("fullname"), currentUser.getStories());
+		User updateUser = new User(currentUser.getId(), request.getParameter("username"),
+				request.getParameter("password"), "", currentUser.isAdmin(), request.getParameter("fullname"),
+				currentUser.getStories());
 
-		if (updateUser.getPassword().equals("")){
+		if (updateUser.getPassword().equals("")) {
 			updateUser.setPassword(currentUser.getPassword());
 		}
-		if (updateUser.getFullname().equals("")){
+		if (updateUser.getFullname().equals("")) {
 			updateUser.setFullname(currentUser.getFullname());
 		}
-		if (updateUser.getUsername().equals("")){
+		if (updateUser.getUsername().equals("")) {
 			updateUser.setUsername(currentUser.getUsername());
 		}
 		File file = null;
@@ -93,11 +103,11 @@ public class UserService {
 			e.printStackTrace();
 			return null;
 		}
-		
+
 		String imageURL = userRepository.uploadImage(file, currentUser);
 
 		updateUser = userRepository.save(updateUser);
-		
+
 		return updateUser;
 	}
 
