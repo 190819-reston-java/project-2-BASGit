@@ -103,4 +103,12 @@ public class StoryService {
 
 	}
 
+	public List<Story> findAllByAuthor(int id) {
+		return storyRepository.findAllByAuthor(id);
+	}
+
+	public List<Story> findAllFeatured() {
+		return storyRepository.findAllFeatured();
+	}
+
 }
