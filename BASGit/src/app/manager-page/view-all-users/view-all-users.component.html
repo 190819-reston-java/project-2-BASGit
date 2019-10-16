@@ -22,15 +22,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- <tr *ngFor="let article of articles"> -->
+                            <tr *ngFor="let user of users">
                             <!-- article is each object, and articles is an array -->
                             <tr>
-                                <td>SMALL PROF PIC</td>
-                                <td>USERNAME</td>
+                                <td>SMALL PROFILE PIC</td>
+                                <td>user.username</td>
                                 <!-- <td>{{article.username (or article.id put into all users)}}</td> -->
-                                <td>FULL NAME</td>
-
-
+                                <td>user.fullname</td>
                             </tr>
                         </tbody>
                     </table>
