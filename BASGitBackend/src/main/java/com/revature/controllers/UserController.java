@@ -131,14 +131,5 @@ public class UserController {
 
 		}
 	
-	
-	@PostMapping(value = "/profile/update")
-	@ResponseBody
-	public ResponseEntity<User> updateProfile(HttpServletRequest request){
-		
-		User currentUser = userService.getCurrent(request);
-		
-		return ResponseEntity.status(HttpStatus.OK).body(currentUser);
-		
-	}
+
 }
