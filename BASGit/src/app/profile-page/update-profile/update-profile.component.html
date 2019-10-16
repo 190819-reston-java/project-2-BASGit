@@ -1,87 +1,89 @@
 <app-sidebar-profile></app-sidebar-profile>
+
 <body>
+    <div id="content-area" class="container">
+        <div class="row">
+            <div id="active" class="w-100">
+                <h4>MY PROFILE</h4>
+            </div>
+            <div id="settings-area" class="col-12">
+                <div class="card">
 
+                    <div class="card-body">
+                        <div class="card-title mb-4">
+                            <div class="d-flex justify-content-start">
+                                <div class="image-container">
+                                    <img src="http://placehold.it/150x150" id="imgProfile"
+                                        style="width: 150px; height: 150px" class="img-thumbnail" />
+                                    <div class="middle">
 
-  <div id="content-area" class="container">
-      <div class="row">
-          <div id="active" class="w-100">
-              <h4>MY PROFILE</h4>
-          </div>
-          <div id="settings-area" class="col-12">
-              <div class="card">
+                                        <input type="file" style="display:none ;" id="profilePicture" name="file" />
 
-                  <div class="card-body">
-                      <div class="card-title mb-4">
-                          <div class="d-flex justify-content-start">
-                              <div class="image-container">
-                                  <img src="http://placehold.it/150x150" id="imgProfile"
-                                      style="width: 150px; height: 150px" class="img-thumbnail" />
-                                  <div class="middle">
+                                    </div>
+                                </div>
+                                <div class="userData ml-3">
+                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold">jane777</h2>
 
-                                      <input type="file" style="display:none ;" id="profilePicture" name="file" />
+                                </div>
 
-                                  </div>
-                              </div>
-                              <div class="userData ml-3">
-                                  <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold">jane777</h2>
+                            </div>
+                        </div>
 
-                              </div>
-
-                          </div>
-                      </div>
-
-                      <div class="row">
-                          <div class="col-12">
+                        <div class="row">
+                            <div class="col-12">
                                 <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-                              <div class="tab-content ml-1" id="">
-                                  <div class="tab-pane fade show active" id="Profile" role="tabpanel"
-                                      aria-labelledby="Profile-tab">
-                                      <div class="row">
-                                          <div class="col-sm-3 col-md-2 col-5">
-                                              <label style="font-weight:bold;">Full Name</label>
-                                          </div>
-                                          <div class="col-md-8 col-6">
-                                            <input type="text" name="fullname" ngModel id="name"  class="form-control"  placeholder="Update Name">
-                                          </div>
-                                      </div>
-                                      <hr />
-                                      <div class="row">
-                                          <div class="col-sm-3 col-md-2 col-5">
-                                              <label style="font-weight:bold;">Username</label>
-                                          </div>
-                                          <div class="col-md-8 col-6">
-                                            <input type="text" name="username" ngModel id="username"  class="form-control"  placeholder="Update Usernaame">
-                                          </div>
-                                      </div>
-                                      <hr />
-                                      <div class="row">
-                                          <div class="col-sm-3 col-md-2 col-5">
-                                              <label style="font-weight:bold;">Update Password</label>
-                                          </div>
-                                          <div class="col-md-8 col-6">
-                                            <input type="text" name="password" ngModel id="password"  class="form-control"  placeholder="Update Password">
-                                          </div>
-                                      </div>
-                                      <hr />
-                                      <div class="row">
-                                          <div class="col-sm-3 col-md-2 col-5">
-                                              <label style="font-weight:bold;">Change Picture</label>
-                                          </div>
-                                          <div class="col-md-8 col-6 ">
-                                            <input type="file"  name="picture" ngModel id="pic" class="" >
-                                          </div>
-                                      </div>
-                                      <div class="row">
-                                          <button class="btn btn-dark" type="submit">Submit</button>
-                                      </div>
-                                  </div>
-                              </div>
-                            </form>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+                                    <div class="tab-content ml-1" id="">
+                                        <div class="tab-pane fade show active" id="Profile" role="tabpanel"
+                                            aria-labelledby="Profile-tab">
+                                            <div class="row">
+                                                <div class="col-sm-3 col-md-2 col-5">
+                                                    <label style="font-weight:bold;">Full Name</label>
+                                                </div>
+                                                <div class="col-md-8 col-6">
+                                                    <input type="text" name="fullname" ngModel id="name"
+                                                        class="form-control" placeholder="Update Name">
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="row">
+                                                <div class="col-sm-3 col-md-2 col-5">
+                                                    <label style="font-weight:bold;">Username</label>
+                                                </div>
+                                                <div class="col-md-8 col-6">
+                                                    <input type="text" name="username" ngModel id="username"
+                                                        class="form-control" placeholder="Update Usernaame">
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="row">
+                                                <div class="col-sm-3 col-md-2 col-5">
+                                                    <label style="font-weight:bold;">Update Password</label>
+                                                </div>
+                                                <div class="col-md-8 col-6">
+                                                    <input type="text" name="password" ngModel id="password"
+                                                        class="form-control" placeholder="Update Password">
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="row">
+                                                <div class="col-sm-3 col-md-2 col-5">
+                                                    <label style="font-weight:bold;">Change Picture</label>
+                                                </div>
+                                                <div class="col-md-8 col-6 ">
+                                                    <input type="file" name="picture" ngModel id="pic" class="">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <button class="btn btn-dark" type="submit">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
