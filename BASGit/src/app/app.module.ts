@@ -33,6 +33,7 @@ import { PoliticsComponent } from './top-news-page/politics/politics.component';
 import { BusinessComponent } from './top-news-page/business/business.component';
 import { EntertainmentComponent } from './top-news-page/entertainment/entertainment.component';
 import { TechnologyComponent } from './top-news-page/technology/technology.component';
+import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { TechnologyComponent } from './top-news-page/technology/technology.compo
     BusinessComponent,
     EntertainmentComponent,
     TechnologyComponent,
+    SignUpPageComponent,
   ],
   imports: [
     BrowserModule,
