@@ -25,88 +25,81 @@ import com.revature.models.User;
 import com.revature.repositories.StoryRepository;
 
 @Service
-public class StoryService  {
+public class StoryService {
 
 	@Autowired
 	private StoryRepository storyRepository;
-	
-	
+
 	public Story findOne(int id) {
 		return storyRepository.findOne(id);
 	}
-	
-	
-	public List<Story> findAll(){
+
+	public List<Story> findAll() {
 		return storyRepository.findAll();
 	}
-	
-	
+
 	public Story save(Story story) {
 		storyRepository.save(story);
-		
+
 		return story;
 	}
 
-
 	public Story createNew(HttpServletRequest request) {
-		
 
 		User u = (User) request.getSession().getAttribute("currentUser");
 		Story story = new Story(0, request.getParameter("synopsis"), request.getParameter("title"), "", u, false);
-		
-		File file = null;
-		
-		try {
-		Part submittedFilePart = request.getPart("picture");
-		String submittedFileName = submittedFilePart.getName();
-		InputStream fileContent = submittedFilePart.getInputStream();
-		file = new File(submittedFileName);
-			FileUtils.copyInputStreamToFile(fileContent, file);
-		}
-		catch (IOException | ServletException e) {
-			e.printStackTrace();
-			return null;
-		}
-		
-		if(u == null) {
-			return null;
-		}
-		
-		return storyRepository.createNew(story, file);
-		
-	}
 
+		File file = null;
+
+		try {
+		if (request.getPart("picture") != null) {
+				Part submittedFilePart = request.getPart("picture");
+				String submittedFileName = submittedFilePart.getName();
+				InputStream fileContent = submittedFilePart.getInputStream();
+				file = new File(submittedFileName);
+				FileUtils.copyInputStreamToFile(fileContent, file);
+		}
+			} catch (IOException | ServletException e) {
+				e.printStackTrace();
+				return null;
+			}
+
+
+		if (u == null) {
+			return null;
+		}
+
+		return storyRepository.createNew(story, file);
+
+	}
 
 	public Story highlight(Story s) {
 		return storyRepository.highlight(s);
 	}
 
-
 	public void delete(Story s) {
 		storyRepository.delete(s);
-		
-	}
 
+	}
 
 	public Story handleStory(HttpServletRequest request) {
 
 		String[] handleDecisions = request.getParameter("changestory").split(" ");
-		
+
 		int storyID = Integer.valueOf(handleDecisions[0]);
 		String decision = handleDecisions[1];
-		
+
 		Story s = findOne(storyID);
-		
-		if(decision == "h") {
+
+		if (decision == "h") {
 			s = highlight(s);
-		}
-		else if(decision == "r") {
+		} else if (decision == "r") {
 			delete(s);
 			s = null;
 		}
-		
+
 		return s;
-		
+
 	}
-	
+
 }
