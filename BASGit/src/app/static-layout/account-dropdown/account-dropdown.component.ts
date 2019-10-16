@@ -16,9 +16,9 @@ export class AccountDropdownComponent implements OnInit {
 
   onSubmit(f: NgForm) {
 if(f.value.managerCode === "1908-REVATURE") {
-  f.value.managerCode === true;
+  f.value.managerCode = true;
 } else {
-  f.value.managerCode === false;
+  f.value.managerCode = false;
 }
     this.http.post("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/login", f.value).subscribe(res=>{
                  //here you received the response of your post
