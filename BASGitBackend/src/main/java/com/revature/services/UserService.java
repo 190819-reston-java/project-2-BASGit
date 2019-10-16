@@ -45,30 +45,13 @@ public class UserService {
 		return userRepository.findByUserName(username);
 	}
 
-	public User create(HttpServletRequest request) {
-		try {
+	public User create(User user, HttpServletRequest request) {
 
-			User u;
-			if (request.getParameter("managercode") != null) {
-				u = new User(0, request.getParameter("username"), request.getParameter("password"),
-						"https://allen-gworek-llc-image-storage.s3.amazonaws.com/defaultprofilepic.png",
-						request.getParameter("managercode").equals("1908-REVATURE"), request.getParameter("fullname"),
-						null);
-			}
-			else {
-				u = new User(0, request.getParameter("username"), request.getParameter("password"),
-						"https://allen-gworek-llc-image-storage.s3.amazonaws.com/defaultprofilepic.png",
-						false, request.getParameter("fullname"),
-						null);
-			}
-			u = userRepository.save(u);
+		User u = userRepository.save(user);
 
-			request.getSession().setAttribute("currentUser", u);
+		request.getSession().setAttribute("currentUser", u);
 
-			return u;
-		} catch (NullPointerException e) {
-			return null;
-		}
+		return u;
 	}
 
 	public User getCurrent(HttpServletRequest request) {
@@ -76,12 +59,11 @@ public class UserService {
 		return currentUser;
 	}
 
-	public User updateUser(HttpServletRequest request) {
+	public User updateUser(User u, HttpServletRequest request) {
 		User currentUser = getCurrent(request);
 
-		User updateUser = new User(currentUser.getId(), request.getParameter("username"),
-				request.getParameter("password"), "", currentUser.isAdmin(), request.getParameter("fullname"),
-				currentUser.getStories());
+		User updateUser = new User(currentUser.getId(), u.getUsername(), u.getPassword(), "", currentUser.isAdmin(),
+				u.getFullname(), currentUser.getStories());
 
 		if (updateUser.getPassword().equals("")) {
 			updateUser.setPassword(currentUser.getPassword());

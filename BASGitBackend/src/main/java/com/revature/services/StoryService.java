@@ -44,10 +44,10 @@ public class StoryService {
 		return story;
 	}
 
-	public Story createNew(HttpServletRequest request) {
+	public Story createNew(Story s, HttpServletRequest request) {
 
 		User u = (User) request.getSession().getAttribute("currentUser");
-		Story story = new Story(0, request.getParameter("synopsis"), request.getParameter("title"), "", u, false);
+		s.setAuthor(u);
 
 		File file = null;
 
@@ -70,7 +70,7 @@ public class StoryService {
 			return null;
 		}
 
-		return storyRepository.createNew(story, file);
+		return storyRepository.createNew(s, file);
 
 	}
 
@@ -83,7 +83,7 @@ public class StoryService {
 
 	}
 
-	public Story handleStory(HttpServletRequest request) {
+	public Story handleStory(Story story, HttpServletRequest request) {
 
 		String[] handleDecisions = request.getParameter("changestory").split(" ");
 

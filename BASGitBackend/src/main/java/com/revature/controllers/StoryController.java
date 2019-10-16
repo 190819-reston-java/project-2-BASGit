@@ -88,9 +88,9 @@ public class StoryController {
 	
 	@PostMapping("/admin/handle")
 	@ResponseBody
-	public ResponseEntity<Story> handleStory(HttpServletRequest request, HttpServletResponse response){
+	public ResponseEntity<Story> handleStory(Story story, HttpServletRequest request, HttpServletResponse response){
 		
-		Story s = storyService.handleStory(request);
+		Story s = storyService.handleStory(story, request);
 		return ResponseEntity.status(HttpStatus.OK).body(s);
 		
 	}
@@ -105,9 +105,9 @@ public class StoryController {
 
 	@PostMapping(value = "/profiles/submit")
 	@ResponseBody
-	public ResponseEntity<Story> createNew(HttpServletRequest request, HttpServletResponse response) {
+	public ResponseEntity<Story> createNew(Story s, HttpServletRequest request, HttpServletResponse response) {
 
-		Story story = storyService.createNew(request);
+		Story story = storyService.createNew(s, request);
 		
 		if(story != null) {
 			return ResponseEntity.status(HttpStatus.OK).body(story);

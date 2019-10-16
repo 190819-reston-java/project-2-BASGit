@@ -32,8 +32,8 @@ public class UserController {
 
 	@PostMapping(value = "/login")
 	@ResponseBody
-	public ResponseEntity<User> login(HttpServletRequest request, HttpServletResponse response){
-		User u = userService.login(request.getParameter("username"), request.getParameter("password"));
+	public ResponseEntity<User> login(User user, HttpServletRequest request, HttpServletResponse response){
+		User u = userService.login(user.getUsername(), user.getPassword());
 		
 		if(u != null) {
 			request.getSession().setAttribute("currentUser", u);
@@ -106,18 +106,18 @@ public class UserController {
 	
 	@PostMapping(value = "/profile/update")
 	@ResponseBody
-	public ResponseEntity<User> update(HttpServletRequest request, HttpServletResponse response){
+	public ResponseEntity<User> update(User u, HttpServletRequest request){
 		
-		User user = userService.updateUser(request);
+		User user = userService.updateUser(u, request);
 		return ResponseEntity.status(HttpStatus.OK).body(user);
 	}
 	
 	@PostMapping(value = "/signup")
 	@ResponseBody
-	public ResponseEntity<User> signUp(HttpServletRequest request, HttpServletResponse response){
+	public ResponseEntity<User> signUp(User user, HttpServletRequest request, HttpServletResponse response){
 		
 		
-		User u = userService.create(request);
+		User u = userService.create(user, request);
 		
 		u = userService.save(u);
 		
