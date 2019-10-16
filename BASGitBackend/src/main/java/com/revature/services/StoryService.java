@@ -1,5 +1,6 @@
 package com.revature.services;
 
+import java.io.File;
 import java.util.Set;
 
 import org.hibernate.Session;
@@ -37,10 +38,11 @@ public class StoryService  {
 	}
 
 
-	public Story createNew(Story story, User u) {
-		storyRepository.createNew(story, u);
+	public Story createNew(Story story, File file) {
+		storyRepository.createNew(story, file);
 		
 		return story;
 		
 	}
+	
 }
