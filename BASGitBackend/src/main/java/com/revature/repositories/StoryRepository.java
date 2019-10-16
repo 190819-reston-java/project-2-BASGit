@@ -11,6 +11,8 @@ import java.util.Set;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -130,5 +132,23 @@ public class StoryRepository {
 		
 		s.delete(story);
 		
+	}
+
+	@Transactional
+	public List<Story> findAllByAuthor(int id) {
+		Session s = sf.getCurrentSession();
+		
+		return (List<Story>) s.createCriteria(Story.class)
+				.add(Restrictions.eq("author", id))
+				.addOrder(Order.desc("id")).list();
+	}
+
+	@Transactional
+	public List<Story> findAllFeatured() {
+		Session s = sf.getCurrentSession();
+		
+		return (List<Story>) s.createCriteria(Story.class)
+				.add(Restrictions.eq("isFeatured", true))
+				.addOrder(Order.desc("id")).list();
 	}
 }

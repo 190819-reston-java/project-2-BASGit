@@ -40,25 +40,50 @@ public class StoryController {
 	private StoryService storyService;
 
 	@GetMapping(value = "/{id}")
-
 	@ResponseBody
 	public ResponseEntity<Story> findOne(@PathVariable("id") int id) {
 
-		Story u = storyService.findOne(id);
+		Story s = storyService.findOne(id);
 
-		if (u != null) {
-			return ResponseEntity.status(HttpStatus.OK).body(u);
+		if (s != null) {
+			return ResponseEntity.status(HttpStatus.OK).body(s);
 		} else {
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 		}
 	}
 
+	@GetMapping(value = "/user/{id}")
+	@ResponseBody
+	public ResponseEntity<List<Story>> findAllByUser(@PathVariable("id") int id){
+		List<Story> s = storyService.findAllByAuthor(id);
+		
+		if(s != null) {
+			return ResponseEntity.status(HttpStatus.OK).body(s);
+		}
+		else {
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+		}
+	}
+	
+	@GetMapping(value = "/featured")
+	@ResponseBody
+	public ResponseEntity<List<Story>> findAllFeatured(){
+		List<Story> s = storyService.findAllFeatured();
+		
+		if(s != null) {
+			return ResponseEntity.status(HttpStatus.OK).body(s);
+		}
+		else {
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+		}
+	}
+	
 	@GetMapping
 	@ResponseBody
 	public ResponseEntity<List<Story>> findAll() {
 
-		List<Story> u = storyService.findAll();
-		return ResponseEntity.status(HttpStatus.OK).body(u);
+		List<Story> s = storyService.findAll();
+		return ResponseEntity.status(HttpStatus.OK).body(s);
 	}
 	
 	@PostMapping("/admin/handle")
