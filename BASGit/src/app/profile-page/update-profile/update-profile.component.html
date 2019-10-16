@@ -32,20 +32,16 @@
 
                       <div class="row">
                           <div class="col-12">
-                              <ul class="nav nav-pills  mb-4" id="myTab" role="tablist">
-
-                              </ul>
+                            <form action="/profile/update" method="POST">
                               <div class="tab-content ml-1" id="">
                                   <div class="tab-pane fade show active" id="Profile" role="tabpanel"
                                       aria-labelledby="Profile-tab">
-
-
                                       <div class="row">
                                           <div class="col-sm-3 col-md-2 col-5">
                                               <label style="font-weight:bold;">Full Name</label>
                                           </div>
                                           <div class="col-md-8 col-6">
-                                            <input type="text" name="name" id="name"  class="form-control"  placeholder="Update Name">
+                                            <input type="text" name="fullname" id="name"  class="form-control"  placeholder="Update Name">
                                           </div>
                                       </div>
                                       <hr />
@@ -67,17 +63,20 @@
                                           </div>
                                       </div>
                                       <hr />
-                                      <div class="row ">
+                                      <div class="row">
                                           <div class="col-sm-3 col-md-2 col-5">
                                               <label style="font-weight:bold;">Change Picture</label>
                                           </div>
                                           <div class="col-md-8 col-6 ">
-                                            <input type="file"  name="pic" id="pic" class="" >
+                                            <input type="file"  name="picture" id="pic" class="" >
                                           </div>
                                       </div>
-                                      <hr />
+                                      <div class="row">
+                                          <button class="btn btn-dark" type="submit">Submit</button>
+                                      </div>
                                   </div>
                               </div>
+                            </form>
                           </div>
                       </div>
                   </div>

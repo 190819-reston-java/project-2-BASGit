@@ -36,14 +36,14 @@
                                 <td>SUBMIT IMAGE (YOMAKEITSMALL)</td>
                                 <td>HIGHLIGHTED OR NOT</td>
                                 <td>
-                                    <form action="">
+                                    <form action="/stories/admin/handle" method="POST">
                                         <!-- HEY THIS SHOULD DO SOMETHING AND BE TIED TO AN ID NUMBER -->
                                         <!-- if you can't figure out the buttons, then make it a select form with a sumbit -->
 
                                         <!-- <button class="btn btn-primary mx-auto" name="changepost" type="submit" value="h " +{{article.id}}>Highlight</button> -->
-                                        <button class="btn btn-primary mx-auto">Highlight</button>
-                                        <button class="btn btn-danger mx-auto">Edit</button>
-                                        <button class="btn btn-dark mx-auto">Remove</button>
+                                        <button type="submit" name="changestory" value="ID NUMBER h" class="btn btn-primary mx-auto">Highlight</button>
+                                        <!-- <button class="btn btn-danger mx-auto">Edit</button> -->
+                                        <button type="submit" name="changestory" value="ID NUMBER r" class="btn btn-dark mx-auto">Remove</button>
                                     </form>
                                 </td>
                             </tr>
