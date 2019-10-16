@@ -2,19 +2,12 @@
     z-index: 2;
     margin-left: 240px;
     margin-top: 60px;
-    /* left: 240px; */
-    /* max-width:82%; */
     max-width: calc(100% - 240px);
-    /* width: 100%; */
 }
 
 #active {
-    /* color:#ffffff; */
-    /* z-index: 5;
-position: fixed; */
     margin-top: -4px;
-    background: linear-gradient(to right, #777777, #bbbbbb, #777777);
-    /* border-top:1.5px solid #525252; */
+    background: linear-gradient(to right, #777777, #cccccc, #777777);
     border-bottom: 2.5px solid #999999;
     height: 30px;
     width: 100%;
@@ -25,22 +18,14 @@ position: fixed; */
 }
 
 
-/* 0 1 2 3 4 5 6 7 8 9 a s d e f */
-
-
-/* 01234567890ASDEF */
-
 .newsbox {
     min-width: 355px;
     margin: 25px 0px 10px 0px;
-    padding-bottom: 25px;
-    /* max-width: 625px; */
-    /* padding-right: 3%;
-padding-left: 3%; */
+    padding: 4px 12px 25px 12px;
     background-color: #ffffff;
     border-radius: 3px;
     box-shadow: 4px 4px 8px #888888;
-    /* margin-top: 52px; */
+
 }
 
 p {
@@ -53,18 +38,18 @@ img {
 }
 
 
-.source-link a {
-  text-decoration-color:#cca830 ;
-  color:#ac870f;
+.source-link{
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;    position: absolute;
+    text-decoration-color:#cca830 ;
+    color:#ac870f;
+
 }
-.source-link {
-    /* text-align: center; */
-    /* vertical-align: bottom; */
-    margin: 0;
-    position: absolute;
-    top: 97%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.headline{
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 img {
@@ -84,4 +69,8 @@ img:hover {
     -o-transform: scale(1.05) rotate(1deg);
     transform: scale(1.05) rotate(1deg);
     opacity: 0.8;
+}
+.source-link a {
+  text-decoration-color:#cca830 ;
+  color:#ac870f;
 }
