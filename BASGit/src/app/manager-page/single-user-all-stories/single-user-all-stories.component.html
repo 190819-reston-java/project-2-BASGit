@@ -8,6 +8,34 @@
                 <h4><b>MANAGER - STORIES FROM ONE USER</b></h4>
             </div>
             <div class="col">
+                <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+                <select class="form-control">
+                <option *ngFor="let user of users" name="id" value="{{user.id}}">{{user.username}}</option>
+                </select>
+                <input type="submit" class="btn btn-dark">Submit<br>
+                </form>
+            <button class="btn btn-dark" routerLink='/manager/singleuserallstories'>Reset</button>
+
+                <div *ngIf="hasBeenClicked" class="table-responsive">
+                        <table class="table table-striped table-sm tablebox">
+                            <thead class="tableboxchild">
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Body</th>
+                                    <th>Image</th>
+                                    <th>Featured?</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let story of stories">
+                                    <td>{{story.headline}}</td>
+                                    <td>{{story.body}}</td>
+                                    <td>STORY IMAGE</td>
+                                    <td>{{story.featured}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
             </div>
         </div>
