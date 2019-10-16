@@ -84,7 +84,12 @@ public class StoryController {
 
 		Story story = storyService.createNew(request);
 		
-		return ResponseEntity.status(HttpStatus.OK).body(story);
+		if(story != null) {
+			return ResponseEntity.status(HttpStatus.OK).body(story);
+		}
+		else {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+		}
 	}
 
 }

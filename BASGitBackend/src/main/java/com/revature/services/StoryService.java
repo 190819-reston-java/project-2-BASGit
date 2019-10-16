@@ -61,7 +61,6 @@ public class StoryService {
 			}
 		} catch (IOException | ServletException e) {
 			e.printStackTrace();
-			return null;
 		}
 		catch (IllegalStateException e) {
 			file = null;
