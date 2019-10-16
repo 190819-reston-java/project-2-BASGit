@@ -4,10 +4,16 @@ a:visited {
 }
 h4 {
   font-family: "Book Antiqua", Palatino, serif;
-  /* font-family: 'Kaushan Script', cursive; */
+  display: block;
   }
-/* #top-navbar{
-    top: 0px;
-    position: fixed;
-    width: 100%;
-} */
+#logo:hover, h4:hover{
+  /* color: #cccccc !important; */
+  text-decoration: none !important;
+}
+a, .sidebar-header{
+  display: block;
+}
+.nav-link:hover{
+  border-radius: 4px;
+  background-color: #444d53;
+}
