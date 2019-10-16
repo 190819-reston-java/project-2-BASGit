@@ -36,15 +36,15 @@ const routes: Routes = [
   { path: 'manager/singleuserallstories', component: SingleUserAllStoriesComponent},
   { path: 'profile/updateprofile', component: UpdateProfileComponent},
   { path: 'profile/userallstories', component: UserAllStoriesComponent},
-  { path: 'BASGit/static/BASGit/topnews/sports', component: SportsComponent},
-  { path: 'BASGit/static/BASGit/topnews/business', component: BusinessComponent},
-  { path: 'BASGit/static/BASGit/topnews/entertainment', component: EntertainmentComponent},
-  { path: 'BASGit/static/BASGit/topnews/politics', component: PoliticsComponent},
-  { path: 'BASGit/static/BASGit/vtopnews/sports', component: SportsComponent},
-  { path: 'BASGit/static/BASGit/topnews/technology', component: TechnologyComponent},
-  { path: 'BASGit/static/BASGit/topnews/cnn', component: CnnComponent},
-  { path: 'BASGit/static/BASGit/topnews/nbc', component: NbcComponent},
-  { path: 'BASGit/static/BASGit/topnews/fox', component: FoxComponent}
+  { path: 'topnews/sports', component: SportsComponent},
+  { path: 'topnews/business', component: BusinessComponent},
+  { path: 'topnews/entertainment', component: EntertainmentComponent},
+  { path: 'topnews/politics', component: PoliticsComponent},
+  { path: 'vtopnews/sports', component: SportsComponent},
+  { path: 'topnews/technology', component: TechnologyComponent},
+  { path: 'topnews/cnn', component: CnnComponent},
+  { path: 'topnews/nbc', component: NbcComponent},
+  { path: 'topnews/fox', component: FoxComponent}
 ];
 
 
