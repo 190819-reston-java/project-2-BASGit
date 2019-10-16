@@ -118,6 +118,7 @@ public class UserRepository  {
 	}
 
 
+	@Transactional
 	public User findByUserNameAndPassword(String username, String password) {
 		Session s = sf.getCurrentSession();
 		
