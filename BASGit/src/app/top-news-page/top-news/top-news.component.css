@@ -42,6 +42,12 @@ img {
     width: auto;
     height: auto;
     max-width: 50%;
+    /* max-height: 45%; */
+}
+
+.ph-image{
+    max-width:100%;
+    margin-top:-20%;
 }
 
 .source-link {
