@@ -1,5 +1,8 @@
 package com.revature.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -17,8 +20,18 @@ public class HelloWorldController {
 	}
 	
 	@PostMapping(value="/test/formSubmission")
-	public ResponseEntity<String> buildForm(@RequestBody String JSON){
-		return ResponseEntity.status(HttpStatus.OK).body(JSON);
+	public ResponseEntity<List<String>> buildForm(@RequestBody String JSON){
+		return ResponseEntity.status(HttpStatus.OK).body(getNeededFields(JSON));
 	}
-	
+
+	private List<String> getNeededFields(String JSONString){
+		JSONString = JSONString.replaceAll("[{}]", "");
+		String[] formJSONSplit = JSONString.split(",");
+		List<String> neededFields = new ArrayList<String>();
+		for (String JSONField : formJSONSplit) {
+			neededFields.add(JSONField.split(": ")[1].replaceAll("\"", ""));
+		}
+		
+		return neededFields;
+	}
 }
