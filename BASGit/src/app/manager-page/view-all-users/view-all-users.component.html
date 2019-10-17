@@ -8,14 +8,14 @@
                 <h4><b>MANAGER - ALL USERS</b></h4>
             </div>
             <div class="col">
-                <div>
+                <!-- <div>
                     <h1></h1>
-                </div>
+                </div> -->
                 <div class="table-responsive">
                     <table class="table table-striped table-sm tablebox">
                         <thead class="tableboxchild">
                             <tr>
-                                <th>Profile Picture</th>
+                                <th class="image-column">Profile Picture</th>
                                 <th>Username</th>
                                 <th>Full Name</th>
                             </tr>
@@ -23,7 +23,7 @@
                         <tbody>
                             <tr *ngFor="let user of users">
                             <!-- article is each object, and articles is an array -->
-                                <td><img src="{{user.avatarURL}}" alt="User Profile Pic" style="width: 20px; height: 20px"></td>
+                                <td class="image-column"><img src="{{user.avatarURL}}" alt="User Profile Pic" style="width: 20px; height: 20px"></td>
                                 <td>{{user.username}}</td>
                                 <!-- <td>{{article.username (or article.id put into all users)}}</td> -->
                                 <td>{{user.fullname}}</td>
