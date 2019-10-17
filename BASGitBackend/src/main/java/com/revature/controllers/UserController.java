@@ -90,10 +90,10 @@ public class UserController {
 
 	@GetMapping(value = "/signout")
 	@ResponseBody
-	public ResponseEntity<User> signOut(User user, HttpServletRequest request, HttpServletResponse response){
+	public ResponseEntity signOut(User user, HttpServletRequest request, HttpServletResponse response){
 		request.getSession().setAttribute("currentUser", null);
 
-		return ResponseEntity.status(HttpStatus.OK).body(user);
+		return ResponseEntity.status(HttpStatus.OK).build();
 	}
 	
 	@PostMapping(value = "/profile/update")
