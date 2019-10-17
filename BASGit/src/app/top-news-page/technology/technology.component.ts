@@ -13,7 +13,7 @@ export class TechnologyComponent implements OnInit {
   newsSelection: String = "country=us&category=technology";
 
   //for the Banner
-  pageName='POLITICS';
+  pageName='TECHNOLOGY';
 
   //Detects if the source is Fox, CNN, or NBC
   sourceCheck(sourceJson){

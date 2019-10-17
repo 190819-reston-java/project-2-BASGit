@@ -2,24 +2,13 @@
   z-index:-1;
   width: 1000%;
   height: 500%;
-transform: translate(-30%, -50%);
+  transform: translate(-30%, -50%);
   position: fixed;
   background-color:rgba(0, 0, 0, 0.6);
-}
-.dropdown-menu-right{
-  background-color: rgba(0, 0, 0, 0.0);
-  border: 1px solid rgba(0, 0, 0, 0.0);
-  height: 1%;
-  width: 1%;
 }
 
 .form-control{
   border: 1.5px solid #cccccc;
-}
-
-h4{
-  margin: 6px 0px 16px 0px;
-  /* text-align: center; */
 }
 
 /* NUMBER 1: */
@@ -27,20 +16,17 @@ h4{
   z-index: 100;
   background-color: #eeeeee;
   border:2px solid #cccccc;
-  width:250px;
+  width:400px;
   position:fixed;
   left: 50%;
   top: 50%;
-transform: translate(-125px, -160px);
+  transform: translate(-125px, -160px);
   border-radius:8px;
 }
-.btn-dark{
-width:100%;
-margin-top:6px;
-margin-bottom:-10px;
-}
+
 .btn-primary{
-  width:100%;
+  margin: 100px;
+  width:50%;
   margin-top:6px;
   margin-bottom:-10px;
 }
@@ -50,19 +36,20 @@ a p{
   color: #cca830;
 
 }
-#overlay{
-  z-index:-1;
-  width: 1000%;
-  height: 500%;
-transform: translate(-30%, -50%);
-  position: fixed;
-  background-color:#0000007c;
+.form-group{
+  width:50%;
+  margin-left: 100px;
+}
+h4 {
+  margin-top:20px;
+  width:50%;
+  margin-left: 100px;
 }
 #signin{
-background: linear-gradient(to right, #ac870f, #ffdc6b, #ac870f);
-border: 2.5px solid #cca830;
-color: #554100;
-font-family: "Book Antiqua", Palatino, serif;
+  background: linear-gradient(to right, #ac870f, #ffdc6b, #ac870f);
+  border: 2.5px solid #cca830;
+  color: #554100;
+  font-family: "Book Antiqua", Palatino, serif;
 }
 
 div div a {
@@ -70,6 +57,6 @@ text-decoration-color:#cca830 ;
 }
 
 body {
-  height: calc(100vh - 100px) !important;
+height: calc(100vh - 100px) !important;
 
 }
