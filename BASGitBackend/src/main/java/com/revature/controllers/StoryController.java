@@ -1,5 +1,6 @@
 package com.revature.controllers;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +26,9 @@ import com.revature.services.StoryService;
 @RequestMapping(value = "/stories")
 public class StoryController {
 
+	public String ALLSTORIESPAGE = "http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/static/BASGit/#/manager/manageralluserstories";
+	public String USERNEWSPAGE = "http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/static/BASGit/#/userstories/alluserstories";
+	
 	@Autowired
 	private StoryService storyService;
 
@@ -77,9 +81,10 @@ public class StoryController {
 	
 	@PostMapping("/admin/handle")
 	@ResponseBody
-	public ResponseEntity<Story> handleStory(@RequestBody String adminHandlerJSON, HttpServletRequest request, HttpServletResponse response){
+	public ResponseEntity<Story> handleStory(@RequestBody String adminHandlerJSON, HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
 		Story s = storyService.handleStory(adminHandlerJSON, request);
+		response.sendRedirect(ALLSTORIESPAGE);
 		return ResponseEntity.status(HttpStatus.OK).body(s);
 		
 	}
@@ -94,10 +99,11 @@ public class StoryController {
 
 	@PostMapping(value = "/profiles/submit")
 	@ResponseBody
-	public ResponseEntity<Story> createNew(@RequestBody String JSONStoryCreation, HttpServletRequest request, HttpServletResponse response) {
+	public ResponseEntity<Story> createNew(@RequestBody String JSONStoryCreation, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		Story story = storyService.createNew(JSONStoryCreation, request);
 		
+		response.sendRedirect(USERNEWSPAGE);
 		if(story != null) {
 			return ResponseEntity.status(HttpStatus.OK).body(story);
 		}
