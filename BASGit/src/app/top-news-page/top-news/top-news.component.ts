@@ -19,6 +19,24 @@ export class TopNewsComponent implements OnInit {
     }
   }
 
+  sourceCheck(sourceJson){
+    if(sourceJson === 'NBC News'||sourceJson === 'CNN'||sourceJson === 'Fox News'){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  sourceDirector(sourceJson){
+    if(sourceJson === 'NBC News'){
+      return "/topnews/nbc";
+    } else if(sourceJson === 'CNN') {
+      return "/topnews/cnn";
+    } else {
+      return "/topnews/fox";
+    }
+  }
+
   synopsisStatus(synopsisJson) {
     //this is for youtube stories that give a boilerplate synopsis that says nothing
     if(synopsisJson === "[[getSimpleString(data.title)]]\r\n[[getSimpleString(data.description)]]\r\n[[getSimpleString(data.videoCountText)]]") {
