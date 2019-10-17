@@ -76,36 +76,37 @@ img:hover {
   color:#ac870f;
 }
 
-/* h4 span a{
+/* .badge-dark{
+    font-family: "Book Antiqua", Palatino, serif;
+} */
+
+/* h4 a{
+    color:#669cff;
+}
+h4 a:hover{
+    text-decoration:none;
     color:#ffffff;
 }
-h4 span a:hover{
-    text-decoration:none;
-    color: #444444;
-}
 .link-badge{
-    background: linear-gradient(to right, #777777, #888888, #777777);
+    background: linear-gradient(to right, #7c7c7c, #999999, #7c7c7c);
 }
 .link-badge:hover{
     background: linear-gradient(to right, #aaaaaa, #cccccc, #aaaaaa);
+    background: linear-gradient(to right, #7c7c7c, #999999, #7c7c7c);
 } */
-h4 span a, h4 a{
-    color:#2d2d2d;
-    /* color: inherit; */
+h4 a{
+    color:#0099ff;
+    text-decoration:underline;
 }
-h4 span a:hover, h4 a:hover{
-    text-decoration:none;
-    /* color: #ffffff; */
+h4 a:hover{
+    /* text-decoration:none; */
+    text-decoration:underline;
+    color:#6adcff;
 }
+
 /* .link-badge{
-    background: linear-gradient(to right, #aaaaaa, #cccccc, #aaaaaa);
+    background: linear-gradient(to right, #999999, #aaaaaa, #999999);
 }
 .link-badge:hover{
-    background: linear-gradient(to right, #cccccc, #eeeeee, #cccccc);
+    background: linear-gradient(to right, #bbbbbb, #cccccc 70%, #c2c2c2);
 } */
-.link-badge{
-    background: linear-gradient(to right, #aaaaaa, #bbbbbb, #aaaaaa);
-}
-.link-badge:hover{
-    background: linear-gradient(to right, #9e9e9e, #bbbbbb 70%, #afafaf);
-}
