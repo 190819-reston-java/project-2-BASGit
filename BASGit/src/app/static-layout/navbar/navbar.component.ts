@@ -10,17 +10,17 @@ import { NgForm } from '@angular/forms'
 })
 export class NavbarComponent implements OnInit {
 
-  loggedInUser: any;
+  loggedInUser: any = null;
 
   constructor(private http: HttpClient) { }
 
   //HEY, MAKE SURE TO CHECK THIS ENDPOINT
 
   checkLoggedIn() {
-    if(this.loggedInUser) {
-      return true;
-    } else {
+    if(this.loggedInUser === null) {
       return false;
+    } else {
+      return true;
     }
   }
 
