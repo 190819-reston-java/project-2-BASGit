@@ -30,10 +30,10 @@
                                 <td>{{story.featured}}</td>
                                 <td>{{story.author.username}}</td>
                                 <td>
-                                    <button (click)="highlightStory(story.id)" class="btn btn-primary mx-auto">Highlight</button>
+                                    <button id="approve" (click)="highlightStory(story.id)" class="btn btn-primary mx-auto">Highlight</button>
                                 </td>
                                 <td>
-                                    <button (click)="removeStory(story.id)" class="btn btn-primary mx-auto">Remove</button>
+                                    <button id="remove" (click)="removeStory(story.id)" class="btn btn-primary mx-auto">Remove</button>
                                 </td>
                             </tr>
                         </tbody>
