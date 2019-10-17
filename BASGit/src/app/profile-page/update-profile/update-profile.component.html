@@ -12,14 +12,13 @@
                         <div class="card-title mb-4">
                             <div class="d-flex justify-content-start">
                                 <div class="image-container">
-                                    <img src="http://placehold.it/150x150" id="imgProfile"
+                                    <img src="{{loggedInUser.avatarURL}}" id="imgProfile"
                                         style="width: 150px; height: 150px" class="img-thumbnail" />
                                     <div class="middle">
                                     </div>
                                 </div>
                                 <div class="userData ml-3">
-                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold">jane777</h2>
-
+                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold">{{loggedInUser.username}}</h2>
                                 </div>
 
                             </div>

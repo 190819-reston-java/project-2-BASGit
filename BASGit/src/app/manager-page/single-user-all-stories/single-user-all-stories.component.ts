@@ -9,22 +9,14 @@ import { NgForm } from '@angular/forms'
 })
 export class SingleUserAllStoriesComponent implements OnInit {
 
-  users: any;
   stories: any;
+
   constructor(private http : HttpClient) { }
 
-  getStories(id) {
-    let storiesobservable = this.http.get(`http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/stories/user/${id}`)
-    storiesobservable.subscribe((res => {
-      this.stories = res;
-    }))
-    return this.stories;
-  }
-
   ngOnInit() {
-    let userobservable = this.http.get('http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users')
-    userobservable.subscribe((result => {
-      this.users = result;
+    let observable = this.http.get('http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/stories/byUser')
+    observable.subscribe((result => {
+      this.stories = result;
     }))
   }
 }

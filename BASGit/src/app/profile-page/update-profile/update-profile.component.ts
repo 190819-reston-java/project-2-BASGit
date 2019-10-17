@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./update-profile.component.css']
 })
 export class UpdateProfileComponent implements OnInit {
+  
+  loggedInUser: any;
 
   constructor(private http: HttpClient,
     private router: Router) { }
@@ -25,6 +27,10 @@ export class UpdateProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    let observable = this.http.get('http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/current')
+    observable.subscribe((result => {
+      this.loggedInUser = result;
+    }))
   }
 
 }
