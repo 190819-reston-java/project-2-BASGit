@@ -31,11 +31,11 @@
                                 <td>{{story.featured}}</td>
                                 <td>{{story.author.username}}</td>
                                 <td>
-                                    <form #f="ngForm" (ngSubmit)="onSubmitH(f)" novalidate>
+                                    <form #f="ngForm" (ngSubmit)="onSubmitH(f)" novalidate class="d-inline">
                                         <button type="submit" name="changestory" ngModel value="story.id h"
                                             class="btn btn-primary mx-auto">Highlight</button>
                                     </form>
-                                    <form #f="ngForm" (ngSubmit)="onSubmitR(f)" novalidate>
+                                    <form #f="ngForm" (ngSubmit)="onSubmitR(f)" novalidate class="d-inline">
                                         <button type="submit" name="changestory" ngModel value="story.id r"
                                             class="btn btn-primary mx-auto">Remove</button>
                                     </form>
