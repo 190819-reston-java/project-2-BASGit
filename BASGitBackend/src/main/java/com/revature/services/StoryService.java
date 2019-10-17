@@ -108,12 +108,12 @@ public class StoryService {
 
 		if (decision == "h") {
 			s = highlight(s);
+			s = storyRepository.save(s);
 		} else if (decision == "r") {
 			delete(s);
 			s = null;
 		}
 
-		s = storyRepository.save(s);
 		return s;
 
 	}
