@@ -1,6 +1,7 @@
 package com.revature.models;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -41,15 +42,15 @@ public class User implements Serializable{
 	private String fullname;
 
 	@JsonIgnore
-	@OneToMany(mappedBy = "id", cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
+	@OneToMany(mappedBy = "author", cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
 			CascadeType.REFRESH })
-	private Set<Story> stories;
+	private List<Story> stories;
 
 	public User() {
 	}
 
 	public User(int id, String username, String password, String avatarURL, boolean isAdmin, String fullname,
-			Set<Story> stories) {
+			List<Story> stories) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
@@ -120,12 +121,12 @@ public class User implements Serializable{
 	}
 
 	
-	public Set<Story> getStories() {
+	public List<Story> getStories() {
 		return stories;
 	}
 
 	
-	public void setStories(Set<Story> stories) {
+	public void setStories(List<Story> stories) {
 		this.stories = stories;
 	}
 	
