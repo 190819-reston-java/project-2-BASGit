@@ -24,7 +24,7 @@ export class SignUpPageComponent implements OnInit {
     console.log(f.value);  // { first: '', last: '' }
     console.log(JSON.stringify(f.value));
     console.log(f.valid);  // false
-    this.router.navigateByUrl("/topnews/topnews");
+    window.location.href = 'http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/static/BASGit/';
   }
 
   
