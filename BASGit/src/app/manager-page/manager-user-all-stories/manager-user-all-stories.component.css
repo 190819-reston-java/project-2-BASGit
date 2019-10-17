@@ -92,6 +92,6 @@ body {
   font-family: "Book Antiqua", Palatino, serif;
 }
 #manager{
-  padding-right: 10px;
+  text-align: right;
 }
 
