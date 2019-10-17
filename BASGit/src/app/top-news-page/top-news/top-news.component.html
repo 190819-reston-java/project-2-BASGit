@@ -20,7 +20,7 @@
           class="badge badge-dark">{{topNews.articles[0].source.name}}</span></h4>
 
       <h4 class="headline">{{topNews.articles[0].title}}</h4>
-      <h6>Published At: {{topNews.articles[0].publishedAt}}</h6>
+      <h6>Published At: {{topNews.articles[0].publishedAt | date:'shortTime'}}</h6>
       <img *ngIf="imageStatus(topNews.articles[0].urlToImage)" src="{{topNews.articles[0].urlToImage}}"
         alt="Article One Image" height="25%" width="50%">
       <img *ngIf="!imageStatus(topNews.articles[0].urlToImage)" src="../assets/defaultimage.png" alt="Article One Image"
@@ -41,7 +41,7 @@
 
 
       <h4 class="headline">{{topNews.articles[1].title}}</h4>
-      <h6>Published At: {{topNews.articles[1].publishedAt}}</h6>
+      <h6>Published At: {{topNews.articles[1].publishedAt | date:'shortTime'}}</h6>
       <img *ngIf="imageStatus(topNews.articles[1].urlToImage)" src="{{topNews.articles[1].urlToImage}}"
         alt="Article Two Image" height="25%" width="50%">
       <img *ngIf="!imageStatus(topNews.articles[1].urlToImage)" src="../assets/defaultimage.png" alt="Article Two Image"
@@ -61,7 +61,7 @@
           class="badge badge-dark">{{topNews.articles[2].source.name}}</span></h4>
 
       <h4 class="headline">{{topNews.articles[2].title}}</h4>
-      <h6>Published At: {{topNews.articles[2].publishedAt}}</h6>
+      <h6>Published At: {{topNews.articles[2].publishedAt | date:'shortTime'}}</h6>
       <img *ngIf="imageStatus(topNews.articles[2].urlToImage)" src="{{topNews.articles[2].urlToImage}}"
         alt="Article Three Image" height="25%" width="50%">
       <img *ngIf="!imageStatus(topNews.articles[2].urlToImage)" src="../assets/defaultimage.png"
@@ -81,7 +81,7 @@
           class="badge badge-dark">{{topNews.articles[3].source.name}}</span></h4>
 
       <h4 class="headline">{{topNews.articles[3].title}}</h4>
-      <h6>Published At: {{topNews.articles[3].publishedAt}}</h6>
+      <h6>Published At: {{topNews.articles[3].publishedAt | date:'shortTime'}}</h6>
       <img *ngIf="imageStatus(topNews.articles[3].urlToImage)" src="{{topNews.articles[3].urlToImage}}"
         alt="Article Four Image" height="25%" width="50%">
       <img *ngIf="!imageStatus(topNews.articles[3].urlToImage)" src="../assets/defaultimage.png"
@@ -101,7 +101,7 @@
 
 
       <h4 class="headline">{{topNews.articles[4].title}}</h4>
-      <h6>Published At: {{topNews.articles[4].publishedAt}}</h6>
+      <h6>Published At: {{topNews.articles[4].publishedAt | date:'shortTime'}}</h6>
       <img *ngIf="imageStatus(topNews.articles[4].urlToImage)" src="{{topNews.articles[4].urlToImage}}"
         alt="Article Five Image" height="25%" width="50%">
       <img *ngIf="!imageStatus(topNews.articles[4].urlToImage)" src="../assets/defaultimage.png"
@@ -121,7 +121,7 @@
 
 
       <h4 class="headline">{{topNews.articles[5].title}}</h4>
-      <h6>Published At: {{topNews.articles[5].publishedAt}}</h6>
+      <h6>Published At: {{topNews.articles[5].publishedAt | date:'shortTime'}}</h6>
       <img *ngIf="imageStatus(topNews.articles[5].urlToImage)" src="{{topNews.articles[5].urlToImage}}"
         alt="Article Two Image" height="25%" width="50%">
       <img *ngIf="!imageStatus(topNews.articles[5].urlToImage)" src="../assets/defaultimage.png" alt="Article One Image"
@@ -141,7 +141,7 @@
 
 
       <h4 class="headline">{{topNews.articles[6].title}}</h4>
-      <h6>Published At: {{topNews.articles[6].publishedAt}}</h6>
+      <h6>Published At: {{topNews.articles[6].publishedAt | date:'shortTime'}}</h6>
       <img *ngIf="imageStatus(topNews.articles[6].urlToImage)" src="{{topNews.articles[6].urlToImage}}"
         alt="Article One Image" height="25%" width="50%">
       <img *ngIf="!imageStatus(topNews.articles[6].urlToImage)" src="../assets/defaultimage.png" alt="Article One Image"
@@ -161,7 +161,7 @@
 
 
       <h4 class="headline">{{topNews.articles[7].title}}</h4>
-      <h6>Published At: {{topNews.articles[7].publishedAt}}</h6>
+      <h6>Published At: {{topNews.articles[7].publishedAt | date:'shortTime'}}</h6>
       <img *ngIf="imageStatus(topNews.articles[7].urlToImage)" src="{{topNews.articles[7].urlToImage}}"
         alt="Article Two Image" height="25%" width="50%">
       <img *ngIf="!imageStatus(topNews.articles[7].urlToImage)" src="../assets/defaultimage.png" alt="Article One Image"
@@ -181,7 +181,7 @@
 
 
       <h4 class="headline">{{topNews.articles[8].title}}</h4>
-      <h6>Published At: {{topNews.articles[8].publishedAt}}</h6>
+      <h6>Published At: {{topNews.articles[8].publishedAt | date:'shortTime'}}</h6>
       <img *ngIf="imageStatus(topNews.articles[8].urlToImage)" src="{{topNews.articles[8].urlToImage}}"
         alt="Article Two Image" height="25%" width="50%">
       <img *ngIf="!imageStatus(topNews.articles[8].urlToImage)" src="../assets/defaultimage.png" alt="Article One Image"
@@ -201,7 +201,7 @@
 
 
       <h4 class="headline">{{topNews.articles[9].title}}</h4>
-      <h6>Published At: {{topNews.articles[9].publishedAt}}</h6>
+      <h6>Published At: {{topNews.articles[9].publishedAt | date:'shortTime'}}</h6>
       <img *ngIf="imageStatus(topNews.articles[9].urlToImage)" src="{{topNews.articles[9].urlToImage}}"
         alt="Article One Image" height="25%" width="50%">
       <img *ngIf="!imageStatus(topNews.articles[9].urlToImage)" src="../assets/defaultimage.png" alt="Article One Image"
@@ -221,7 +221,7 @@
 
 
       <h4 class="headline">{{topNews.articles[10].title}}</h4>
-      <h6>Published At: {{topNews.articles[10].publishedAt}}</h6>
+      <h6>Published At: {{topNews.articles[10].publishedAt | date:'shortTime'}}</h6>
       <img *ngIf="imageStatus(topNews.articles[10].urlToImage)" src="{{topNews.articles[10].urlToImage}}"
         alt="Article Two Image" height="25%" width="50%">
       <img *ngIf="!imageStatus(topNews.articles[10].urlToImage)" src="../assets/defaultimage.png"
@@ -241,7 +241,7 @@
 
 
       <h4 class="headline">{{topNews.articles[11].title}}</h4>
-      <h6>Published At: {{topNews.articles[11].publishedAt}}</h6>
+      <h6>Published At: {{topNews.articles[11].publishedAt | date:'shortTime'}}</h6>
       <img *ngIf="imageStatus(topNews.articles[11].urlToImage)" src="{{topNews.articles[11].urlToImage}}"
         alt="Article Two Image" height="25%" width="50%">
       <img *ngIf="!imageStatus(topNews.articles[11].urlToImage)" src="../assets/defaultimage.png"
