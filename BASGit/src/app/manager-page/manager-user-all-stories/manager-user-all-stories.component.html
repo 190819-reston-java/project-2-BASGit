@@ -32,11 +32,11 @@
                                 <td>{{story.author.username}}</td>
                                 <td>
                                     <form #f="ngForm" (ngSubmit)="onSubmitH(f)" novalidate>
-                                        <button type="submit" name="changestory" onClick="window.location.reload();" ngModel value="{{story.id}} h"
+                                        <button type="submit" name="changestory" ngModel value="{{story.id}} h"
                                             class="btn btn-primary mx-auto">Highlight</button>
                                     </form>
                                     <form #f="ngForm" (ngSubmit)="onSubmitR(f)" novalidate>
-                                        <button type="submit" name="changestory" onClick="window.location.reload();" ngModel value="{{story.id}} r"
+                                        <button type="submit" name="changestory"ngModel value="{{story.id}} r"
                                             class="btn btn-primary mx-auto">Remove</button>
                                     </form>
                                 </td>
