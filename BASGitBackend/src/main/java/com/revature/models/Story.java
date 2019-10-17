@@ -25,7 +25,7 @@ public class Story implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "story_id")
 	private int id;
-	@Column
+	@Column(length = 5000)
 	private String body;
 	@Column
 	private String headline;
