@@ -10,11 +10,19 @@ import { NgForm } from '@angular/forms'
 })
 export class NavbarComponent implements OnInit {
 
-  loggedInUser: any = null;
+  loggedInUser: any;
 
   constructor(private http: HttpClient) { }
 
   //HEY, MAKE SURE TO CHECK THIS ENDPOINT
+
+  checkLoggedIn() {
+    if(this.loggedInUser) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   onSubmit(f: NgForm) {
     this.http.get("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/signout").subscribe(res=>{
