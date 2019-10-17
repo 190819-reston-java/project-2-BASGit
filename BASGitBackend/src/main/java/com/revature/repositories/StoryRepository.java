@@ -4,10 +4,8 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Properties;
-import java.util.Set;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,7 +13,6 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.amazonaws.auth.BasicAWSCredentials;
@@ -134,6 +131,7 @@ public class StoryRepository {
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	@Transactional
 	public List<Story> findAllByAuthor(int id) {
 		Session s = sf.getCurrentSession();
@@ -143,6 +141,7 @@ public class StoryRepository {
 				.list();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Transactional
 	public List<Story> findAllFeatured() {
 		Session s = sf.getCurrentSession();
