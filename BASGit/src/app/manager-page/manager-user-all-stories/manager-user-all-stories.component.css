@@ -77,4 +77,18 @@ opacity: 0.8;
 body {
   min-height: 650px;
 }
+#approve{
+  font-weight: bold;
+  background: linear-gradient(to right, #ac870f, #ffdc6b, #ac870f);
+  border: 2.5px solid #cca830;
+  color: black;
+  font-family: "Book Antiqua", Palatino, serif;
+}
+#remove {
+  font-weight: bold;
+  background: linear-gradient(to right,#BA110c, #ff2400, #BA110c);
+  border: 2.5px solid #BA110c;
+  color: black;
+  font-family: "Book Antiqua", Palatino, serif;
+}
 
