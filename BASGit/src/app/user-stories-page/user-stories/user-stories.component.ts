@@ -17,7 +17,8 @@ export class UserStoriesComponent implements OnInit {
     let catobservable = this.http.get('http://aws.random.cat/meow')
     catobservable.subscribe((res => {
       this.cat = res;
-      return this.cat.file;
+     let catstring: String = this.cat.file;
+     return catstring.replace(/\\/g, '');
     }))
   }
 

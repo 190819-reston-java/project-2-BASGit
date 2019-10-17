@@ -14,11 +14,7 @@ export class NavbarComponent implements OnInit {
   loggedInUser: any = null;
 
   constructor(private http: HttpClient,
-    private router: Router) { 
-      this.router.routeReuseStrategy.shouldReuseRoute = function() {
-        return false;
-    };
-    }
+    private router: Router) { }
 
   onSubmit(f: NgForm) {
     this.http.get("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/signout").subscribe(res=>{
