@@ -116,7 +116,7 @@ public class UserController {
 
 		User u = userService.signUp(JSONString);
 		u = userService.save(u);
-		request.setAttribute("currentUser", u);
+		request.getSession().setAttribute("currentUser", u);
 		return ResponseEntity.status(HttpStatus.OK).body(u);
 	}
 	
