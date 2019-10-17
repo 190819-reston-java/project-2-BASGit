@@ -29,8 +29,8 @@
                                 <td>{{story.featured}}</td>
                                 <td>{{story.author.username}}</td>
                                 <td>
-                                    <button ng-click="highlightStory(story.id)" class="btn btn-primary mx-auto">Highlight</button>
-                                    <button ng-click="removeStory(story.id)" class="btn btn-primary mx-auto">Remove</button>
+                                    <button (click)="highlightStory(story.id)" class="btn btn-primary mx-auto">Highlight</button>
+                                    <button (click)="removeStory(story.id)" class="btn btn-primary mx-auto">Remove</button>
                                 </td>
                             </tr>
                         </tbody>
