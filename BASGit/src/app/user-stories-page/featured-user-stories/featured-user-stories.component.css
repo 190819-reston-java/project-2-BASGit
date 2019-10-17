@@ -5,8 +5,9 @@
   max-width: calc(100% - 240px);
 }
 
-#active {
-  margin-top: -4px;
+.header {
+
+  margin-top: -6px;
   background: linear-gradient(to right, #ac870f, #ffdc6b, #ac870f);
   border-bottom: 2.5px solid #cca830;
   font-family: "Book Antiqua", Palatino, serif;
@@ -41,9 +42,7 @@ button:hover {
   padding: 5px;
   height: 100px;
   display: flex;
-  /* background-color:#666666; */
   background: linear-gradient(#888888 50%, #828282 50.1%, #6e6e6e);
-  /* border: 2px solid #bbbbbb; */
   box-shadow: 4px 4px 8px #888888;
   border-top: 2px solid #888888;
   border-radius: 4px 4px 4px 4px;
@@ -52,8 +51,6 @@ button:hover {
 }
 
 #news-view {
-  /* background-color:#ccc; */
-  /* max-width:82%; */
   width: calc(100% - 240px);
 }
 

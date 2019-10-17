@@ -21,7 +21,7 @@
 
 .newsbox {
     min-width: 355px;
-    margin: 25px 0px 10px 0px;
+    margin: 30px 0px 10px 0px;
     padding: 4px 12px 25px 12px;
     background-color: #ffffff;
     border-radius: 3px;
@@ -76,24 +76,7 @@ img:hover {
   color:#ac870f;
 }
 
-/* .badge-dark{
-    font-family: "Book Antiqua", Palatino, serif;
-} */
 
-/* h4 a{
-    color:#669cff;
-}
-h4 a:hover{
-    text-decoration:none;
-    color:#ffffff;
-}
-.link-badge{
-    background: linear-gradient(to right, #7c7c7c, #999999, #7c7c7c);
-}
-.link-badge:hover{
-    background: linear-gradient(to right, #aaaaaa, #cccccc, #aaaaaa);
-    background: linear-gradient(to right, #7c7c7c, #999999, #7c7c7c);
-} */
 h4 a{
     color:#0099ff;
     text-decoration:underline;
@@ -103,10 +86,3 @@ h4 a:hover{
     text-decoration:underline;
     color:#6adcff;
 }
-
-/* .link-badge{
-    background: linear-gradient(to right, #999999, #aaaaaa, #999999);
-}
-.link-badge:hover{
-    background: linear-gradient(to right, #bbbbbb, #cccccc 70%, #c2c2c2);
-} */
