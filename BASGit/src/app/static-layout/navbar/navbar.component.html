@@ -6,8 +6,8 @@
     <a class="nav-link d-inline text-white" routerLink="/userstories/alluserstories">User News</a>
     <a class="nav-link d-inline text-white" routerLink="/manager/manageralluserstories">Manager Page</a>
     <a class="nav-link d-inline text-white" routerLink="/profile/profilepage">Profile Page</a>
-    <app-account-dropdown class="d-inline"></app-account-dropdown>
+    <button class="btn btn-dark" routerLink='/login/login'>Login/SignUp</button>
     <form  #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-        <button class="btn btn-dark" routerLink="/topnews/topnews" type="submit">Sign Out</button>
+        <button class="btn btn-dark" type="submit">Sign Out</button>
     </form>
 </nav>

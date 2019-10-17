@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-featured-user-stories',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeaturedUserStoriesComponent implements OnInit {
 
-  constructor() { }
+  cat: any;
+  userNews: any;
+
+  constructor(private http : HttpClient) { }
+
+  getRandomCatPicture() {
+    let catobservable = this.http.get('http://aws.random.cat/meow')
+    catobservable.subscribe((res => {
+      this.cat = res;
+      return this.cat.file;
+    }))
+  }
 
   ngOnInit() {
+    let observable = this.http.get('http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/stories/featured')
+    observable.subscribe((result => {
+      this.userNews = result;
+    }))
   }
 
 }

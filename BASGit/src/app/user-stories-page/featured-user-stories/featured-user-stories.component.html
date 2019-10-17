@@ -7,45 +7,28 @@
                 <h4><b>USER NEWS</b></h4>
             </div>
             <!-- <div class="col-sm-3 mx-auto newsbox">
-                <h5>Title</h5>
-                <h4>Published By</h4>
-                <h6>Published At: A TIME</h6>
-                <img *ngIf="false" src="{{topNews.articles[0].urlToImage}}" alt="Article One Image" height="25%" width="50%">
-                <img *ngIf="true" src="../assets/defaultimage.png" alt="Article One Image" height="25%" width="50%">
-                <p *ngIf="true">CONTENT</p>
-                <p *ngIf="false">{{topNews.articles[0].description}}</p>
-                <h6 class="source-link"><a href="#" target="_blank">Original Article</a></h6>
+                <h5>{{userNews[0].headline}}</h5>
+                <h4>Published by: {{userNews[0].author.username}}</h4>
+                <img [src]="getRandomCatPicture()" alt="Article One Image" height="100px" width="200px">
+                <p>{{userNews[0].body}}</p>
             </div>
             <div class="col-sm-3 mx-auto newsbox">
-                <h5>Title</h5>
-                <h4>Published By</h4>
-                <h6>Published At: A TIME</h6>
-                <img *ngIf="false" src="{{topNews.articles[0].urlToImage}}" alt="Article One Image" height="25%" width="50%">
-                <img *ngIf="true" src="../assets/defaultimage.png" alt="Article One Image" height="25%" width="50%">
-                <p *ngIf="true">CONTENT</p>
-                <p *ngIf="false">{{topNews.articles[0].description}}</p>
-                <h6 class="source-link"><a href="#" target="_blank">Original Article</a></h6>
+                <h5>{{userNews[1].headline}}</h5>
+                <h4>Published by: {{userNews[1].author.username}}</h4>
+                <img [src]="getRandomCatPicture()" alt="Article Two Image" height="100px" width="200px">
+                <p>{{userNews[1].body}}</p>
             </div>
             <div class="col-sm-3 mx-auto newsbox">
-                <h5>Title</h5>
-                <h4>Published By</h4>
-                <h6>Published At: A TIME</h6>
-                <img *ngIf="false" src="{{topNews.articles[0].urlToImage}}" alt="Article One Image" height="25%" width="50%">
-                <img *ngIf="true" src="../assets/defaultimage.png" alt="Article One Image" height="25%" width="50%">
-                <p *ngIf="true">CONTENT</p>
-                <p *ngIf="false">{{topNews.articles[0].description}}</p>
-                <h6 class="source-link"><a href="#" target="_blank">Original Article</a></h6>
+                <h5>{{userNews[2].headline}}</h5>
+                <h4>Published by: {{userNews[2].author.username}}</h4>
+                <img [src]="getRandomCatPicture()" alt="Article Two Image" height="100px" width="200px">
+                <p>{{userNews[2].body}}</p>
             </div>
-
             <div class="col-sm-3 mx-auto newsbox">
-                <h5>Title</h5>
-                <h4>Published By</h4>
-                <h6>Published At: A TIME</h6>
-                <img *ngIf="false" src="{{topNews.articles[0].urlToImage}}" alt="Article One Image" height="25%" width="50%">
-                <img *ngIf="true" src="../assets/defaultimage.png" alt="Article One Image" height="25%" width="50%">
-                <p *ngIf="true">CONTENT</p>
-                <p *ngIf="false">{{topNews.articles[0].description}}</p>
-                <h6 class="source-link"><a href="#" target="_blank">Original Article</a></h6>
+                <h5>{{userNews[3].headline}}</h5>
+                <h4>Published by: {{userNews[3].author.username}}</h4>
+                <img [src]="getRandomCatPicture()" alt="Article Three Image" height="100px" width="200px">
+                <p>{{userNews[3].body}}</p>
             </div> -->
         </div>
     </div>

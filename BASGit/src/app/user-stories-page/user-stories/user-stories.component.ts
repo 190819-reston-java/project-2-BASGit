@@ -8,9 +8,20 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserStoriesComponent implements OnInit {
 
+  cat: any;
   userNews: any;
 
   constructor(private http : HttpClient) { }
+
+  getRandomCatPicture() {
+    let catobservable = this.http.get('http://aws.random.cat/meow')
+    catobservable.subscribe((res => {
+      this.cat = res;
+      return this.cat.file;
+    }))
+  }
+
+  
 
   ngOnInit() {
     let observable = this.http.get('http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/stories')
@@ -18,5 +29,7 @@ export class UserStoriesComponent implements OnInit {
       this.userNews = result;
     }))
   }
+
+
 
 }

@@ -1,0 +1,45 @@
+<div>
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Sign in
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+            <div>
+                <h5>Sign into your account:</h5>
+                <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+                    <table>
+                        <tr>
+                            <td>
+                                <h6>Username:</h6>
+                            </td>
+                            <td>
+                                <input type="text" name="username" ngModel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h6 style="min-width:85px">Password:</h6>
+                            </td>
+                            <td>
+                                <input type="password" name="password" ngModel><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" class="btn btn-dark">Submit<br>
+                            </td>
+                        </tr>
+                      
+                        <tr>
+                            <td colspan="2">
+                                <a routerLink="/signup/signup"><p><i>register a new account</i></p></a>
+                            </td>
+                        </tr>
+                    </table>
+                  </form>
+               
+            </div>
+      
+          <div id="overlay"></div>
+        </div>
+      </div>
