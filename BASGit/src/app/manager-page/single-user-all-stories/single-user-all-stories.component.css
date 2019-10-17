@@ -18,6 +18,25 @@
     font-family: "Book Antiqua", Palatino, serif;
 }
 
+
+th{
+    border: none;
+}
+.tablebox{
+    margin-top:12px;
+}
+th p{
+    font-weight: bold;
+    color: #ffffff;
+    background-color:#6C757D;
+    border-radius: 3px;
+    padding: 2px 5px 2px 5px;
+}
+
+.usernameColumn{
+    width: 200px;
+}
+
 button {
     min-width: 100px;
     border: 2px solid #bbbbbb;
