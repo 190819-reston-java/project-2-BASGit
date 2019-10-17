@@ -39,4 +39,23 @@ public class HelloWorldController {
 		
 		return neededFields;
 	}
+	
+	@PostMapping(value="/test/storySubmission")
+	public ResponseEntity<List<String>> buildStory(@RequestBody String JSON){
+		return ResponseEntity.status(HttpStatus.OK).body(getNeededStoryFields(JSON));
+	}
+	
+	private List<String> getNeededStoryFields(String JSONString){
+		
+		JSONString = JSONString.substring(1, JSONString.length() - 1);
+		
+		JSONString = JSONString.replaceFirst("\"title\":", "");
+		String[]JSONParts = JSONString.split("\"synopsis\":");
+		List<String> neededFields = new ArrayList<String>();
+		for(String part : JSONParts) {
+			neededFields.add(part);
+		}
+		
+		return neededFields;
+	}
 }

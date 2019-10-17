@@ -40,7 +40,7 @@ public class StoryService {
 
 	public Story createNew(String JSONToProcess, HttpServletRequest request) {
 		
-		List<String> neededFields = getNeededFields(JSONToProcess);
+		List<String> neededFields = getNeededStoryFields(JSONToProcess);
 
 		User u = (User) request.getSession().getAttribute("currentUser");
 		Story s = new Story(0, neededFields.get(1), neededFields.get(0), "", u, false);
@@ -84,11 +84,26 @@ public class StoryService {
 
 
 	private List<String> getNeededFields(String JSONString){
-		JSONString = JSONString.replaceAll("[{}]", "");
-		String[] formJSONSplit = JSONString.split(",");
+		JSONString = JSONString.replaceAll("\"[a-zA-Z]*\":", "");
+		JSONString = JSONString.substring(1, JSONString.length());
+		String[] formJSONSplit = JSONString.split("\",\"");
 		List<String> neededFields = new ArrayList<String>();
 		for (String JSONField : formJSONSplit) {
 			neededFields.add(JSONField.split(":")[1].replaceAll("\"", ""));
+		}
+		
+		return neededFields;
+	}
+	
+	private List<String> getNeededStoryFields(String JSONString){
+		
+		JSONString = JSONString.substring(1, JSONString.length() - 1);
+		
+		JSONString = JSONString.replaceFirst("\"title\":", "");
+		String[]JSONParts = JSONString.split("\"synopsis\":");
+		List<String> neededFields = new ArrayList<String>();
+		for(String part : JSONParts) {
+			neededFields.add(part);
 		}
 		
 		return neededFields;
