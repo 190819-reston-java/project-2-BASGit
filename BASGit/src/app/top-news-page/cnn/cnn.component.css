@@ -73,4 +73,9 @@ img:hover {
 .source-link a {
   text-decoration-color:#cca830 ;
   color:#ac870f;
+
+}
+#logo {
+  height:35px;
+  width: 70px;
 }
