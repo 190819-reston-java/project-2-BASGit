@@ -75,5 +75,6 @@ opacity: 0.8;
 }
 
 body {
-  bottom: 0;
+  min-height: 650px;
 }
+
