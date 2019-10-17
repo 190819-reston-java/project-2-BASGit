@@ -18,6 +18,10 @@
     font-family: "Book Antiqua", Palatino, serif;
 }
 
+.image-column{
+    width: 20%;
+}
+
 button {
     min-width: 100px;
     border: 2px solid #bbbbbb;

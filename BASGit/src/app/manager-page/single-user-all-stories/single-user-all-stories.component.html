@@ -8,17 +8,20 @@
                 <h4><b>MANAGER - STORIES FROM ONE USER</b></h4>
             </div>
             <div class="col">
+                <div>
+                    <h1></h1>
+                </div>
                 <div class="table-responsive">
                     <table class="table table-striped table-sm tablebox">
                         <thead class="tableboxchild">
                             <tr>
-                                <th>Username</th>
-                                <th>Articles</th>
+                                <th class="usernameColumn"><p>Username</p></th>
+                                <th><p>Submitted Stories</p></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let user of users">
-                                <td>{{user.username}}</td>
+                                <td class="usernameColumn">{{user.username}}</td>
                                 <td>
                                     <table class="table table-striped table-sm tablebox">
                                         <tr *ngFor="let story of getStories(user.id)">
