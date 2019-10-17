@@ -3,12 +3,38 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-sports',
-  templateUrl: './sports.component.html',
-  styleUrls: ['./sports.component.css']
+  // templateUrl: './sports.component.html',
+  // styleUrls: ['./sports.component.css']
+  templateUrl: '../top-news/top-news.component.html',
+  styleUrls: ['../top-news/top-news.component.css']
 })
 export class SportsComponent implements OnInit {
   topNews: any;
   newsSelection: String = "country=us&category=sports";
+
+   //for the Banner
+   pageName='SPORTS';
+
+   //Detects if the source is Fox, CNN, or NBC
+   sourceCheck(sourceJson){
+     if(sourceJson === 'NBC News'||sourceJson === 'CNN'||sourceJson === 'Fox News'){
+       return true;
+     } else {
+       return false;
+     }
+   }
+ 
+ 
+   //Links to the Fox/CNN/NBC page
+   sourceDirector(sourceJson){
+     if(sourceJson === 'NBC News'){
+       return "/topnews/nbc";
+     } else if(sourceJson === 'CNN') {
+       return "/topnews/cnn";
+     } else {
+       return "/topnews/fox";
+     }
+   }
 
   imageStatus(imageJson) {
     if(imageJson) {

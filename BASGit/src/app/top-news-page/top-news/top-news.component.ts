@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TopNewsComponent implements OnInit {
 
+  pageName='TOP NEWS';
+
   topNews: any;
   newsSelection: String = "country=us";
 
@@ -19,6 +21,7 @@ export class TopNewsComponent implements OnInit {
     }
   }
 
+  //Detects if the source is Fox, CNN, or NBC
   sourceCheck(sourceJson){
     if(sourceJson === 'NBC News'||sourceJson === 'CNN'||sourceJson === 'Fox News'){
       return true;
@@ -27,6 +30,7 @@ export class TopNewsComponent implements OnInit {
     }
   }
 
+  //Links to the Fox/CNN/NBC page
   sourceDirector(sourceJson){
     if(sourceJson === 'NBC News'){
       return "/topnews/nbc";
