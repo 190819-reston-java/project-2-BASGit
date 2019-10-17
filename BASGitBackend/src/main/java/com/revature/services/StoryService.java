@@ -84,8 +84,9 @@ public class StoryService {
 
 
 	private List<String> getNeededFields(String JSONString){
-		JSONString = JSONString.replaceAll("[{}]", "");
-		String[] formJSONSplit = JSONString.split(",");
+		JSONString = JSONString.replaceAll("\"[a-zA-Z]*\":", "");
+		JSONString = JSONString.substring(1, JSONString.length());
+		String[] formJSONSplit = JSONString.split("\",\"");
 		List<String> neededFields = new ArrayList<String>();
 		for (String JSONField : formJSONSplit) {
 			neededFields.add(JSONField.split(":")[1].replaceAll("\"", ""));
