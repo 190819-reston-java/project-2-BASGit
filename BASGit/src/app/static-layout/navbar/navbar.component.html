@@ -4,9 +4,9 @@
     </div>
     <a class="nav-link d-inline text-white" routerLink="/topnews/topnews">Top News</a>
     <a class="nav-link d-inline text-white" routerLink="/userstories/alluserstories">User News</a>
-    <a *ngIf="loggedInUser.admin" class="nav-link d-inline text-white" routerLink="/manager/manageralluserstories">Manager Page</a>
+    <a *ngIf="checkAdmin()" class="nav-link d-inline text-white" routerLink="/manager/manageralluserstories">Manager Page</a>
     <a *ngIf="checkLoggedIn()"  class="nav-link d-inline text-white" routerLink="/profile/profilepage">Profile Page</a>
-    <app-account-dropdown class="d-inline"></app-account-dropdown>
+    <app-account-dropdown *ngIf="checkLoggedIn()" class="d-inline"></app-account-dropdown>
     <form *ngIf="checkLoggedIn()" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
         <button class="btn btn-dark" routerLink="/topnews/topnews" type="submit">Sign Out</button>
     </form>

@@ -17,10 +17,18 @@ export class NavbarComponent implements OnInit {
   //HEY, MAKE SURE TO CHECK THIS ENDPOINT
 
   checkLoggedIn() {
-    if(this.loggedInUser === null) {
+    if(this.loggedInUser == null || this.loggedInUser == undefined) {
       return false;
     } else {
       return true;
+    }
+  }
+
+  checkAdmin() {
+    if(this.loggedInUser.admin === true) {
+      return true;
+    } else {
+      return false;
     }
   }
 
