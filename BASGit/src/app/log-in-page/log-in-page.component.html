@@ -1,10 +1,5 @@
-<p>filler text</p>
-<p>filler text</p>
-<p>filler text</p>
-<p>filler text</p>
-<p>filler text</p>
-<p>filler text</p>
-<p>filler text</p>
+
+<!-- <body>
                 <h5>Sign into your account:</h5>
                 <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
                     <table>
@@ -29,7 +24,7 @@
                                 <input type="submit" class="btn btn-dark">Submit<br>
                             </td>
                         </tr>
-                      
+
                         <tr>
                             <td colspan="2">
                                 <a routerLink='/signup/signup'><p><i>register a new account</i></p></a>
@@ -37,5 +32,36 @@
                         </tr>
                     </table>
                   </form>
+                </body> -->
 
+<body>
+                <!-- <div class="dropdown"> -->
+                    <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      Sign in
+                    </button> -->
+                    <!-- <div class="dropdown-menu dropdown-menu-right"> -->
+                      <div id="login-panel">
+                        <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+                          <h4>Account sign in</h4>
+                          <div class="form-group">
+                            <h6>Username:</h6>
+                            <input type="text" class="form-control" ngModel id="exampleDropdownFormEmail1" placeholder="Username"
+                              required>
+                          </div>
+                          <div class="form-group">
+                            <h6>Password:</h6>
+                            <input type="password" class="form-control" ngModel id="exampleDropdownFormPassword1" placeholder="Password" required>
+                          </div>
+                          <button id="signin" type="submit" class="btn btn-primary">Sign in</button>
+                        </form>
+                        <div class="dropdown-divider"></div>
+                        <a routerLink='/signup/signup'><p><i>register a new account</i></p>>
+                          <p id="register"><i>or register a new account</i></p>
+                        </a>
+                      </div> -->
+                      <div id="overlay"></div>
+                    <!-- </div> -->
+                  <!-- </div> -->
+                </body>
 
