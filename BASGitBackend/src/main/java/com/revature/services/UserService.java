@@ -3,6 +3,7 @@ package com.revature.services;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -95,6 +96,21 @@ public class UserService {
 
 	public User login(String username, String password) {
 		return userRepository.findByUserNameAndPassword(username, password);
+	}
+
+	public User signUp(String JSONString) {
+
+		JSONString = JSONString.replaceAll("[{}]", "");
+		String[] formJSONSplit = JSONString.split(",");
+		List<String> neededFields = new ArrayList<String>();
+		for (String JSONField : formJSONSplit) {
+			neededFields.add(JSONField.split(": ")[1].replaceAll("\"", ""));
+		}
+		User u = new User(0, neededFields.get(0), neededFields.get(1),
+				"https://allen-gworek-llc-image-storage.s3.amazonaws.com/defaultprofilepic.png",
+				neededFields.get(3).equals("1908-REVATURE"), neededFields.get(2), null);
+
+		return u;
 	}
 
 }

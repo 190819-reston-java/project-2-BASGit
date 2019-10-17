@@ -117,21 +117,9 @@ public class UserController {
 	@PostMapping(value = "/signup")
 	@ResponseBody
 	public ResponseEntity<User> signUp(@RequestBody String JSONString, HttpServletRequest request, HttpServletResponse response){
-		
-		JSONString = JSONString.replaceAll("[{}]", "");
-		String[] formJSONSplit = JSONString.split(",");
-		List<String> neededFields = new ArrayList<String>();
-		JSONString = "";
-		for(String JSONField : formJSONSplit) {
-			neededFields.add(JSONField.split(": ")[1].replaceAll("\"", ""));
-		}
-		//u = userService.save(u);
-		
-		User u = new User(0, neededFields.get(0), neededFields.get(1), 
-				"https://allen-gworek-llc-image-storage.s3.amazonaws.com/defaultprofilepic.png",
-				neededFields.get(3).equals("1908-REVATURE"), neededFields.get(2), null);
-		
-		
+
+		User u = userService.signUp(JSONString);
+		u = userService.save(u);
 		return ResponseEntity.status(HttpStatus.OK).body(u);
 	}
 	
