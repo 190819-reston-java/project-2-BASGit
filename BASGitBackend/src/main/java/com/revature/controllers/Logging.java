@@ -14,6 +14,7 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
 // see: training-code/week6/SpringAOPDemo/src/main/java/com/revature/aspects/
+// Ideas: log IPs/time of visits, 404 requests, errors, How long things take, ...
 
 @Aspect
 @Component
@@ -37,7 +38,7 @@ public class Logging {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//System.out.println(StoryController.testingString());
-		StoryController.testingString();		
+		System.out.println(StoryController.class.toString());		
 	}
 
 }
