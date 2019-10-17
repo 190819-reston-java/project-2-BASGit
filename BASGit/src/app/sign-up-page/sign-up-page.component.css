@@ -40,4 +40,7 @@ div div a {
   text-decoration-color:#cca830 ;
   font-weight: bold;
 }
+body {
+  min-height: 650px;
+}
 
