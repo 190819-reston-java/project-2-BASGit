@@ -17,7 +17,6 @@
                             <tr>
                                 <th>Title</th>
                                 <th>Body</th>
-                                <th>Image</th>
                                 <th>Featured?</th>
                                 <th>User</th>
                                 <th>Manager Actions</th>
@@ -27,12 +26,11 @@
                             <tr *ngFor="let story of stories">
                                 <td>{{story.headline}}</td>
                                 <td>{{story.body}}</td>
-                                <td>STORY IMAGE</td>
                                 <td>{{story.featured}}</td>
                                 <td>{{story.author.username}}</td>
                                 <td>
-                                    <button onClick=highlightStory(story.id) class="btn btn-primary mx-auto">Highlight</button>
-                                    <button onClick=removeStory(story.id) class="btn btn-primary mx-auto">Remove</button>
+                                    <button onClick="highlightStory(story.id)" class="btn btn-primary mx-auto">Highlight</button>
+                                    <button onClick="removeStory(story.id)" class="btn btn-primary mx-auto">Remove</button>
                                 </td>
                             </tr>
                         </tbody>

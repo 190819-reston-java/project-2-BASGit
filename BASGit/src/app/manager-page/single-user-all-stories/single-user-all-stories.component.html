@@ -18,11 +18,10 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let user of users">
-                                <script>getStories(user.id)</script>
                                 <td>{{user.username}}</td>
                                 <td>
                                     <table class="table table-striped table-sm tablebox">
-                                        <tr *ngFor="let story of stories">
+                                        <tr *ngFor="let story of getStories(user.id)">
                                             <td>{{story.title}}</td>
                                             <td>{{story.synopsis}}</td>
                                         </tr>

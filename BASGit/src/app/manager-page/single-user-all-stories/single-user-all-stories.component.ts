@@ -19,6 +19,7 @@ export class SingleUserAllStoriesComponent implements OnInit {
     let observable = this.http.get("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/stories/users/"+id)
     observable.subscribe((result => {
       this.stories = result;
+      return this.stories;
     }))
   }
 
