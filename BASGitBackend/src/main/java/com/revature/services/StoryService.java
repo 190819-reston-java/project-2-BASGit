@@ -33,9 +33,7 @@ public class StoryService {
 	}
 
 	public Story save(Story story) {
-		storyRepository.save(story);
-
-		return story;
+		return storyRepository.save(story);
 	}
 
 	public Story createNew(String JSONToProcess, HttpServletRequest request) {
@@ -74,6 +72,7 @@ public class StoryService {
 	}
 
 	public Story highlight(Story s) {
+		System.out.println("In highlight in service layer");
 		return storyRepository.highlight(s);
 	}
 
@@ -118,10 +117,11 @@ public class StoryService {
 
 		Story s = findOne(storyID);
 
-		if (decision == "h") {
+		if (decision.equals("h")) {
 			s = highlight(s);
-			s = storyRepository.save(s);
-		} else if (decision == "r") {
+			System.out.println("Highlighted story + " + storyID);
+			s = save(s);
+		} else if (decision.equals("r")) {
 			delete(s);
 			s = null;
 		}

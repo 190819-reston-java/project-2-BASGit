@@ -16,7 +16,6 @@ export class LogInPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  
   onSubmit(f: NgForm) {
     if(f.value.managerCode === "1908-REVATURE") {
       f.value.managerCode = true;
@@ -30,7 +29,7 @@ export class LogInPageComponent implements OnInit {
                })
         console.log(f.value);  // { first: '', last: '' }
         console.log(f.valid);  // false
-        window.location.href='http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/static/BASGit/#/topnews/topnews';
+        this.router.navigateByUrl("/topnews/topnews");
       }
     
 
