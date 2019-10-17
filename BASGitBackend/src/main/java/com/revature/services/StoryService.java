@@ -96,10 +96,7 @@ public class StoryService {
 	
 	public Story handleStory(String adminHandlerJSON, HttpServletRequest request) {
 
-
-		List<String> neededFields = getNeededFields(adminHandlerJSON);
-		
-		String[] handleDecisions = neededFields.get(0).split(" ");
+		String[] handleDecisions = adminHandlerJSON.split(" ");
 
 		int storyID = Integer.valueOf(handleDecisions[0]);
 		String decision = handleDecisions[1];
