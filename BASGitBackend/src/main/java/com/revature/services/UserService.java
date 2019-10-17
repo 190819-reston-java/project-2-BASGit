@@ -102,7 +102,7 @@ public class UserService {
 		String[] formJSONSplit = JSONString.split(",");
 		List<String> neededFields = new ArrayList<String>();
 		for (String JSONField : formJSONSplit) {
-			neededFields.add(JSONField.split(": ")[1].replaceAll("\"", ""));
+			neededFields.add(JSONField.split(":")[1].replaceAll("\"", ""));
 		}
 		
 		return neededFields;

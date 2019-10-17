@@ -30,7 +30,7 @@ public class HelloWorldController {
 		List<String> neededFields = new ArrayList<String>();
 		for (String JSONField : formJSONSplit) {
 			try {
-			neededFields.add(JSONField.split(": ")[1].replaceAll("\"", ""));
+			neededFields.add(JSONField.split(":")[1].replaceAll("\"", ""));
 			}
 			catch(ArrayIndexOutOfBoundsException e) {
 				neededFields.add("***PROBLEMATIC FIELD: " + JSONField);
