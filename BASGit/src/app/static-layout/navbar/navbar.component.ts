@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
                  console.log(res);
                  //you can do asomething, like
            })
-           this.router.navigateByUrl("/topnews/topnews");
+           window.location.href = 'http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/static/BASGit/';
   }
 
     ngOnInit() {
