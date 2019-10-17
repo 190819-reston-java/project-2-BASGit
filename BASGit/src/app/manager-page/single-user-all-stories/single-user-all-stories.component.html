@@ -5,7 +5,7 @@
     <div id="news-view" class="container">
         <div class="row justify-content-around">
             <div id="active" class="w-100">
-                <h4><b>MANAGER - STORIES FROM ONE USER</b></h4>
+                <h4><b>MANAGER - STORIES SORTED BY USER</b></h4>
             </div>
             <div class="col">
                 <div>
@@ -15,21 +15,16 @@
                     <table class="table table-striped table-sm tablebox">
                         <thead class="tableboxchild">
                             <tr>
-                                <th class="usernameColumn"><p>Username</p></th>
-                                <th><p>Submitted Stories</p></th>
+                                <th class="usernameColumn">Username</th>
+                                <th>Title</th>
+                                <th>Body</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let user of users">
-                                <td class="usernameColumn">{{user.username}}</td>
-                                <td>
-                                    <table class="table table-striped table-sm tablebox">
-                                        <tr *ngFor="let story of getStories(user.id)">
-                                            <td>{{story.title}}</td>
-                                            <td>{{story.synopsis}}</td>
-                                        </tr>
-                                    </table>
-                                </td>
+                            <tr *ngFor="let story of stories">
+                                <td>{{story.author.username}}</td>
+                                <td>{{story.headline}}</td>
+                                <td>{{story.body}}</td>
                             </tr>
                         </tbody>
                     </table>
