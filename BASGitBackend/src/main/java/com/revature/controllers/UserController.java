@@ -1,16 +1,12 @@
 package com.revature.controllers;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -120,6 +116,7 @@ public class UserController {
 
 		User u = userService.signUp(JSONString);
 		u = userService.save(u);
+		request.getSession().setAttribute("currentUser", u);
 		return ResponseEntity.status(HttpStatus.OK).body(u);
 	}
 	
