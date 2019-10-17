@@ -3,6 +3,7 @@ package com.revature.services;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -44,15 +45,18 @@ public class StoryService {
 		return story;
 	}
 
-	public Story createNew(Story s, HttpServletRequest request) {
+	public Story createNew(String JSONToProcess, HttpServletRequest request) {
+		
+		List<String> neededFields = getNeededFields(JSONToProcess);
 
 		User u = (User) request.getSession().getAttribute("currentUser");
-		s.setAuthor(u);
+		Story s = new Story(0, neededFields.get(1), neededFields.get(0), "", u, false);
+
 
 		File file = null;
 
 		try {
-			if (request.getPart("picture") != null) {
+			if (neededFields.get(2) != null) {
 				Part submittedFilePart = request.getPart("picture");
 				String submittedFileName = submittedFilePart.getName();
 				InputStream fileContent = submittedFilePart.getInputStream();
@@ -83,9 +87,24 @@ public class StoryService {
 
 	}
 
-	public Story handleStory(Story story, HttpServletRequest request) {
 
-		String[] handleDecisions = request.getParameter("changestory").split(" ");
+	private List<String> getNeededFields(String JSONString){
+		JSONString = JSONString.replaceAll("[{}]", "");
+		String[] formJSONSplit = JSONString.split(",");
+		List<String> neededFields = new ArrayList<String>();
+		for (String JSONField : formJSONSplit) {
+			neededFields.add(JSONField.split(": ")[1].replaceAll("\"", ""));
+		}
+		
+		return neededFields;
+	}
+	
+	public Story handleStory(String adminHandlerJSON, HttpServletRequest request) {
+
+
+		List<String> neededFields = getNeededFields(adminHandlerJSON);
+		
+		String[] handleDecisions = neededFields.get(0).split(" ");
 
 		int storyID = Integer.valueOf(handleDecisions[0]);
 		String decision = handleDecisions[1];

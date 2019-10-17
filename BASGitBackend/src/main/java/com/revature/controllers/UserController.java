@@ -34,8 +34,8 @@ public class UserController {
 
 	@PostMapping(value = "/login")
 	@ResponseBody
-	public ResponseEntity<User> login(User user, HttpServletRequest request, HttpServletResponse response){
-		User u = userService.login(user.getUsername(), user.getPassword());
+	public ResponseEntity<User> login(@RequestBody String usernameAndPasswordJSON, HttpServletRequest request, HttpServletResponse response){
+		User u = userService.login(usernameAndPasswordJSON);
 		
 		if(u != null) {
 			request.getSession().setAttribute("currentUser", u);

@@ -94,18 +94,28 @@ public class UserService {
 		return updateUser;
 	}
 
-	public User login(String username, String password) {
-		return userRepository.findByUserNameAndPassword(username, password);
+	public User login(String JSONString) {
+		
+		List<String> neededFields = getNeededFields(JSONString);
+
+		return userRepository.findByUserNameAndPassword(neededFields.get(0), neededFields.get(1));
 	}
 
-	public User signUp(String JSONString) {
-
+	private List<String> getNeededFields(String JSONString){
 		JSONString = JSONString.replaceAll("[{}]", "");
 		String[] formJSONSplit = JSONString.split(",");
 		List<String> neededFields = new ArrayList<String>();
 		for (String JSONField : formJSONSplit) {
 			neededFields.add(JSONField.split(": ")[1].replaceAll("\"", ""));
 		}
+		
+		return neededFields;
+	}
+	
+	public User signUp(String JSONString) {
+
+		List<String> neededFields = getNeededFields(JSONString);
+		
 		User u = new User(0, neededFields.get(0), neededFields.get(1),
 				"https://allen-gworek-llc-image-storage.s3.amazonaws.com/defaultprofilepic.png",
 				neededFields.get(3).equals("1908-REVATURE"), neededFields.get(2), null);

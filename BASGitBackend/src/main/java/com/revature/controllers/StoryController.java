@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -88,9 +89,9 @@ public class StoryController {
 	
 	@PostMapping("/admin/handle")
 	@ResponseBody
-	public ResponseEntity<Story> handleStory(Story story, HttpServletRequest request, HttpServletResponse response){
+	public ResponseEntity<Story> handleStory(@RequestBody String adminHandlerJSON, HttpServletRequest request, HttpServletResponse response){
 		
-		Story s = storyService.handleStory(story, request);
+		Story s = storyService.handleStory(adminHandlerJSON, request);
 		return ResponseEntity.status(HttpStatus.OK).body(s);
 		
 	}
@@ -105,9 +106,9 @@ public class StoryController {
 
 	@PostMapping(value = "/profiles/submit")
 	@ResponseBody
-	public ResponseEntity<Story> createNew(Story s, HttpServletRequest request, HttpServletResponse response) {
+	public ResponseEntity<Story> createNew(@RequestBody String JSONStoryCreation, HttpServletRequest request, HttpServletResponse response) {
 
-		Story story = storyService.createNew(s, request);
+		Story story = storyService.createNew(JSONStoryCreation, request);
 		
 		if(story != null) {
 			return ResponseEntity.status(HttpStatus.OK).body(story);
