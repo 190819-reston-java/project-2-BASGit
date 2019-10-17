@@ -86,7 +86,7 @@ body {
 }
 #remove {
   font-weight: bold;
-  background: linear-gradient(to right,#d62222, #ff2200d2, #d62222);
+  background: linear-gradient(to right,#9b1616, rgb(255, 0, 0)#9b1616);
   border: 2.5px solid #e20f0f;
   color: black;
   font-family: "Book Antiqua", Palatino, serif;
