@@ -84,7 +84,6 @@ public class StoryController {
 	public ResponseEntity<Story> handleStory(@RequestBody String adminHandlerJSON, HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
 		Story s = storyService.handleStory(adminHandlerJSON, request);
-		response.sendRedirect(ALLSTORIESPAGE);
 		return ResponseEntity.status(HttpStatus.OK).body(s);
 		
 	}

@@ -119,11 +119,11 @@ public class StoryRepository {
 		Session s = sf.getCurrentSession();
 		
 		story.setFeatured(true);
-		s.save(story);
 		
 		return story;
 	}
 
+	@Transactional
 	public void delete(Story story) {
 		Session s = sf.getCurrentSession();
 		

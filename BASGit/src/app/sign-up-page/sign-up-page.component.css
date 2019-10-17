@@ -1,0 +1,43 @@
+.container {
+ position: relative;
+ padding-top: 50px;
+
+}
+.form-control{
+  border: 1.5px solid #cccccc;
+}
+.btn-primary{
+  margin: 100px;
+  width:50%;
+  margin-top:6px;
+  margin-bottom:-10px;
+}
+a p{
+  text-align: center;
+  margin-bottom:10px;
+  color: #cca830;
+
+}
+
+h1 {
+  color: #ac870f;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+
+}
+.signup{
+  background: linear-gradient(to right, #ac870f, #ffdc6b, #ac870f);
+  border: 2.5px solid #cca830;
+  color: #554100;
+  font-family: "Book Antiqua", Palatino, serif;
+  width: 150px;
+  height: 35px;
+}
+label {
+  font-weight: bold;
+}
+div div a {
+  text-decoration-color:#cca830 ;
+  font-weight: bold;
+}
+
