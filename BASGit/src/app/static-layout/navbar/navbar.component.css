@@ -1,13 +1,20 @@
 a:visited {
-    color: white;
+  color: white;
 
 }
 h4 {
-  font-family: "Book Antiqua", Palatino, serif;
-  /* font-family: 'Kaushan Script', cursive; */
-  }
-/* #top-navbar{
-    top: 0px;
-    position: fixed;
-    width: 100%;
-} */
+font-family: "Book Antiqua", Palatino, serif;
+display: block;
+}
+#logo:hover, h4:hover{
+/* color: #cccccc !important; */
+text-decoration: none !important;
+}
+a, .sidebar-header{
+display: block;
+}
+.nav-link:hover, button:hover{
+border-radius: 4px;
+background-color: #444d53;
+outline: none;
+}
