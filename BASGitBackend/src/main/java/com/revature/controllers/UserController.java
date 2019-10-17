@@ -124,7 +124,7 @@ public class UserController {
 		}
 		else
 		{
-			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+			return ResponseEntity.status(HttpStatus.OK).body(new User(0, "", "", "", false, "", null));
 		}
 
 		}
