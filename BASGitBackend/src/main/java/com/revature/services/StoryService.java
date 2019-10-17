@@ -113,6 +113,7 @@ public class StoryService {
 			s = null;
 		}
 
+		s = storyRepository.save(s);
 		return s;
 
 	}
