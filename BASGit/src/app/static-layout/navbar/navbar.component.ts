@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
                  console.log(res);
                  //you can do asomething, like
            })
-           window.open('http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/static/BASGit/', "_self");
+           window.open('http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/static/BASGit/');
 
   }
 
