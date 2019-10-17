@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AccountDropdownComponent } from '../account-dropdown/account-dropdown.component';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms'
-import { Router, Event, NavigationStart } from '@angular/router';
+import { Router, ActivatedRoute, Event, NavigationStart } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -14,12 +14,14 @@ export class NavbarComponent implements OnInit {
   loggedInUser: any = null;
 
   constructor(private http: HttpClient,
-    private router: Router) { 
-      router.events.subscribe((event: Event)=> {
-        if (event instanceof NavigationStart) {
-          this.ngOnInit();
-      }
-      })
+    private router: Router,
+    route: ActivatedRoute) { 
+     route.params.subscribe(val=>{
+      let observable = this.http.get('http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/current')
+      observable.subscribe((result => {
+        this.loggedInUser = result;
+      }))
+     })
     }
 
   onSubmit(f: NgForm) {
