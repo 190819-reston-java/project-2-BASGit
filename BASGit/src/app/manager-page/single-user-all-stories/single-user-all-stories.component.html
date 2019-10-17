@@ -10,7 +10,7 @@
             <div class="col">
                 <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
                 <select class="form-control">
-                <option *ngFor="let user of users" name="id" value="{{user.id}}">{{user.username}}</option>
+                <option *ngFor="let user of users" name="id" [value]="user.id">{{user.username}}</option>
                 </select>
                 <input type="submit" class="btn btn-dark">Submit<br>
                 </form>
