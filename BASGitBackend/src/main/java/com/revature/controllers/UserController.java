@@ -92,13 +92,7 @@ public class UserController {
 	@ResponseBody
 	public ResponseEntity<User> signOut(User user, HttpServletRequest request, HttpServletResponse response){
 		request.getSession().setAttribute("currentUser", null);
-		
-		try {
-			response.sendRedirect("BASGit/static/BASGit/");
-		} catch (IOException e) {
-			e.printStackTrace();
-			ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-		}
+
 		return ResponseEntity.status(HttpStatus.OK).body(user);
 	}
 	
