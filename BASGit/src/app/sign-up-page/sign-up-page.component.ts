@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up-page',
@@ -11,7 +12,8 @@ export class SignUpPageComponent implements OnInit {
 
 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,
+    private router: Router) {}
 
    onSubmit(f: NgForm) {
     this.http.post("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/signup", JSON.stringify(f.value)).subscribe(res=>{
@@ -22,6 +24,7 @@ export class SignUpPageComponent implements OnInit {
     console.log(f.value);  // { first: '', last: '' }
     console.log(JSON.stringify(f.value));
     console.log(f.valid);  // false
+    this.router.navigateByUrl("/topnews/topnews");
   }
 
   

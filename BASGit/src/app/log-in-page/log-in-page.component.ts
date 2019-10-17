@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-in-page',
@@ -9,7 +10,8 @@ import { NgForm } from '@angular/forms'
 })
 export class LogInPageComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private router: Router) { }
 
   ngOnInit() {
   }
@@ -28,6 +30,7 @@ export class LogInPageComponent implements OnInit {
                })
         console.log(f.value);  // { first: '', last: '' }
         console.log(f.valid);  // false
+        this.router.navigateByUrl("/topnews/topnews");
       }
     
 
