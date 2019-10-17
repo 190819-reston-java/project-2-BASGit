@@ -55,21 +55,21 @@ public class UserService {
 		return currentUser;
 	}
 
-	public User updateUser(User u, HttpServletRequest request) {
+	public User updateUser(String JSON, HttpServletRequest request) {
 		User currentUser = getCurrent(request);
 
-		User updateUser = new User(currentUser.getId(), u.getUsername(), u.getPassword(), "", currentUser.isAdmin(),
-				u.getFullname(), currentUser.getStories());
-
-		if (updateUser.getPassword().equals("")) {
-			updateUser.setPassword(currentUser.getPassword());
+		List<String> neededFields = getNeededFields(JSON);
+		
+		if (!neededFields.get(2).equals("")) {
+			currentUser.setPassword(neededFields.get(2));
 		}
-		if (updateUser.getFullname().equals("")) {
-			updateUser.setFullname(currentUser.getFullname());
+		if (!neededFields.get(0).equals("")) {
+			currentUser.setFullname(neededFields.get(0));
 		}
-		if (updateUser.getUsername().equals("")) {
-			updateUser.setUsername(currentUser.getUsername());
+		if (!neededFields.get(1).equals("")) {
+			currentUser.setUsername(neededFields.get(1));
 		}
+		/*
 		File file = null;
 		try {
 			Part submittedFilePart = request.getPart("picture");
@@ -84,10 +84,11 @@ public class UserService {
 
 		String imageURL = userRepository.uploadImage(file, currentUser);
 		updateUser.setAvatarURL(imageURL);
+		*/
+		
+		currentUser = userRepository.save(currentUser);
 
-		updateUser = userRepository.save(updateUser);
-
-		return updateUser;
+		return currentUser;
 	}
 
 	public User login(String JSONString) {

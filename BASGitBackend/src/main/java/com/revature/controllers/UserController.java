@@ -98,9 +98,9 @@ public class UserController {
 	
 	@PostMapping(value = "/profile/update")
 	@ResponseBody
-	public ResponseEntity<User> update(User u, HttpServletRequest request){
+	public ResponseEntity<User> update(@RequestBody String JSONString, HttpServletRequest request){
 		
-		User user = userService.updateUser(u, request);
+		User user = userService.updateUser(JSONString, request);
 		return ResponseEntity.status(HttpStatus.OK).body(user);
 	}
 	
