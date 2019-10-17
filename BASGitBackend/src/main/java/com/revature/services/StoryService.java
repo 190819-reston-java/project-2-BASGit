@@ -138,4 +138,8 @@ public class StoryService {
 		return storyRepository.findAllFeatured();
 	}
 
+	public List<Story> findAllOrderByUserID() {
+		return storyRepository.findAllOrderByUserID();
+	}
+
 }
