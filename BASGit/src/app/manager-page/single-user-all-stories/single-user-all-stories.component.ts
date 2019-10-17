@@ -18,6 +18,7 @@ export class SingleUserAllStoriesComponent implements OnInit {
     storiesobservable.subscribe((res => {
       this.stories = res;
     }))
+    return this.stories;
   }
 
   ngOnInit() {
