@@ -17,6 +17,7 @@ export class SingleUserAllStoriesComponent implements OnInit {
 
   onSubmit(f: NgForm) {
     this.hasBeenClicked = true;
+    console.log(f.value.id);
     this.http.get("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/stories/users/"+f.value.id).subscribe(res=>{
                  //here you received the response of your post
                  console.log(res);
