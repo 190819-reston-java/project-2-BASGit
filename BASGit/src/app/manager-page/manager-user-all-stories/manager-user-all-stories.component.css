@@ -89,6 +89,3 @@ transform: scale(1.05) rotate(1deg);
 opacity: 0.8;
 }
 
-body {
-  height: calc(100vh - 100px);
-}
