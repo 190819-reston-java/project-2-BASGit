@@ -17,7 +17,7 @@
             <li>
                 <a routerLink='/userstories/topuserstories'>Featured User News</a>
             </li>
-            <li>
+            <li *ngIf="loggedInUser !== null">
                 <!-- MAKE AN NG IF HERE! -->
                 <a routerLink='/profile/userstories/submituserstories'>Submit New Story</a>
             </li>
