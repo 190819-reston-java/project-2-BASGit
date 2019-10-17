@@ -48,6 +48,7 @@ public class StoryService {
 
 		File file = null;
 
+		/*
 		try {
 			if (neededFields.get(2) != null) {
 				Part submittedFilePart = request.getPart("picture");
@@ -62,6 +63,7 @@ public class StoryService {
 		catch (IllegalStateException e) {
 			file = null;
 		}
+		*/
 
 		if (u == null) {
 			return null;
