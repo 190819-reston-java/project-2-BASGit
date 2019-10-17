@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Logging {
 	
-		private static final Logger storyControllerLog = Logger.getLogger(Logging.class);
+		private static final Logger storyControllerLog = Logger.getLogger(StoryController.class);
 		
 		//@Before("within(com.revature.controllers.StoryController)")
 		@Before("execution(* *(..))")
