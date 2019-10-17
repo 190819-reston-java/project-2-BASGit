@@ -20,6 +20,7 @@
                                 <th>Featured?</th>
                                 <th>User</th>
                                 <th>Manager Actions</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,6 +31,8 @@
                                 <td>{{story.author.username}}</td>
                                 <td>
                                     <button (click)="highlightStory(story.id)" class="btn btn-primary mx-auto">Highlight</button>
+                                </td>
+                                <td>
                                     <button (click)="removeStory(story.id)" class="btn btn-primary mx-auto">Remove</button>
                                 </td>
                             </tr>
