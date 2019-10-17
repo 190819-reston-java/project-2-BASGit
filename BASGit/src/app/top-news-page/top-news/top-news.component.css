@@ -24,13 +24,8 @@
     background-color: #ffffff;
     border-radius: 3px;
     box-shadow: 4px 4px 8px #888888;
-    /* max-height: 500px; */
 }
 
-/* div div p{
-    color: #ff0000;
-    max-height: 100px;
-} */
 
 p {
     display: inline;
@@ -42,7 +37,6 @@ img {
     width: auto;
     height: auto;
     max-width: 50%;
-    /* max-height: 45%; */
 }
 
 .ph-image{
@@ -95,7 +89,6 @@ h4 a {
 }
 
 h4 a:hover {
-    /* text-decoration:none; */
     text-decoration: underline;
     color: #6adcff;
 }
