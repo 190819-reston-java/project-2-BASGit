@@ -117,9 +117,12 @@ public class UserController {
 	@ResponseBody
 	public ResponseEntity<String> signUp(@RequestBody String JSONString, HttpServletRequest request, HttpServletResponse response){
 		
-		
-		String u = JSONString;
-		
+		JSONString = JSONString.replaceAll("[{}]", "");
+		String[] formJSONSplit = JSONString.split(",");
+		JSONString = "";
+		for(String JSONField : formJSONSplit) {
+			JSONString += JSONField + "ENDLINE\n";
+		}
 		//u = userService.save(u);
 		
 		
