@@ -12,7 +12,7 @@ export class SubmitStoryComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   onSubmit(f: NgForm) {
-    this.http.post("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/stories/profile/submit", f.value).subscribe(res=>{
+    this.http.post("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/stories/profile/submit", JSON.stringify(f.value)).subscribe(res=>{
                  //here you received the response of your post
                  console.log(res);
                  //you can do asomething, like
