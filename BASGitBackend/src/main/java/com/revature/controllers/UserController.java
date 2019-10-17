@@ -1,6 +1,7 @@
 package com.revature.controllers;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -119,12 +120,17 @@ public class UserController {
 		
 		JSONString = JSONString.replaceAll("[{}]", "");
 		String[] formJSONSplit = JSONString.split(",");
+		List<String> neededFields = new ArrayList<String>();
 		JSONString = "";
 		for(String JSONField : formJSONSplit) {
-			JSONString += JSONField + "ENDLINE\n";
+			neededFields.add(JSONField.split(": ")[0].replaceAll("\"", ""));
 		}
 		//u = userService.save(u);
 		
+		JSONString = "";
+		for(String JSONField : neededFields) {
+			JSONString += JSONField;
+		}
 		
 		
 		return ResponseEntity.status(HttpStatus.OK).body(JSONString);
