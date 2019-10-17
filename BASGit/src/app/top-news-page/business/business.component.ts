@@ -3,8 +3,10 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-business',
-  templateUrl: './business.component.html',
-  styleUrls: ['./business.component.css']
+  // templateUrl: './business.component.html',
+  // styleUrls: ['./business.component.css']
+  templateUrl: '../top-news/top-news.component.html',
+  styleUrls: ['../top-news/top-news.component.css']
 })
 export class BusinessComponent implements OnInit {
   topNews: any;
@@ -17,7 +19,31 @@ export class BusinessComponent implements OnInit {
       return false;
     }
   }
+  
+  //for the Banner
+  pageName='BUSINESS';
 
+  //Detects if the source is Fox, CNN, or NBC
+  sourceCheck(sourceJson){
+    if(sourceJson === 'NBC News'||sourceJson === 'CNN'||sourceJson === 'Fox News'){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+
+  //Links to the Fox/CNN/NBC page
+  sourceDirector(sourceJson){
+    if(sourceJson === 'NBC News'){
+      return "/topnews/nbc";
+    } else if(sourceJson === 'CNN') {
+      return "/topnews/cnn";
+    } else {
+      return "/topnews/fox";
+    }
+  }
+  
   synopsisStatus(synopsisJson) {
     //this is for youtube stories that give a boilerplate synopsis that says nothing
     if (synopsisJson === "[[getSimpleString(data.title)]]\r\n[[getSimpleString(data.description)]]\r\n[[getSimpleString(data.videoCountText)]]") {

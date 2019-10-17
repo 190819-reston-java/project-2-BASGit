@@ -3,12 +3,37 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-technology',
-  templateUrl: './technology.component.html',
-  styleUrls: ['./technology.component.css']
+  // templateUrl: './technology.component.html',
+  // styleUrls: ['./technology.component.css']
+  templateUrl: '../top-news/top-news.component.html',
+  styleUrls: ['../top-news/top-news.component.css'],
 })
 export class TechnologyComponent implements OnInit {
   topNews: any;
   newsSelection: String = "country=us&category=technology";
+
+  //for the Banner
+  pageName='POLITICS';
+
+  //Detects if the source is Fox, CNN, or NBC
+  sourceCheck(sourceJson){
+    if(sourceJson === 'NBC News'||sourceJson === 'CNN'||sourceJson === 'Fox News'){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  //Links to the Fox/CNN/NBC page
+  sourceDirector(sourceJson){
+    if(sourceJson === 'NBC News'){
+      return "/topnews/nbc";
+    } else if(sourceJson === 'CNN') {
+      return "/topnews/cnn";
+    } else {
+      return "/topnews/fox";
+    }
+  }
 
   imageStatus(imageJson) {
     if(imageJson) {
