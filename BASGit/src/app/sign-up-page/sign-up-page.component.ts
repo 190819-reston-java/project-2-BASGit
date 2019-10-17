@@ -20,6 +20,7 @@ export class SignUpPageComponent implements OnInit {
                  //you can do asomething, like
            })
     console.log(f.value);  // { first: '', last: '' }
+    console.log(JSON.stringify(f.value));
     console.log(f.valid);  // false
   }
 
