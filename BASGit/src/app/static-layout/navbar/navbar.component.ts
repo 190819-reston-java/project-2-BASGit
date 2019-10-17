@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   //HEY, MAKE SURE TO CHECK THIS ENDPOINT
 
   onSubmit(f: NgForm) {
-    this.http.get("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/logout").subscribe(res=>{
+    this.http.get("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/signout").subscribe(res=>{
                  //here you received the response of your post
                  console.log(res);
                  //you can do asomething, like
