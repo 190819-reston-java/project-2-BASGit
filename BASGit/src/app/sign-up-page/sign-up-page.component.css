@@ -19,9 +19,10 @@ a p{
 
 }
 
-h2 {
+h1 {
   color: #ac870f;
   font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
 
 }
 .signup{
@@ -32,12 +33,15 @@ h2 {
   width: 150px;
   height: 35px;
 }
-
+label {
+  font-weight: bold;
+}
 div div a {
-text-decoration-color:#cca830 ;
+  text-decoration-color:#cca830 ;
+  font-weight: bold;
 }
 
 body {
-height: calc(100vh - 100px) !important;
+  height: calc(100vh - 100px) !important;
 
 }
