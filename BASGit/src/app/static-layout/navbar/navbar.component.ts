@@ -38,6 +38,7 @@ export class NavbarComponent implements OnInit {
                  console.log(res);
                  //you can do asomething, like
            })
+      window.location.href='http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/static/BASGit/#/topnews/topnews';
   }
 
     ngOnInit() {
