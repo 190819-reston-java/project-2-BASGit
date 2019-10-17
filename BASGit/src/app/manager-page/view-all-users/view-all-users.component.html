@@ -23,7 +23,7 @@
                         <tbody>
                             <tr *ngFor="let user of users">
                             <!-- article is each object, and articles is an array -->
-                                <td>SMALL PROFILE PIC</td>
+                                <td><img src="{{user.avatarURL}}" alt="User Profile Pic" style="width: 20px; height: 20px"></td>
                                 <td>{{user.username}}</td>
                                 <!-- <td>{{article.username (or article.id put into all users)}}</td> -->
                                 <td>{{user.fullname}}</td>

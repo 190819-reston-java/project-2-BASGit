@@ -15,16 +15,12 @@ export class SingleUserAllStoriesComponent implements OnInit {
 
   constructor(private http : HttpClient) { }
 
-  onSubmit(f: NgForm) {
-    this.hasBeenClicked = true;
-    this.http.get("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/stories/users/"+f.value.id).subscribe(res=>{
-                 //here you received the response of your post
-                 console.log(res);
-                 this.stories = res;
-                 //you can do asomething, like
-           })
-    console.log(f.value);  // { first: '', last: '' }
-    console.log(f.valid);  // false
+  getStories(id) {
+    let observable = this.http.get("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/stories/user/"+id)
+    observable.subscribe((result => {
+      this.stories = result;
+      return this.stories;
+    }))
   }
 
   ngOnInit() {

@@ -22,18 +22,16 @@
                         <div class="card-title mb-4">
                             <div class="d-flex justify-content-start">
                                 <div class="image-container">
-                                    <img src="http://placehold.it/150x150" id="imgProfile"
+                                    <img src="{{loggedInUser.avatarURL}}" id="imgProfile"
                                         style="width: 150px; height: 150px" class="img-thumbnail" />
                                     <div class="middle">
-
-                                        <input type="file" style="display:none ;" id="profilePicture" name="file" />
 
                                     </div>
                                 </div>
                                 <div class="userData ml-3">
-                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold">jane777</h2>
-                                    <h6 class="d-block"> janedoe@hotmail.com</h6>
-                                    <h6 class="d-block"> .....s</h6>
+                                    <h1 class="d-block" style="font-size: 1.5rem; font-weight: bold">
+                                        {{loggedInUser.username}}</h1>
+                                    <h6 class="d-block"></h6>
                                 </div>
 
                             </div>
@@ -51,47 +49,10 @@
                                                 <label style="font-weight:bold;">Full Name</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                Jane Doe
+                                                {{loggedInUser.fullname}}
                                             </div>
                                         </div>
                                         <hr />
-
-                                        <div class="row">
-                                            <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;">Birth Date</label>
-                                            </div>
-                                            <div class="col-md-8 col-6">
-                                                July 04, 1776.
-                                            </div>
-                                        </div>
-                                        <hr />
-
-
-                                        <div class="row">
-                                            <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;">Something</label>
-                                            </div>
-                                            <div class="col-md-8 col-6">
-                                                Something
-                                            </div>
-                                        </div>
-                                        <hr />
-                                        <div class="row">
-                                            <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;">Something</label>
-                                            </div>
-                                            <div class="col-md-8 col-6">
-                                                Something
-                                            </div>
-                                        </div>
-                                        <hr />
-
-
-
-
-
-
-
                                     </div>
                                 </div>
                             </div>

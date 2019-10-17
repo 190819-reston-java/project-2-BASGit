@@ -22,6 +22,7 @@ import { CnnComponent } from './top-news-page/cnn/cnn.component';
 import { NbcComponent } from './top-news-page/nbc/nbc.component';
 import { FoxComponent } from './top-news-page/fox/fox.component';
 import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
+import { LogInPageComponent } from './log-in-page/log-in-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/topnews/topnews', pathMatch: 'full'},
@@ -46,7 +47,8 @@ const routes: Routes = [
   { path: 'topnews/cnn', component: CnnComponent},
   { path: 'topnews/nbc', component: NbcComponent},
   { path: 'topnews/fox', component: FoxComponent},
-  { path: 'signup/signup', component: SignUpPageComponent}
+  { path: 'signup/signup', component: SignUpPageComponent},
+  { path: 'login/login', component: LogInPageComponent}
 ];
 
 

@@ -17,7 +17,6 @@
                             <tr>
                                 <th>Title</th>
                                 <th>Body</th>
-                                <th>Image</th>
                                 <th>Featured?</th>
                                 <th>User</th>
                                 <th>Manager Actions</th>
@@ -27,18 +26,11 @@
                             <tr *ngFor="let story of stories">
                                 <td>{{story.headline}}</td>
                                 <td>{{story.body}}</td>
-                                <td>STORY IMAGE</td>
                                 <td>{{story.featured}}</td>
                                 <td>{{story.author.username}}</td>
                                 <td>
-                                    <form #f="ngForm" (ngSubmit)="onSubmitH(f)" novalidate>
-                                        <button type="submit" name="changestory" onClick="window.location.reload();" ngModel value="{{story.id}} h"
-                                            class="btn btn-primary mx-auto">Highlight</button>
-                                    </form>
-                                    <form #f="ngForm" (ngSubmit)="onSubmitR(f)" novalidate>
-                                        <button type="submit" name="changestory" onClick="window.location.reload();" ngModel value="{{story.id}} r"
-                                            class="btn btn-primary mx-auto">Remove</button>
-                                    </form>
+                                    <button (click)="highlightStory(story.id)" class="btn btn-primary mx-auto">Highlight</button>
+                                    <button (click)="removeStory(story.id)" class="btn btn-primary mx-auto">Remove</button>
                                 </td>
                             </tr>
                         </tbody>
