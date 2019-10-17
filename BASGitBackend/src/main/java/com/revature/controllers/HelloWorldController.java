@@ -47,12 +47,13 @@ public class HelloWorldController {
 	
 	private List<String> getNeededStoryFields(String JSONString){
 		
-		JSONString = JSONString.replaceAll("\"[a-zA-Z]*\":", "");
-		JSONString = JSONString.substring(1, JSONString.length());
-		String[] formJSONSplit = JSONString.split("\",\"");
+		JSONString = JSONString.substring(1, JSONString.length() - 1);
+		
+		JSONString = JSONString.replaceFirst("\"title\":", "");
+		String[]JSONParts = JSONString.split("\"synopsis\":");
 		List<String> neededFields = new ArrayList<String>();
-		for (String JSONField : formJSONSplit) {
-			neededFields.add(JSONField.split(":")[1].replaceAll("\"", ""));
+		for(String part : JSONParts) {
+			neededFields.add(part);
 		}
 		
 		return neededFields;
