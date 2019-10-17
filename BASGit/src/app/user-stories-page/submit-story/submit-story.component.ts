@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-submit-story',
@@ -9,7 +10,8 @@ import { NgForm } from '@angular/forms'
 })
 export class SubmitStoryComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private router: Router) { }
 
   onSubmit(f: NgForm) {
     this.http.post("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/stories/profiles/submit", JSON.stringify(f.value)).subscribe(res=>{
@@ -20,6 +22,7 @@ export class SubmitStoryComponent implements OnInit {
     console.log(f.value);  // { first: '', last: '' }
     console.log(JSON.stringify(f.value));
     console.log(f.valid);  // false
+    this.router.navigateByUrl("/userstories/alluserstories");
   }
 
   ngOnInit() {

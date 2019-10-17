@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manager-user-all-stories',
@@ -11,7 +12,8 @@ export class ManagerUserAllStoriesComponent implements OnInit {
 
   stories: any;
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient,
+    private router: Router) { }
 
 highlightStory(id) {
   this.http.post("http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/stories/admin/handle", `${id} h`).subscribe(res=>{
@@ -20,6 +22,7 @@ highlightStory(id) {
     //you can do asomething, like
 })
 console.log(`${id} h`);
+this.router.navigateByUrl("/userstories/topuserstories");
 }
 
 removeStory(id) {
@@ -29,6 +32,7 @@ removeStory(id) {
     //you can do asomething, like
 })
 console.log(`${id} r`);
+this.router.navigateByUrl("/userstories/userstories");
 }
 
 
