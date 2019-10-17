@@ -150,4 +150,12 @@ public class StoryRepository {
 				.add(Restrictions.eq("isFeatured", true))
 				.addOrder(Order.desc("id")).list();
 	}
+
+	@Transactional
+	public List<Story> findAllOrderByUserID() {
+		Session s = sf.getCurrentSession();
+		
+		return (List<Story>) s.createCriteria(Story.class)
+				.addOrder(Order.desc("author")).list();
+	}
 }

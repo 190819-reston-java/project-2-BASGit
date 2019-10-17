@@ -88,6 +88,13 @@ public class StoryController {
 		
 	}
 
+	@GetMapping("/byUser")
+	@ResponseBody
+	public ResponseEntity<List<Story>> allByUserID(){
+		List<Story> s = storyService.findAllOrderByUserID();
+		return ResponseEntity.status(HttpStatus.OK).body(s);
+	}
+	
 	@PutMapping
 	@ResponseBody
 	public ResponseEntity<Story> save(Story story) {
