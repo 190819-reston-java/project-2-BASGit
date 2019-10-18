@@ -15,16 +15,12 @@ export class UserAllStoriesComponent implements OnInit {
   constructor(private http : HttpClient) { }
 
   ngOnInit() {
-    let observable = this.http.get('http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/current')
-    observable.subscribe((result => {
-      this.user = result;
-      this.userId = this.user.id;
-    }))
-
-    let observableTwo = this.http.get(`http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/stories/user/${this.userId}`)
-    observableTwo.subscribe((result => {
-      this.stories = result;
-    }))
-  }
+    this.http.get('http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/current').subscribe(result =>{
+    this.user = result;
+    this.http.get(`http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/stories/user/${this.user.id}`).subscribe(res => {
+      this.stories = res;
+    })
+    })
+  } 
 
 }
