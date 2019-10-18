@@ -33,11 +33,11 @@ export class TopNewsComponent implements OnInit {
   //Links to the Fox/CNN/NBC page
   sourceDirector(sourceJson){
     if(sourceJson === 'NBC News'){
-      return "/topnews/nbc";
+      return "/BASGit/static/BASGit/#/topnews/nbc";
     } else if(sourceJson === 'CNN') {
-      return "/topnews/cnn";
+      return "/BASGit/static/BASGit/#/topnews/cnn";
     } else {
-      return "/topnews/fox";
+      return "/BASGit/static/BASGit/#/topnews/fox";
     }
   }
 

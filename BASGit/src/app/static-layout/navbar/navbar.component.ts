@@ -3,6 +3,7 @@ import { AccountDropdownComponent } from '../account-dropdown/account-dropdown.c
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms'
 import { Router, ActivatedRoute, Event, NavigationStart } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -22,7 +23,8 @@ export class NavbarComponent implements OnInit {
                  console.log(res);
                  //you can do asomething, like
            })
-           this.router.navigateByUrl("/topnews/topnews");
+           window.open('http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/static/BASGit/',"_self");
+
   }
 
     ngOnInit() {

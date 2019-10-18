@@ -84,3 +84,7 @@ opacity: 0.8;
   text-decoration-color:#cca830 ;
   color:#ac870f;
 }
+body {
+  min-height: 650;
+
+}

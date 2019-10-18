@@ -6,7 +6,6 @@
 }
 
 #active {
-
     margin-top: -4px;
     background: linear-gradient(to right, #777777, #cccccc, #777777);
     border-bottom: 2.5px solid #999999;
@@ -18,7 +17,6 @@
     color: #2d2d2d;
 }
 
-
 .newsbox {
     min-width: 355px;
     margin: 30px 0px 10px 0px;
@@ -26,8 +24,8 @@
     background-color: #ffffff;
     border-radius: 3px;
     box-shadow: 4px 4px 8px #888888;
-
 }
+
 
 p {
     display: inline;
@@ -36,21 +34,29 @@ p {
 img {
     padding-right: 5px;
     float: left;
+    width: auto;
+    height: auto;
+    max-width: 50%;
 }
 
+.ph-image{
+    max-width:100%;
+    margin-top:-20%;
+}
 
-.source-link{
+.source-link {
     text-align: center;
     bottom: 0;
     left: 0;
-    right: 0;    position: absolute;
-    text-decoration-color:#cca830 ;
-    color:#ac870f;
-
+    right: 0;
+    position: absolute;
+    text-decoration-color: #cca830;
+    color: #ac870f;
 }
-.headline{
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-weight: bold;
+
+.headline {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: bold;
 }
 
 img {
@@ -71,22 +77,23 @@ img:hover {
     transform: scale(1.05) rotate(1deg);
     opacity: 0.8;
 }
+
 .source-link a {
-  text-decoration-color:#cca830 ;
-  color:#ac870f;
+    text-decoration-color: #cca830;
+    color: #ac870f;
 }
 
+h4 a {
+    color: #2facff;
+    text-decoration: underline;
+}
 
-h4 a{
-    color:#2facff;
-    text-decoration:underline;
+h4 a:hover {
+    text-decoration: underline;
+    color: #6adcff;
 }
-h4 a:hover{
-    /* text-decoration:none; */
-    text-decoration:underline;
-    color:#6adcff;
-}
+
 #logo {
-  height:35px;
-  width: 70px;
+    height: 35px;
+    width: 70px;
 }

@@ -29,7 +29,7 @@ export class LogInPageComponent implements OnInit {
                })
         console.log(f.value);  // { first: '', last: '' }
         console.log(f.valid);  // false
-        this.router.navigateByUrl("/topnews/topnews");
+        window.open('http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/static/BASGit/',"_self");
       }
     
 

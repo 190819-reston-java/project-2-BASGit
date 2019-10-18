@@ -1,34 +1,34 @@
 <app-sidebar-profile></app-sidebar-profile>
+
 <body>
-    <p>filler</p>
-    <p>filler</p>
-    <p>filler</p>
-    <p>filler</p>
-    <p>filler</p>
-    <p>filler</p>
-    <div id="content-area" class="container">
-        <div class="row justify-content-around">
+        <div id="news-view" class="container">
+          <div class="row justify-content-around">
             <div id="active" class="w-100">
-                <h4>My News Stories</h4>
+              <h4><b>My News Stories</b></h4>
             </div>
-        </div>
-    </div>
-    <div class="table-responsive">
-            <table class="table table-striped table-sm tablebox">
-                <thead class="tableboxchild">
+            <div class="col">
+              <div>
+                <h1></h1>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-striped table-sm tablebox">
+                  <thead class="tableboxchild">
                     <tr>
                         <th>Title</th>
                         <th>Body</th>
                         <th>Featured?</th>
                     </tr>
-                </thead>
-                <tbody>
+                  </thead>
+                  <tbody>
                     <tr *ngFor="let story of stories">
                         <td>{{story.headline}}</td>
                         <td>{{story.body}}</td>
                         <td>{{story.featured}}</td>
                     </tr>
-                </tbody>
-            </table>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
-</body>
+      </body>

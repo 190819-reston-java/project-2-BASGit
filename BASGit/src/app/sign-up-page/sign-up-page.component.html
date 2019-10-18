@@ -1,41 +1,40 @@
-
 <body>
-<p>sign-up-page works!</p>
-<div class="container">
-    <div class="row align-items-center">
-        <div class="col-md-6 col-12">
+    <p>sign-up-page works!</p>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 col-12">
                 <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
                     <!-- http://ec2-52-90-209-187.compute-1.amazonaws.com:5555/BASGit/users/signup -->
-                <div class="form-group">
-                    <h1>Sign Up
-                        <br>
-                    </h1>
-                </div>
-                <div class="form-group">
-                    <label for="Username">Username</label>
-                    <input type="text" class="form-control" id="password" name="username" ngModel placeholder="CoolUsername" required>
-                </div>
-                <div class="form-group">
-                    <label for="Password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" ngModel placeholder="Password"  required>
-                    <!-- <small id="passwordHelp" class="form-text text-muted">Must contain at least one number and one
+                    <div class="form-group">
+                        <h1>Sign Up
+                            <br>
+                        </h1>
+                    </div>
+                    <div class="form-group">
+                        <label for="Username">Username</label>
+                        <input type="text" class="form-control" id="password" name="username" ngModel placeholder="CoolUsername" pattern="[a-zA-Z0-9]+" title="Letters and numbers only" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" ngModel placeholder="Password" pattern="[a-zA-Z0-9]+" title="Letters and numbers only" required>
+                        <!-- <small id="passwordHelp" class="form-text text-muted">Must contain at least one number and one
                         uppercase and lowercase letter, and at least 8 or more characters</small> -->
-                </div>
-                <div class="form-group">
-                    <label for="Full Name">Full Name</label>
-                    <input type="text" class="form-control" id="newName" name="fullname" ngModel placeholder="John Smith" required>
-                </div>
-                <div class="form-group">
-                    <label for="Manager Code">Manager Code</label>
-                    <input type="text" class="form-control" id="managerCode" name="managerCode" ngModel placeholder="Secret Manager Code Goes Here">
-                </div>
-                <!-- <div class="form-group">
+                    </div>
+                    <div class="form-group">
+                        <label for="Full Name">Full Name</label>
+                        <input type="text" class="form-control" id="newName" name="fullname" ngModel placeholder="John Smith" pattern="[a-zA-Z0-9]+" title="Letters and numbers only" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Manager Code">Manager Code</label>
+                        <input type="text" class="form-control" id="managerCode" name="managerCode" ngModel pattern="[a-zA-Z0-9-]+" title="Shh" placeholder="Secret Manager Code Goes Here">
+                    </div>
+                    <!-- <div class="form-group">
                         <input class="btn btn-dark" type="submit" value="signup">
                 </div> -->
-                <!-- <small id="passwordHelp" class="form-text text-muted">Illegal Characters: \$</small> -->
-                <button type="submit" class="signup">Submit</button>
-            </form>
+                    <!-- <small id="passwordHelp" class="form-text text-muted">Illegal Characters: \$</small> -->
+                    <button type="submit" class="signup">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 </body>

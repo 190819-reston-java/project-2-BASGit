@@ -1,7 +1,7 @@
 body {
   padding-top: 6.2rem;
   padding-bottom: 4.2rem;
-  /* background: #888888; */
+  min-width: 650px;
   background: linear-gradient(#555555, #888888);
   z-index: 2;
   margin-left: 240px;
