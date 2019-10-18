@@ -41,7 +41,7 @@ public class StoryRepository {
 	public List<Story> findAll() {
 		Session s = sf.getCurrentSession();
 
-		return s.createCriteria(Story.class).list();
+		return s.createCriteria(Story.class).addOrder(Order.asc("id")).list();
 
 	}
 
