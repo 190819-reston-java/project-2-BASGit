@@ -1,13 +1,15 @@
 package com.revature.services;
 
-import java.util.Set;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+//import java.util.Set;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+//import org.hibernate.Session;
+//import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
+//import org.springframework.transaction.annotation.Propagation;
+//import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.models.Story;
 import com.revature.models.User;
@@ -21,24 +23,26 @@ public class StoryService  {
 	
 	
 	public Story findOne(int id) {
-		return storyRepository.findOne(id);
+		return this.storyRepository.findOne(id);
 	}
 	
 	
-	public Set<Story> findAll(){
-		return storyRepository.findAll();
+	public ArrayList<Story> findAll(){
+		return this.storyRepository.findAll();
 	}
 	
 	
 	public Story save(Story story) {
-		storyRepository.save(story);
+		this.storyRepository.save(story);
 		
 		return story;
 	}
+//	@Temporal(TemporalType.DATE)
+//	@Column(name="date_time")
+//	private Timestamp dateTime;
 
-
-	public Story createNew(Story story, User u) {
-		storyRepository.createNew(story, u);
+	public Story createNew(Story story, User u, User t, Timestamp ts) {
+		this.storyRepository.createNew(story, u, t, ts);
 		
 		return story;
 		
