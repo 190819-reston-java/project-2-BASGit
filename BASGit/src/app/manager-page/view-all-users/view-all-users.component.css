@@ -99,5 +99,5 @@ img:hover {
 }
 
 body {
-    height: calc(100vh - 100px);
+    min-height: 650px;
 }
