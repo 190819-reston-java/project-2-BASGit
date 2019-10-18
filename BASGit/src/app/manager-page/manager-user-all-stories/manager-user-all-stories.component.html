@@ -17,9 +17,9 @@
                             <tr>
                                 <th>Title</th>
                                 <th>Body</th>
-                                <th>Featured</th>
+                                <th>Featured?</th>
                                 <th>User</th>
-                                <th id="manager" >Manager</th>
+                                <th id="manager">Manager</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -27,13 +27,10 @@
                             <tr *ngFor="let story of stories">
                                 <td>{{story.headline}}</td>
                                 <td>{{story.body}}</td>
-                                <td>
-                                    <p *ngIf="{{story.featured}} === true">Yes</p>
-                                    <p *ngIf="{{story.featured}} === false">No</p>
-                                </td>
+                                <td>{{story.featured}}</td>
                                 <td>{{story.author.username}}</td>
                                 <td>
-                                    <button *ngIf="{{story.featured}} !== true" id="approve" (click)="highlightStory(story.id)" class="btn btn-primary mx-auto">Highlight</button>
+                                    <button id="approve" (click)="highlightStory(story.id)" class="btn btn-primary mx-auto">Highlight</button>
                                 </td>
                                 <td>
                                     <button id="remove" (click)="removeStory(story.id)" class="btn btn-primary mx-auto">Remove</button>
