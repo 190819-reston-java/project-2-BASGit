@@ -64,3 +64,10 @@
 .image-container:hover .middle {
   opacity: 1;
 }
+#update {
+  font-weight: bold;
+  background: linear-gradient(to right, #ac870f, #ffdc6b, #ac870f);
+  border: 2.5px solid #cca830;
+  color: black;
+  font-family: "Book Antiqua", Palatino, serif;
+}
