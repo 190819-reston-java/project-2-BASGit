@@ -137,7 +137,7 @@ public class StoryRepository {
 		Session s = sf.getCurrentSession();
 		
 		return (List<Story>) s.createCriteria(Story.class)
-				.add(Restrictions.eq("author.id", id)).addOrder(Order.desc("id"))
+				.add(Restrictions.eq("author.id", id)).addOrder(Order.asc("id"))
 				.list();
 	}
 
@@ -148,7 +148,7 @@ public class StoryRepository {
 		
 		return (List<Story>) s.createCriteria(Story.class)
 				.add(Restrictions.eq("isFeatured", true))
-				.addOrder(Order.desc("id")).list();
+				.addOrder(Order.asc("id")).list();
 	}
 
 	@Transactional
@@ -156,6 +156,6 @@ public class StoryRepository {
 		Session s = sf.getCurrentSession();
 		
 		return (List<Story>) s.createCriteria(Story.class)
-				.addOrder(Order.desc("author")).list();
+				.addOrder(Order.asc("author")).list();
 	}
 }
